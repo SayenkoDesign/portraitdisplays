@@ -1,0 +1,144 @@
+.medium-wrap {
+	max-width: 1002px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.small-wrap {
+	max-width: 650px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.gray-bg {
+	background-color: $light-gray;
+}
+
+.gray-wave {
+	max-width: none;
+	width: 100%;
+	
+	&.gray-wave-top {
+		margin-bottom: -1px;
+	}
+	
+	&.gray-wave-bottom {
+		margin-top: -1px;
+	}
+	
+}
+
+.pixel-set {
+	
+	width: 30px;
+	height: 30px;
+	position: relative;
+	display: inline-block;
+	
+	span {
+		position: absolute;
+		background-color: $sky-blue;
+		height: 15px;
+		width: 15px;
+		display: inline-block;
+		&.pixel-set-1 {
+			left: 0;
+			bottom: 0;
+		}
+		&.pixel-set-2 {
+			right: 0;
+			top: 0;
+		}
+	}
+
+}
+
+.pixel-grid {
+	position: absolute;
+	display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    align-items: center;
+    width: 188px;
+    height: 155px;
+    flex-wrap: wrap;
+	
+	span {
+		background-color: $sky-blue;
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		margin: 0.7em;	
+	}
+	
+}
+
+.arrow-wrap {
+	position: relative;
+	top: 1px;
+	left: 4px;
+	display: inline-block;
+	padding: 0;
+	width: 16px;
+	height: 13px;
+	
+}
+
+.has-corner-bg {
+	position: relative;
+	
+	> div {
+		position: relative;
+	
+		.image-corner-bg {
+			position: absolute;
+			display: inline-block;
+			width: 257px;
+			height: 140px;
+			
+			&.sky-blue-corner-bg {
+				top: 0;
+				left: 0;
+				transform: translateX(-21px) translateY(-19px);
+				background-color: $sky-blue;
+			}
+			
+			&.dark-blue-corner-bg {
+				right: 0;
+				bottom: 0;
+				transform: translateX(21px) translateY(19px);
+				background-color: $dark-blue;
+			}
+			
+		}
+		
+		img {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+}
+
+ul.fancy-bullets {
+	padding-top: 0.27em;
+	list-style: none;
+	padding-left: 1.77em;
+	
+	li {
+		position: relative;
+		margin-bottom: 1.45em;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			left: -44px;
+			width: 24px;
+			height: 24px;
+			background: url('/wp-content/themes/portrait-displays/assets/svg/list-bullet.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	}
+}

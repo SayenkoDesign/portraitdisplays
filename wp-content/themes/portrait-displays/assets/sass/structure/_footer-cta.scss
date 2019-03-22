@@ -1,0 +1,32 @@
+img#white-footer-wave {
+    margin-bottom: -67px;
+    max-width: none;
+    width: 100%;
+}
+
+.footer-cta-content-wrap {
+	position: relative;
+	padding-top: 5.95em;
+	padding-bottom: 2.95em;
+	justify-content: center;
+
+	.footer-cta-half {
+		padding: 0 32px;
+		margin: 3em auto;
+	}
+	
+	.pixel-set {
+		position: absolute;
+		top: 54.5%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		
+		@include breakpoint (large) {
+			top: 50%;
+			
+		}
+	}
+	
+
+	
+}

@@ -1,0 +1,186 @@
+/*
+Header
+---------------------------------------------- */
+
+// Fix for sticky header
+.logged-in .site-header.fixed {
+    @include breakpoint(xlarge) {
+        top: 32px;
+    }      
+ }
+ 
+ @include breakpoint(xlarge) {
+    .sticky-header {
+        // Set sticky header height as needed  
+    }
+ }
+ 
+//  Top Bar Message
+ #top-bar-message-wrap {
+	background-color: #DA2A55;
+	 padding-top: 5px;
+	 padding-bottom: 5px;
+	
+	#top-bar-message {
+		
+		p {
+			color: #fff;
+			margin-bottom: 0;
+			
+			span {
+				padding-right: 22px;
+			}
+			
+			a {
+				color: #D7D5D5;
+				transition: $transition;
+				
+				img {
+					transition: $transition;
+					transform: translateX(0);					
+				}
+				
+				&:hover {
+					color: $sky-blue;
+					
+					img {
+						transform: translateX(10px);
+					}
+					
+					 span > img.top-arrow {
+						opacity: 0;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	 
+ }
+ 
+//  Top Bar Message Pseudo Transitions
+ .no-touchevents #top-bar-message-wrap {
+	
+	#top-bar-message {
+		
+		p {
+			span {
+			}
+			
+			a {
+				transition: $transition;
+				
+				img {
+					transition: $transition;
+					transform: translateX(0);					
+				}
+				
+				&:hover {
+					color: $sky-blue;
+					
+					img {
+						transform: translateX(10px);
+					}
+					
+					 span > img.top-arrow {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+	 
+ }
+
+
+// Primary Navigation
+#masthead {
+	
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+	
+	.wrap {
+		padding-bottom: 12px;
+	}
+	                     
+    &.fixed {
+	    background: #fff;
+        position: fixed!important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.50);
+		border-radius: 1px;
+        
+        
+        &.shrink {
+            // Scale fixed header logo
+            .site-title {
+                img {
+                   transform-origin: center center;
+                   transform: scale(.891);
+                   width: auto;   
+                }
+            }
+        }
+        
+        // Show/Hide fixed header
+        &.nav-up {
+            transform: translateY(-400%);   
+        }
+        
+        &.nav-down {
+            transform: translateY(0);  
+            transition: transform .1s ease 0s; 
+        }
+        
+        .wrap {
+	        
+	        #site-nav-wrap {
+		        
+		        #site-navigation {
+				        ul li a {
+					        color: $dark-gray;
+				        }
+				        
+			        #upper-nav {
+				        
+				        span.upper-link-text {
+							
+							&:after {
+								display: none;
+							}
+							
+						}
+		        
+						#contact-modal-button {
+							background-color: $dark-blue;
+						}
+						
+						#upper-nav-store-link {
+							background-color: $sky-blue;					
+						}
+					
+					}
+				
+				}
+			
+			}
+		
+		}
+        
+            
+    }    
+}
+
+
+
+
+
+
+

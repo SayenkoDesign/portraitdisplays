@@ -1,0 +1,404 @@
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
+
+// Default menu (active after a fresh WordPress install)
+.menu {
+	@include list-reset;
+        
+    @include breakpoint(large) {
+        display: flex;
+    }
+    
+    li {
+        
+    }
+
+} // .menu
+
+
+.js-superfish {
+    
+    .menu-item > a:focus ~ ul.sub-menu,
+    .menu-item.focus > ul.sub-menu,
+    .menu-item:hover > ul.sub-menu {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+    
+    
+    .menu-item:focus {
+        position: static;
+    }
+    
+    .menu-item > a:focus + ul.sub-menu,
+    .menu-item.sfHover > ul.sub-menu {
+        opacity: 1;
+    }   
+}
+
+
+.no-touchevents a[href^="tel:"]:not(.button) {
+    color: $dark-gray;
+	pointer-events: none;    /* prevents click event */
+    cursor: text;            /* use text highlight cursor*/
+}
+
+// Navigation on Comment, Post and Posts
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0;
+		//overflow: hidden;
+	} // .site-main &
+
+	&.nav-previous {
+		float: left;
+	} // &.nav-previous
+
+	&.nav-next {
+		float: right;
+		text-align: right;
+	} // &.nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation
+
+
+button {
+    cursor: pointer;   
+}
+
+
+// Primary Navigation
+#masthead {
+	
+	#site-nav-wrap {
+		
+		#site-navigation {
+			text-align: right;
+			font-size: 1.063rem;
+			color: #fff;
+			
+			a {
+				color: #fff;
+			}
+			
+			#upper-nav {
+				display: flex;
+				flex-wrap: nowrap;
+				justify-content: flex-end;
+				margin-bottom: 14px;
+				
+				a {
+					font-size: 1.063rem;
+					font-family: $open-sans;
+					color: #fff;
+					padding: 7px 19px;
+					transform: skew(-20deg);
+					
+					span.upper-nav-skew-correct {
+						display: inline-block;
+						transform: skew(20deg);
+						
+						span.upper-link-text {
+							position: relative;
+							
+							&:after {
+								content: "";
+								position: absolute;
+								left: 0;
+								bottom: -4px;
+								width: 27px;
+								height: 2px;
+								background-color: $dark-blue;
+							}
+							
+						}
+						
+						> img {
+							margin-top: -2px;
+							margin-right: 11px;
+						}
+						
+					}
+					
+					&#contact-modal-button {
+						
+
+					}
+					
+					&#upper-nav-store-link {
+						
+
+					}
+					
+					&:hover {
+						
+						span.upper-nav-skew-correct {
+							
+							span.upper-link-text:after {
+								width: 100%;
+							}
+	
+						}
+					}
+				}
+			}
+			
+			ul.primary-menu {
+				display: flex;
+				justify-content: flex-end;
+				list-style: none;
+			    padding: 0;
+			    margin: 0;
+			    
+			    button {
+				    display: none;
+			    }
+			    
+			    li {
+				    font-size: 1.063rem;
+					font-family: $open-sans;
+					margin: 0 8px;
+				    
+				    &:last-child {
+					    margin-right: 0;
+					    
+					    a {
+							padding-right: 0; 
+							   
+					    }
+					        
+				    }
+			    
+			    	&.menu-item-has-children {
+						position: relative;
+			    
+					    &:hover {
+						 	>  ul.sub-menu {
+							 	left: 0;
+							 	top: 25px;
+							 	opacity: 1;
+							 	z-index: 1;
+						 	}
+						}
+						 	
+			    	}
+			    	
+			 	    a {
+					    padding: 4px;
+					    position: relative;
+					    
+					    	&:after {
+							    content: "";
+							    height: 2px;
+							    background-color: $dark-blue;
+							    position: absolute;
+							    bottom: 0;
+							    left: 50%;
+							    right: 50%;
+						    }
+						    
+						&:hover:after{
+							left: 0;
+							right: 0;
+						}
+				    }
+				    
+				    &.menu-item-has-children {
+					    a:after {
+						    display: none;
+					    }
+				    }
+			    
+			    }
+			    
+			    ul.sub-menu {
+				    min-width: 190px;
+				    background: #FFFFFF;
+					box-shadow: 0 11px 12px 0 rgba(0,0,0,0.10);
+					letter-spacing: 0;
+					text-align: left;
+					line-height: 31px;
+					border-top: 6px solid $sky-blue;
+
+				    margin: 0;
+				    padding: 0;
+				    opacity: 0;
+				    background: #fff;
+				    top: 0;
+				    left: -99999em;
+				    position: absolute;
+				    list-style: none;
+				    z-index: 0;
+				    
+				    transition: opacity 0.15s ease 0.01s;
+				    
+				    li {
+					    margin: 0; 
+				    
+					    a {
+						    width: 100%;
+						    display: inline-block;
+						    color: $dark-gray;
+							padding: 8px 17px;
+							transition: $transition;
+
+					    }
+
+				    }
+			    }
+			}
+			
+		}
+		
+	}
+        
+                        
+    &.fixed {
+        .wrap {
+	        #site-nav-wrap {
+		        
+		        #site-navigation {
+				        ul li a {
+					        color: $dark-gray;
+				        }
+				        
+			        #upper-nav {
+				        
+				        span.upper-link-text {
+							
+							&:after {
+								display: none;
+							}
+							
+						}
+		        
+						#contact-modal-button {
+							background-color: $dark-blue;
+						}
+						
+						#upper-nav-store-link {
+							background-color: $sky-blue;					
+						}
+					
+					}
+				
+				}
+			
+			}
+		
+		}
+    }    
+}
+
+// Primary Navigation Pseudo Transitions
+.no-touchevents #masthead {
+	#site-nav-wrap {
+		#site-navigation {
+			#upper-nav {
+				a {
+
+					&:hover {
+						
+						span.upper-nav-skew-correct {
+							
+							span.upper-link-text:after {
+								width: 100%;
+								transition: $transition;
+							}
+	
+						}
+					}
+				}
+			}
+			
+			ul.primary-menu {			    
+			    
+			    li {
+			    
+			    	&.menu-item-has-children {
+			    
+					    &:hover {
+						 	>  ul.sub-menu {
+							 	left: 0;
+							 	top: 25px;
+							 	opacity: 1;
+							 	z-index: 1;
+						 	}
+						}
+						 	
+			    	}
+			    	
+			 	    a {
+				 	    	&:after {
+				 	    		transition: $transition;
+						}    
+						    
+						&:hover:after{
+							left: 0;
+							right: 0;
+						}
+				    }
+				    
+			    
+			    }
+			    
+			    ul.sub-menu {
+				    li {
+					    a {
+							
+							&:hover {
+								background-color: $light-gray;
+							}
+
+					    }
+				    }
+			    }
+			}
+		}
+	}
+}
+
+// Footer Navigation
+#site-footer {
+	ul.primary-menu {
+		li {
+			a {
+				font-size: 0.875rem;
+				color: $light-gray-text;
+				letter-spacing: 0.5px;
+				text-align: left;
+				line-height: 20px;
+			}
+			
+			ul.sub-menu {
+				padding-top: 0.9em;
+				list-style: none;
+				margin: 0;
+				li {
+					padding: 0;
+					a {
+						font-size: 14px;
+						color: $text-black;
+						letter-spacing: 0;
+						text-align: left;
+						line-height: 31px;
+					}
+				}
+			}
+		}
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
