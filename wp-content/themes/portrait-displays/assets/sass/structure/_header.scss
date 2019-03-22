@@ -18,8 +18,20 @@ Header
 //  Top Bar Message
  #top-bar-message-wrap {
 	background-color: #DA2A55;
-	 padding-top: 5px;
-	 padding-bottom: 5px;
+	padding-top: 0.813em;
+	padding-bottom: 0.813em;
+	position: relative;
+	transition: $transition;
+		
+	img.header-alert-close {
+		cursor: pointer;
+	    position: absolute;
+	    top: 50%;
+	    right: 12px;
+	    padding: 4px;
+	    z-index: 1;
+	    transform: translateY(-50%);
+	}
 	
 	#top-bar-message {
 		
@@ -136,7 +148,7 @@ Header
         
         &.nav-down {
             transform: translateY(0);  
-            transition: transform .1s ease 0s; 
+            transition: transform .3s ease 0s; 
         }
         
         .wrap {

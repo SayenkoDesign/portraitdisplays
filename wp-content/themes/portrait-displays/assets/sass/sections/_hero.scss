@@ -21,8 +21,9 @@
     }
     
     img#header-right-fins {
+	    max-width: 224px;
 	    right: 0;
-	    bottom: -80px;
+	    bottom: -20px;
 	    position: absolute;
 	    z-index: 2;
     }
@@ -63,7 +64,7 @@
 			    width: calc(100% + 10px);
 			    max-width: none;
 			    bottom: 0;
-			    left: -10px;
+			    left: -7px;
 			}
 		
 		}
@@ -108,6 +109,32 @@
 			}
 			
 		}
+		
+		#hero-button-wrap {
+			
+			display: flex;
+			
+			a.button {
+				
+				white-space: nowrap;
+				margin-right: 1em;
+				
+			&:last-child {
+				margin-right: 0;
+			}
+			
+				span {	
+					white-space: nowrap;
+				}
+				
+				img {
+					position: static;
+					width: auto;
+					z-index: 0;
+				}
+			}
+		
+		}
 			
 	}
 
@@ -118,6 +145,11 @@
 	#page-top {
 	    min-height: 46vw;
 		max-height: 46vw;
+		
+		img#header-right-fins {
+	    		bottom: -80px;
+	    		max-width: 284px;
+    		}
 		
 		.hero-content-half {
 			position: relative;

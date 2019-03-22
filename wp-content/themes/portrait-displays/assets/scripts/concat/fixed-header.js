@@ -4,7 +4,7 @@
     
     var didScroll;
     var lastScrollTop = 0;
-    var delta = 200;
+    var delta = 150;
     var navbarHeight = $('.site-header').outerHeight();
     
     $(window).scroll(function(event){
@@ -34,7 +34,7 @@
             }
         } else {
             // Scroll Up
-            if((delta+navbarHeight) + st + $(window).height() < $(document).height()) {
+            if(st + $(window).height() < $(document).height()) {
                 
                 $('.site-header').removeClass('nav-up').addClass('nav-down');
             }

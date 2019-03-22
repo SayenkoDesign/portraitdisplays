@@ -12,8 +12,6 @@
 
 </div><!-- #content -->
 
-<img id="white-footer-wave" src="/wp-content/themes/portrait-displays/assets/svg/white-footer-wave.svg"/>
-
 <?php
 _s_get_template_part( 'template-parts/global', 'footer-cta' );
 ?>

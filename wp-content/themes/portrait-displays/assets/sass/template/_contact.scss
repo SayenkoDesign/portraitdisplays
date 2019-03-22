@@ -1,0 +1,26 @@
+.page-template-contact {
+
+	a#back-to-previous-link {
+		margin-top: 1.9em;
+		padding: 0.634em 0em;
+		display: inline-block;
+		font-family: $raleway;
+		transition: $transition;
+		
+		span#back-to-previous-text {
+			display: inline-block;
+			padding-left: 0.8em;
+		}
+		
+		img {
+			transition: $transition;
+		}
+		
+	&:hover {
+		img {
+			transform: translateX(-10px);
+		}
+	}
+		
+	}	
+}

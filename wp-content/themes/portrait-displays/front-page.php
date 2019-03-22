@@ -77,7 +77,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 	
 		<?php if( have_rows('why_us') ):?>
 			<img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-top.svg"/>
-			<section id="why-us">
+			<section id="why-us" class="gray-bg">
 			<?php while ( have_rows('why_us') ) : the_row();?>	
 			<h2 class="text-center"><?php the_sub_field('heading');?></h2>
 			

@@ -36,7 +36,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 		while ( $loop->have_posts() ) : $loop->the_post();?>
 		  
 		  	<div class="single-leadership-card column">
-		  		<div class="text-center">
+		  		<div class="text-center lc-img-wrap">
 					<?php 
 					$leadership_image = get_field('image');
 					$leadership_size = 'leadership-card';
@@ -49,13 +49,15 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				<div class="l-card-top">
 					<div>
 						<h3><?php the_title();?></h3>
-						<p><?php the_field('title');?></p>
+						<h5><?php the_field('title');?></h5>
 					</div>
 					<?php 
 					$link = get_field('linkedin_link');
 					if( $link ): 
 						?>
-						<a href="<?php echo $link ?>" target="_blank>">IG ICON</a>
+						<a href="<?php echo $link ?>" target="_blank>">
+							<img class="leader-linkedin" src="/wp-content/themes/portrait-displays/assets/svg/LinkedIn.svg"/>
+						</a>
 					<?php endif; ?>
 				</div>
 				
@@ -66,7 +68,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 			</div>
 
 		  
-		<?php endwhile;?>        
+		<?php endwhile; wp_reset_query();?>        
         
         </main>
     

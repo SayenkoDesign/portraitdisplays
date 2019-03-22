@@ -4714,7 +4714,7 @@ return /******/ (function(modules) { // webpackBootstrap
     
     var didScroll;
     var lastScrollTop = 0;
-    var delta = 200;
+    var delta = 150;
     var navbarHeight = $('.site-header').outerHeight();
     
     $(window).scroll(function(event){
@@ -4744,7 +4744,7 @@ return /******/ (function(modules) { // webpackBootstrap
             }
         } else {
             // Scroll Up
-            if((delta+navbarHeight) + st + $(window).height() < $(document).height()) {
+            if(st + $(window).height() < $(document).height()) {
                 
                 $('.site-header').removeClass('nav-up').addClass('nav-down');
             }
@@ -4789,9 +4789,29 @@ return /******/ (function(modules) { // webpackBootstrap
         
 
     });
-  
     
+//     Close Header Alert
+	var $topBar = $('#top-bar-message-wrap');
+
+	function setHeight() {
+	var barHeight = $($topBar).innerHeight();
+	
+		$(document).on('click', 'body img.header-alert-close', function() {
+			$($topBar).css( 'margin-top', -barHeight).delay(500).fadeOut(0);
+		})
+	
+	};
+	setHeight();
+	
+
+	
+
+
+
+
 }(document, window, jQuery));
+
+
 
 (function (document, window, $) {
 

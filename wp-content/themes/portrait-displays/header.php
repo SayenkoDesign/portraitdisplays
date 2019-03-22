@@ -32,8 +32,8 @@
         <li><a href="#content" class="screen-reader-shortcut"><?php esc_html_e( 'Skip to content', '_s' ); ?></a></li>
         <li><a href="#footer" class="screen-reader-shortcut"><?php esc_html_e( 'Skip to footer', '_s' ); ?></a></li>
     </ul>
-        
-	    
+
+	<?php if (!is_page_template('page-templates/contact.php')):?>
     <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
 	    
 	    <?php if( have_rows('top_bar_message', 'option') ):?>
@@ -52,7 +52,7 @@
 							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?>
 							
 								<span class="arrow-wrap">
-									<img src="/wp-content/themes/portrait-displays/assets/svg/blue-link-arrow.svg"/>
+									<img src="/wp-content/themes/portrait-displays/assets/svg/top-alert-blue-link-arrow.svg"/>
 									<img class="top-arrow" src="/wp-content/themes/portrait-displays/assets/svg/gray-link-arrow.svg"/>
 								</span>
 								
@@ -62,6 +62,8 @@
 			    </div>
 				    
 	    	<?php endwhile;?>
+	    	        <img class="header-alert-close" src="/wp-content/themes/portrait-displays/assets/svg/gray-close.svg"/>
+
 			</div>
 	    <?php endif; ?>
 
@@ -88,18 +90,18 @@
             <div id="site-nav-wrap" class="columns small-12 medium-6">	                    
                 <nav id="site-navigation" class="nav-primary columns" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
 	                          
-                	<div id="upper-nav">
-	                	<a id="contact-modal-button" href="#"><span class="upper-nav-skew-correct"><span class="upper-link-text"><?php the_field('lets_talk_label', 'option');?></span></span></a>
-						<?php 
-						$link = get_field('store_link', 'option');
-						if( $link ): 
-							$link_url = $link['url'];
-							$link_title = $link['title'];
-							$link_target = $link['target'] ? $link['target'] : '_self';
-							?>
+					<div id="upper-nav">
+							<a id="contact-modal-button" href="#"><span class="upper-nav-skew-correct"><span class="upper-link-text"><?php the_field('lets_talk_label', 'option');?></span></span></a>
+							<?php 
+							$link = get_field('store_link', 'option');
+							if( $link ): 
+								$link_url = $link['url'];
+								$link_title = $link['title'];
+								$link_target = $link['target'] ? $link['target'] : '_self';
+								?>
 							<a id="upper-nav-store-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="upper-nav-skew-correct"><img src="/wp-content/themes/portrait-displays/assets/svg/shopping-cart.svg"/><span class="upper-link-text"><?php echo esc_html($link_title); ?></span></span></a>
 						<?php endif; ?>	                	
-                	</div>  
+					</div>  
                 	      
                 <?php
                                             
@@ -124,8 +126,9 @@
                 </nav>
             </div>
         </div><!-- wrap -->
-         
+                 
     </header><!-- #masthead -->
+    <?php endif;?>
     
     <div id="page" class="site-container">
         

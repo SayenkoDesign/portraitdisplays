@@ -1,10 +1,11 @@
 // Mobile Navigation
 
 .menu-toggle,
-.sub-menu-toggle {
+.sub-menu-toggle,
+button#genesis-mobile-nav-primary {
 	display: block;
     
-    @include breakpoint(xlarge) {
+    @include breakpoint(medium) {
         display: none;
     }
 }
@@ -51,10 +52,12 @@
 	
 }
 
+/*
 .genesis-responsive-menu,
 .genesis-responsive-menu .sub-menu {
 	display: none;
 }
+*/
 
 
 .genesis-responsive-menu .menu li {
@@ -69,3 +72,4 @@
 	}
 
 }
+

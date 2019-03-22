@@ -29,6 +29,26 @@
         
 
     });
-  
     
+//     Close Header Alert
+	var $topBar = $('#top-bar-message-wrap');
+
+	function setHeight() {
+	var barHeight = $($topBar).innerHeight();
+	
+		$(document).on('click', 'body img.header-alert-close', function() {
+			$($topBar).css( 'margin-top', -barHeight).delay(500).fadeOut(0);
+		})
+	
+	};
+	setHeight();
+	
+
+	
+
+
+
+
 }(document, window, jQuery));
+
+

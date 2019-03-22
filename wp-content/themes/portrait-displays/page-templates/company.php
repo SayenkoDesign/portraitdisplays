@@ -252,9 +252,6 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 					</div>	
 					
 
-					
-							
-					
 				<?php endwhile;?>
 				</div>
 			<?php endif;?>

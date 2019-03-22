@@ -37,25 +37,27 @@
 			<h1><?php the_field('page_top_heading');?></h1>
 			<h4><?php the_field('page_top_subtext');?></h4>
 			
-			<?php 
-			$link = get_field('page_top_blue_button');
-			if( $link ): 
-				$link_url = $link['url'];
-				$link_title = $link['title'];
-				$link_target = $link['target'] ? $link['target'] : '_self';
-				?>
-				<a class="button blue-button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-			<?php endif; ?>
-			
-			<?php 
-			$link = get_field('page_top_white_button');
-			if( $link ): 
-				$link_url = $link['url'];
-				$link_title = $link['title'];
-				$link_target = $link['target'] ? $link['target'] : '_self';
-				?>
-				<a class="button white-button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-			<?php endif; ?>
+			<div id="hero-button-wrap">
+				<?php 
+				$link = get_field('page_top_blue_button');
+				if( $link ): 
+					$link_url = $link['url'];
+					$link_title = $link['title'];
+					$link_target = $link['target'] ? $link['target'] : '_self';
+					?>
+					<a class="button blue-button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="button-text"><?php echo esc_html($link_title); ?></span><img src="/wp-content/themes/portrait-displays/assets/svg/white-link-arrow.svg"/></a>
+				<?php endif; ?>
+				
+				<?php 
+				$link = get_field('page_top_white_button');
+				if( $link ): 
+					$link_url = $link['url'];
+					$link_title = $link['title'];
+					$link_target = $link['target'] ? $link['target'] : '_self';
+					?>
+					<a class="button white-button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="button-text"><?php echo esc_html($link_title); ?></span><img src="/wp-content/themes/portrait-displays/assets/svg/blue-link-arrow.svg"/></a>
+				<?php endif; ?>
+			</div>
 			
 		</div>
 		

@@ -5,13 +5,18 @@ $show_cta = get_field('show_cta');
 
 if( $show_cta && in_array('yes', $show_cta) ): ?>
 
-	<?php
-	$img_id = get_field('footer_cta_background_image');
-	$img_size = "footer-cta-bg";
-	$imgarr = wp_get_attachment_image_src( $img_id, $img_size );?>
-	<section id="footer-cta" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat:no-repeat;background-size: cover;background-position: center center;">
+<img id="white-footer-wave" src="/wp-content/themes/portrait-displays/assets/svg/white-footer-wave.svg"/>
+
+<?php
+$img_id = get_field('footer_cta_background_image');
+$img_size = "footer-cta-bg";
+$imgarr = wp_get_attachment_image_src( $img_id, $img_size );?>
+<section id="footer-cta" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat:no-repeat;background-size: cover;background-position: center center;">
+	<div id="footer-cta-mask"></div>
 	<div class="row">
+		
 		<div class="column small-12">
+			
 			<?php if( get_field('how_many_link_buttons') == 'one' ): ?>
 			<div id="footer-cta-single" class="footer-cta-content-wrap row align-center text-center">
 				<div class="footer-cta-half small-12 medium-8 large-4 text-center">
@@ -94,12 +99,14 @@ if( $show_cta && in_array('yes', $show_cta) ): ?>
 				
 					<?php endwhile;?>
 				<?php endif;?>
-				</div>
-		</div>
-	</div>
-	<?php endif; ?>
+			</div>
+			<?php endif; ?>
 
+		</div>
+		
 	</div>
+	
+	
 </section>
 
 <?php endif; ?>

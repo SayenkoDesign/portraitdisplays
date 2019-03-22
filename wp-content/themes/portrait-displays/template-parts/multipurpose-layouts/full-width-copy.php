@@ -2,7 +2,7 @@
 // Multipurpose - Full Width Copy
 
 if( get_row_layout() == 'full_width_copy' ):?>
-	<section class="flex-full-width-copy">
+	<section class="flex-full-width-copy row column">
 		
 		<?php if ( get_sub_field('heading')):?>
 		<h2><?php the_sub_field('heading');?></h2>
