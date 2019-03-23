@@ -1,26 +1,44 @@
 .page-template-contact {
+	
+	#main {
+		
+		display: flex;	
 
-	a#back-to-previous-link {
-		margin-top: 1.9em;
-		padding: 0.634em 0em;
-		display: inline-block;
-		font-family: $raleway;
-		transition: $transition;
-		
-		span#back-to-previous-text {
-			display: inline-block;
-			padding-left: 0.8em;
-		}
-		
-		img {
+		a#back-to-previous-link {
+			margin-top: 1.9em;
+			margin-left: 50px;
+			padding: 0.634em 0em;
+			display: block;
+			font-family: $raleway;
 			transition: $transition;
+			
+			span#back-to-previous-text {
+				display: inline-block;
+				padding-left: 0.8em;
+			}
+			
+			img {
+				transition: $transition;
+			}
+			
+		&:hover {
+			img {
+				transform: translateX(-10px);
+			}
+		}
+			
+		}	
+		
+		h1 {
+			padding-top: 1.55em;
+			margin-bottom: 0.2em;
 		}
 		
-	&:hover {
-		img {
-			transform: translateX(-10px);
+		form,
+		#_form_23_ {
+			padding-top: 1.8em
 		}
+		
 	}
 		
-	}	
 }

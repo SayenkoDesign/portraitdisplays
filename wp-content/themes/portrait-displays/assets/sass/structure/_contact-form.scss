@@ -38,6 +38,7 @@
 
 #_form_23_ textarea {
 	resize:none;
+	min-height: 146px;
 }
 
 #_form_23_ ._submit {
@@ -45,6 +46,7 @@
 	cursor:pointer;
 	font-family:arial, sans-serif;
 	text-align:center;
+	margin: auto;
 }
 
 #_form_23_ ._close-icon {
@@ -385,12 +387,13 @@
 	position:relative;
 	text-align:left;
 	margin:25px auto 0;
-	padding:20px;
+	padding:50px;
 	box-sizing:border-box;
 	*zoom:1;
 	background:#fff !important;
 	border:0px solid #b0b0b0 !important;
-	width:500px;
+	width: 100%;
+	max-width:610px;
 	border-radius:0px !important;
 	color:#000 !important;
 }
