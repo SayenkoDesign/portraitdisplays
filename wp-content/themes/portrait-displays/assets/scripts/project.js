@@ -4790,7 +4790,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
     });
     
-//     Close Header Alert
+// Close Header Alert
 	var $topBar = $('#top-bar-message-wrap');
 
 	function setHeight() {
@@ -4803,10 +4803,64 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	setHeight();
 	
+// Add Active to Values Modal Dot Nav
+	
+/*
+$('input[type="radio"]').change(function () {
+    // Get Choice for Application
+    var application = $('input[name="application"]:checked').prop('id') || '';
+  
+    // Get all tr's with the selected data-app
+    var $trs = $('tr[data-app="'+application+'"]');
+  
+    // Add your class
+    $trs.addClass('highlight');
+  
+    // Remove the class from all other tr's
+    $('tr').not($trs).removeClass('highlight');
+});
+*/
+
+
+
 
 	
+/*
+	var modalID = $('.value-reveal-modal').attr('id');
+		    console.log(modalID);
+	
+	if ($('#value-modal-dot-nav button').data("open") === modalID) {
+	    $('#value-modal-dot-nav button').addClass('active');
+	}
+*/
 
 
+/*
+$(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+	var modalID = $(this).attr(modalID);
+	
+		    console.log("loaded");
+	
+	
+		if ($('#value-modal-dot-nav button').data("open") === modalID) {
+	    $('#value-modal-dot-nav button').addClass('active');
+	    }
+	
+});
+*/
+
+
+/*
+$(document).on('open.fndtn.reveal', '[data-reveal]', function(){
+console.log('test');
+});
+*/
+
+/*
+$('#value-3').bind('opened', function() {
+  console.log("myModal opened");
+});
+*/
 
 
 }(document, window, jQuery));

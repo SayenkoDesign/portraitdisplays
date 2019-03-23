@@ -28,19 +28,11 @@
 
 <body <?php body_class(); ?>>
 	
-	<div class="reveal" id="contact-modal" data-animation-in="fadeIn fast" data-animation-out="fadeOut fast" data-reveal>
-	<div id="contact-modal-header"><h3>Let's Talk</h3>
-		<div class="cm-close-button" data-close aria-label="Close reveal"><img class="top-arrow" src="/wp-content/themes/portrait-displays/assets/svg/contact-modal-close.svg"/></div>
-	</div>
-		<?php
-			_s_get_template_part( 'template-parts/global', 'contact-form' );
-		?>
-	</div>
 
-    <ul class="skip-link screen-reader-text">
-        <li><a href="#content" class="screen-reader-shortcut"><?php esc_html_e( 'Skip to content', '_s' ); ?></a></li>
-        <li><a href="#footer" class="screen-reader-shortcut"><?php esc_html_e( 'Skip to footer', '_s' ); ?></a></li>
-    </ul>
+	<?php
+		_s_get_template_part( 'template-parts/modal', 'contact-modal' );
+	?>
+
 
 	<?php if (!is_page_template('page-templates/contact.php')):?>
     <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">

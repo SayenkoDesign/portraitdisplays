@@ -79,76 +79,95 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								_s_get_template_part( 'template-parts/global', 'pixel-set' );
 							?>
 						</div>
+						
 						<?php while ( have_rows('core_values') ) : the_row();?>
 						
 							<h2><?php the_sub_field('heading');?></h2>
 
 						
-							<?php $number_of_values = count(get_sub_field('values'));?>
-							<?php $value_number = get_row_index();?>
+							<?php $number_of_values = count(get_sub_field('values'));?>							
 							
+							<!-- Modal Loop -->
+							<?php if( have_rows('values') ):?>
+								<?php while ( have_rows('values') ) : the_row();?>						
 							
-<!-- 						Modal Loop -->
-						<?php if( have_rows('values') ):?>
-							<?php while ( have_rows('values') ) : the_row();?>						
-						
-									<div id="value-<?php echo get_row_index(); ?>" class="value-reveal-modal" data-reveal>						
-									<?php if( have_rows('single_value') ):
-										while ( have_rows('single_value') ) : the_row();?>						
-						
+									<div id="value-<?php echo get_row_index(); ?>" class="reveal large value-reveal-modal" data-animation-in="fadeIn fast" data-animation-out="fadeOut fast"  data-reveal>	
 											
-									<div class="row columns">
-													
-										<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+										<div class="row">
+														
+											<button class="close-reveal-modal no-style-button" data-close aria-label="Close"><img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/value-modal-close.png"/></button>
+											
+											<?php if(get_row_index() != 1):?>
+												<button class="button modal-nav value-before no-style-button" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button">
+													<span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span>
+												</button>
+												
+												<?php else:?>
+												
+												<div class="value-modal-nav-space"></div>
+												
+											<?php endif;?>	
+																					
+																
+													<?php if( have_rows('single_value') ):
+														while ( have_rows('single_value') ) : the_row();?>						
+										
+														<div class="smallest-wrap">
+															
+															<?php $image = get_sub_field('icon');
+															if( !empty($image) ): ?>
+															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+															<?php endif; ?>
+														
+														
+															<h2><?php the_sub_field('label');?></h2>									
+															<p><?php the_sub_field('modal_copy');?></p>
 
-										<?php if($value_number != 1):?>
-											<button class="button modal-nav step-before" data-open="stepModal-<?php echo $stepNumber - 1;?>" aria-label="Previous Step" type="button"><i class="icon icon-chevron-left"></i></button>
-										<?php endif;?>
+															<div id="value-modal-dot-nav">
+																<?php 
+																$count = $number_of_values;
+																$activeValue = 1;
+																$value = 1;											
+																for ($i = 0; $i < $count; $i++) {
+																    echo "<button id=active-value-" . $activeValue++ . " class='no-style-button' data-open='value-" . $value++ . "'></button>";
+																} ;?>
+															</div>																
+												
+														</div>
+				
+														<?php endwhile;?>
+													<?php endif;?>	
+
 										
-										<div class="small-wrap">
-											
-											<?php $image = get_sub_field('icon');
-											if( !empty($image) ): ?>
-											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-											<?php endif; ?>
-										
-										
-											<h3><?php the_sub_field('label');?></h3>									
-											<p><?php the_sub_field('modal_copy');?></p>
-											<?php if($value_number != $number_of_values):?>
-												<button class="button modal-nav step-after" data-open="stepModal-<?php echo $stepNumber + 1;?>" aria-label="Next Step" type="button"><i class="icon icon-chevron-right"></i></button>	
+											<?php if(get_row_index() != $number_of_values):?>
+												<button class="button modal-nav value-after no-style-button" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button">
+													<span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span>
+												</button>	
+												
+												<?php else:?>
+												
+												<div class="value-modal-nav-space"></div>
 											<?php endif;?>	
 											
 											
-											<div id="value-modal-dot-nav">
-												<?php $element = "<div></div>"; 
-												$count = 6;
-												for ($i = 0; $i < $count; $i++) {
-												    echo $element;
-												} ;?>
-											</div>
 											
+										
 										</div>
 									
-									</div>
-
-										<?php endwhile;?>
-									<?php endif;?>							
-						
-											</div>
-			
-							<?php endwhile;?>
-						<?php endif;?>						
+									</div>						
+				
+								<?php endwhile;?>
+							<?php endif;?>						
 						
 				
 						
-<!-- 						Modal Trigger Loop			 -->
+						<!-- Modal Trigger Loop -->
 						<?php if( have_rows('values') ):?>
 							<div id="values-wrap" class="row small-up-1 medium-up-3 large-up-5 align-justify">
 							<?php while ( have_rows('values') ) : the_row();?>
 							
 
-								<div class="single-value columns" data-open="value-<?php echo get_row_index();?>" href="#">
+								<button class="single-value columns no-style-button" data-open="value-<?php echo get_row_index();?>" href="#">
 
 									<?php if( have_rows('single_value') ):
 										while ( have_rows('single_value') ) : the_row();?>
@@ -162,11 +181,12 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 										<?php endwhile;?>
 									<?php endif;?>
 									
-								</div>
+								</button>
 						
 							<?php endwhile;?>
-					</div>
-				<?php endif;?>
+							</div>
+						<?php endif;?>
+			
 			
 				<?php endwhile;?>
 					</div>
