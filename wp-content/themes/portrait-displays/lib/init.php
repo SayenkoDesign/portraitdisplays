@@ -63,4 +63,4 @@
 *****************************************/
     
     include_once( 'post-types/cpt-people.php' );  
-        
+    include_once( 'post-types/cpt-downloads.php' );  

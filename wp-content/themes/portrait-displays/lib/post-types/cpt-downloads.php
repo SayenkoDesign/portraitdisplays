@@ -1,12 +1,12 @@
 <?php
  
 /**
- * Create new CPT - People
+ * Create new CPT - Downloads
  */
  
-class CPT_People extends CPT_Core {
+class CPT_Downloads extends CPT_Core {
 
-    const POST_TYPE = 'people';
+    const POST_TYPE = 'downloads';
 	const TEXTDOMAIN = '_s';
 	
 	/**
@@ -20,8 +20,8 @@ class CPT_People extends CPT_Core {
         parent::__construct(
         
         	array(
-				__( 'Person', self::TEXTDOMAIN ), // Singular
-				__( 'People', self::TEXTDOMAIN ), // Plural
+				__( 'Download', self::TEXTDOMAIN ), // Singular
+				__( 'Downloads', self::TEXTDOMAIN ), // Plural
 				self::POST_TYPE // Registered name/slug
 			),
 			array( 
@@ -34,12 +34,12 @@ class CPT_People extends CPT_Core {
 				'hierarchical'        => false,
 				'show_ui'             => true,
 				'show_in_menu'        => true,
-				'menu_position'       => 6,
+				'menu_position'       => 5,
 				'show_in_nav_menus'   => false,
 				'exclude_from_search' => true,
 				//'rewrite'             => array( 'slug' => 'teams' ),
 				'supports' => array( 'title', 'thumbnail', 'revisions' ),
-                'menu_icon' => 'dashicons-businessman'
+                'menu_icon' => 'dashicons-archive'
 			)
 
         );
@@ -48,4 +48,4 @@ class CPT_People extends CPT_Core {
  
 }
 
-new CPT_People();
+new CPT_Downloads();

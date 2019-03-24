@@ -373,6 +373,8 @@ button {
 				letter-spacing: 0.5px;
 				text-align: left;
 				line-height: 20px;
+				font-family: $open-sans;
+				text-transform: uppercase;
 			}
 			
 			ul.sub-menu {
@@ -382,6 +384,7 @@ button {
 				li {
 					padding: 0;
 					a {
+						text-transform: none;
 						font-size: 14px;
 						color: $text-black;
 						letter-spacing: 0;
