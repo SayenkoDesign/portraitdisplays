@@ -44,11 +44,16 @@
 	setHeight();
 	
 
-// Windows / Mac Tabs
+// Core Values Orbit Slider: Add active class to first slide
+
+$('ul.orbit-container li:first').addClass('is-active');
+$('nav.orbit-bullets button:first').addClass('is-active');
 
 	
-	
 // Single Download  Tabs
+
+	// Windows / Mac Tabs
+
 	var singleProductDownload = $('section.single-product-download');
 	
 	var downloadTabs = $('.spd-bottom');
@@ -82,6 +87,8 @@
 		});	
 	
 	});
+	
+	// 	Bottom Tabs
 	
 	$(downloadTabs).each(function (i, obj) {
 		

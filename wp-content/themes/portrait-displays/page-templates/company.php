@@ -67,9 +67,9 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				</div>
 				
 			</section>
-		</div>		
-			
-			
+		</div>	
+		
+					
 			<?php if( have_rows('core_values') ):?>
 				<img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-top.svg"/>
 				<section id="core-values" class="gray-bg">
@@ -88,86 +88,81 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 							<?php $number_of_values = count(get_sub_field('values'));?>							
 							
 							<!-- Modal Loop -->
-							<?php if( have_rows('values') ):?>
-								<?php while ( have_rows('values') ) : the_row();?>						
 							
-									<div id="value-<?php echo get_row_index(); ?>" class="reveal large value-reveal-modal" data-animation-in="fadeIn fast" data-animation-out="fadeOut fast"  data-reveal>	
-											
-										<div class="row">
-														
-											<button class="close-reveal-modal no-style-button" data-close aria-label="Close"><img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/value-modal-close.png"/></button>
-											
-											<?php if(get_row_index() != 1):?>
-												<button class="button modal-nav value-before no-style-button" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button">
-													<span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span>
-												</button>
-												
-												<?php else:?>
-												
-												<div class="value-modal-nav-space"></div>
-												
-											<?php endif;?>	
-																					
-																
-													<?php if( have_rows('single_value') ):
-														while ( have_rows('single_value') ) : the_row();?>						
-										
-														<div class="smallest-wrap">
-															
-															<?php $image = get_sub_field('icon');
-															if( !empty($image) ): ?>
-															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-															<?php endif; ?>
-														
-														
-															<h2><?php the_sub_field('label');?></h2>									
-															<p><?php the_sub_field('modal_copy');?></p>
-
-															<div id="value-modal-dot-nav">
-																<?php 
-																$count = $number_of_values;
-																$activeValue = 1;
-																$value = 1;											
-																for ($i = 0; $i < $count; $i++) {
-																    echo "<button id=active-value-" . $activeValue++ . " class='no-style-button' data-open='value-" . $value++ . "'></button>";
-																} ;?>
-															</div>																
-												
-														</div>
-				
-														<?php endwhile;?>
-													<?php endif;?>	
-
-										
-											<?php if(get_row_index() != $number_of_values):?>
-												<button class="button modal-nav value-after no-style-button" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button">
-													<span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span>
-												</button>	
-												
-												<?php else:?>
-												
-												<div class="value-modal-nav-space"></div>
-											<?php endif;?>	
-											
-											
-											
-										
-										</div>
+							
+							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+								
+								<div class="orbit-wrapper">
 									
-									</div>						
-				
-								<?php endwhile;?>
-							<?php endif;?>						
+								    <div class="orbit-controls">
+										<button class="orbit-previous no-style-button"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+										<button class="orbit-next no-style-button"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+									</div>
+										
+									<ul class="orbit-container">
+											
+											
+									<?php if( have_rows('values') ):?>
+										<?php while ( have_rows('values') ) : the_row();?>						
+									
+											<li class="orbit-slide">	
+											
+												<figure class="orbit-figure">
+												
+													<div class="row">
+	
+														<?php if( have_rows('single_value') ):
+															while ( have_rows('single_value') ) : the_row();?>						
+											
+															<div class="smallest-wrap">
+																
+																<?php $image = get_sub_field('icon');
+																if( !empty($image) ): ?>
+																<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+																<?php endif; ?>
+															
+															
+																<h2><?php the_sub_field('label');?></h2>									
+																<p><?php the_sub_field('modal_copy');?></p>
+	
+																<nav class="orbit-bullets">
+																	<?php 
+																	$count = $number_of_values;
+																	$activeValue = 1;
+																	$value = 1;											
+																	for ($i = 0; $i < $count; $i++) {
+																	    echo "<button data-slide=" . $activeValue++ . " class='no-style-button'></button>";
+																	} ;?>
+																</nav>																
+													
+															</div>
+					
+															<?php endwhile;?>
+														<?php endif;?>	
+			
+													</div>
+												
+												</figure>
+											
+											</li>						
 						
+										<?php endwhile;?>
+									<?php endif;?>	
+									
+														
+									</ul>
+								
+								</div>
+								
+							</div>								
 				
 						
 						<!-- Modal Trigger Loop -->
 						<?php if( have_rows('values') ):?>
 							<div id="values-wrap" class="row small-up-1 medium-up-3 large-up-5 align-justify">
 							<?php while ( have_rows('values') ) : the_row();?>
-							
 
-								<button class="single-value columns no-style-button" data-open="value-<?php echo get_row_index();?>" href="#">
+								<button class="single-value columns no-style-button" id="button-for-value-<?php echo get_row_index();?>" href="#">
 
 									<?php if( have_rows('single_value') ):
 										while ( have_rows('single_value') ) : the_row();?>
@@ -193,6 +188,9 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				</section>
 				<img class="gray-wave gray-wave-bottom" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-bottom.svg"/>
 			<?php endif;?>
+			
+			
+					
 			
 			
 <div class="columns row">

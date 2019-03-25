@@ -56,9 +56,7 @@
 				while ( $loop->have_posts() ) : $loop->the_post();?>
 	
 	
-				<?php 
-				
-				$download = get_post();?>
+				<?php $download = get_post();?>
 
 				<li><a href="#<?php echo $download->post_name;?>"><?php the_title();?></a></li>
 
