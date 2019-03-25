@@ -45,111 +45,288 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 					<div class="row">
 	
 					  	<div class="columns small-12 medium-6">
-					  	<?php if( have_rows('system_requirements') ):?>
+						  	
 					  		<h3>System Requirements</h3>
-					  		<?php while ( have_rows('system_requirements') ) : the_row();?>	
-					  		
-					  		<?php the_sub_field('note');?>
-					  		
-						  		<?php if( have_rows('requirement_list') ):?>
-						  			<ul class="fancy-bullets">
-						  			<?php while ( have_rows('requirement_list') ) : the_row();?>	
-						  				<li><?php the_sub_field('single_requirement');?></li>
-						  			<?php endwhile;?>
-						  			</ul>
-						  		<?php endif;?>
+
+
+					  		<?php if(get_field('has_mac_version')):?>
+					  			<div class="tab-nav os-nav">
+						  			
+									<button class="no-style-button tab-nav-button windows-button">
+								  		<div class="plus-wrap">
+								  			<span class="plus-line plus-line-h"></span>
+								  			<span class="plus-line plus-line-v"></span>
+								  		</div>
+								  		for Windows
+								  	</button>
+
+								  	
+								  	<button class="no-style-button tab-nav-button mac-button">
+								  		<div class="plus-wrap">
+								  			<span class="plus-line plus-line-h"></span>
+								  			<span class="plus-line plus-line-v"></span>
+								  		</div>
+								  		for Mac
+								  	</button>
+								  						  			
+				  				</div>
+					  		<?php endif;?>
+
+
+
+
+
+
+
+
+
+
+							<div class="os-wrap for-windows">
+						  	<?php if( have_rows('system_requirements') ):?>
+						  		<?php while ( have_rows('system_requirements') ) : the_row();?>	
+						  		
+						  		<?php the_sub_field('note');?>
+						  		
+							  		<?php if( have_rows('requirement_list') ):?>
+							  			<ul class="fancy-bullets">
+							  			<?php while ( have_rows('requirement_list') ) : the_row();?>	
+							  				<li><?php the_sub_field('single_requirement');?></li>
+							  			<?php endwhile;?>
+							  			</ul>
+							  		<?php endif;?>
+						  	
+						  		<?php endwhile;?>
+						  	<?php endif;?>
+							</div>
+						  	
+						  	
+						  	<?php if(get_field('has_mac_version')):?>
+							<div class="os-wrap for-mac">
+						  	<?php if( have_rows('mac_system_requirements') ):?>
+						  		<?php while ( have_rows('mac_system_requirements') ) : the_row();?>	
+						  		
+						  		<?php the_sub_field('note');?>
+						  		
+							  		<?php if( have_rows('requirement_list') ):?>
+							  			<ul class="fancy-bullets">
+							  			<?php while ( have_rows('requirement_list') ) : the_row();?>	
+							  				<li><?php the_sub_field('single_requirement');?></li>
+							  			<?php endwhile;?>
+							  			</ul>
+							  		<?php endif;?>
+						  	
+						  		<?php endwhile;?>
+						  	<?php endif;?>
+							</div>
+							<?php endif;?>	
+						
+						
+										  	
 					  	
-					  		<?php endwhile;?>
-					  	<?php endif;?>
+					  	
 					  	</div>
 					  	
 				  	</div>
+
+
+
+
+
 					  	
 				  	<div class="columns small-12 medium-6 download-form">
-					  
+					  	
+					  	<div class="os-wrap for-windows"></div>
+					  	
+					  	<?php if(get_field('has_mac_version')):?>
+					  	<div class="os-wrap for-mac"></div>
+					  	<?php endif;?>
+					  	
 				  	</div>
-				  	
-			  	</div>
-				  	
-			  	<div class="tab-nav">
-				  	
-				  	<button class="no-style-button tab-nav-button release-notes-button">
-				  		<div class="plus-wrap">
-				  			<span class="plus-line plus-line-h"></span>
-				  			<span class="plus-line plus-line-v"></span>
-				  		</div>
-				  		Release Notes
-				  	</button>
-				  	
-<!--
-				  	<a class="tab-nav-button" href="#">
-				  		<div class="plus-wrap">
-				  			<span class="plus-line plus-line-h"></span>
-				  			<span class="plus-line plus-line-v"></span>
-				  		</div>					  	
-				  		Product Page
-					</a>
--->
-				  	
-				  	<button class="no-style-button tab-nav-button legacy-downloads-button">
-				  		<div class="plus-wrap">
-				  			<span class="plus-line plus-line-h"></span>
-				  			<span class="plus-line plus-line-v"></span>
-				  		</div>
-				  		Legacy Downloads
-				  	</button>
-				  	
+
 			  	</div>
 			  	
-			  	<div class="tab-content-wrap">
-				  	
-				  	<div class="release-notes tab-content">
-					  	<?php the_field('release_notes');?>
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+				<div class="spd-bottom os-wrap for-windows">  	
+				  	<div class="tab-nav">
+					  	
+					  	<button class="no-style-button tab-nav-button release-notes-button">
+					  		<div class="plus-wrap">
+					  			<span class="plus-line plus-line-h"></span>
+					  			<span class="plus-line plus-line-v"></span>
+					  		</div>
+					  		Release Notes
+					  	</button>
+					  	
+	<!--
+					  	<a class="tab-nav-button" href="#">
+					  		<div class="plus-wrap">
+					  			<span class="plus-line plus-line-h"></span>
+					  			<span class="plus-line plus-line-v"></span>
+					  		</div>					  	
+					  		Product Page
+						</a>
+	-->
+					  	
+					  	<button class="no-style-button tab-nav-button legacy-downloads-button">
+					  		<div class="plus-wrap">
+					  			<span class="plus-line plus-line-h"></span>
+					  			<span class="plus-line plus-line-v"></span>
+					  		</div>
+					  		Legacy Downloads
+					  	</button>
+					  	
 				  	</div>
 				  	
-				  	<div class="legacy-versions tab-content">
-						<?php if( have_rows('legacy_downloads') ):?>
-							<?php while ( have_rows('legacy_downloads') ) : the_row();?>	
-								
-								<?php if( have_rows('single_legacy_version') ):?>
-									<?php while ( have_rows('single_legacy_version') ) : the_row();?>	
-								
-										<div class="single-legacy-version">
-											
-											<h3>
-												<div class="legacy-name-accent-wrap">
-													<span class="dash"></span>
-													<span class="ring">
-														<svg height="17" width="17">
-														  <circle cx="8.5" cy="8.5" r="8.5" />
-														</svg>
-													</span>
-												</div>
-												<?php the_sub_field('version_name');?>
-											</h3>
-											
-											<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
-											
-											<h4><?php the_sub_field('highlights_of_improvements');?></h4>
-											
-											
-											<?php 
-											$file = get_sub_field('download_file');
-											if( $file ): ?>
-												<h4 class="legacy-link"><a href="<?php echo $file['url']; ?>" download>Download <?php echo $file['title']; ?><span class="legacy-link-underline"></span></a></h4>
-											<?php endif; ?>
-											
-											
-										</div>
-								
-									<?php endwhile;?>
-								<?php endif;?>
-								
-							<?php endwhile;?>
-						<?php endif;?>
-					</div>
+
+				  	<div class="tab-content-wrap">
+					  	
+					  	<div class="release-notes tab-content">
+						  	<?php the_field('release_notes');?>
+					  	</div>
+					  	
+					  	<div class="legacy-versions tab-content">
+							<?php if( have_rows('legacy_downloads') ):?>
+								<?php while ( have_rows('legacy_downloads') ) : the_row();?>	
+									
+									<?php if( have_rows('single_legacy_version') ):?>
+										<?php while ( have_rows('single_legacy_version') ) : the_row();?>	
+									
+											<div class="single-legacy-version">
+												
+												<h3>
+													<div class="legacy-name-accent-wrap">
+														<span class="dash"></span>
+														<span class="ring">
+															<svg height="17" width="17">
+															  <circle cx="8.5" cy="8.5" r="8.5" />
+															</svg>
+														</span>
+													</div>
+													<?php the_sub_field('version_name');?>
+												</h3>
+												
+												<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
+												
+												<h4><?php the_sub_field('highlights_of_improvements');?></h4>
+												
+												
+												<?php 
+												$file = get_sub_field('download_file');
+												if( $file ): ?>
+													<h4 class="legacy-link"><a href="<?php echo $file['url']; ?>" download>Download <?php echo $file['title']; ?><span class="legacy-link-underline"></span></a></h4>
+												<?php endif; ?>
+												
+												
+											</div>
+									
+										<?php endwhile;?>
+									<?php endif;?>
+									
+								<?php endwhile;?>
+							<?php endif;?>
+						</div>
+					  	
+				  	</div>
+				</div>
+				
+				
+				<?php if(get_field('has_mac_version')):?>
+				<div class="spd-bottom os-wrap for-mac">
+					
+				  	<div class="tab-nav">
+					  	
+					  	<button class="no-style-button tab-nav-button release-notes-button">
+					  		<div class="plus-wrap">
+					  			<span class="plus-line plus-line-h"></span>
+					  			<span class="plus-line plus-line-v"></span>
+					  		</div>
+					  		Release Notes
+					  	</button>
+					  	
+	<!--
+					  	<a class="tab-nav-button" href="#">
+					  		<div class="plus-wrap">
+					  			<span class="plus-line plus-line-h"></span>
+					  			<span class="plus-line plus-line-v"></span>
+					  		</div>					  	
+					  		Product Page
+						</a>
+	-->
+					  	
+					  	<button class="no-style-button tab-nav-button legacy-downloads-button">
+					  		<div class="plus-wrap">
+					  			<span class="plus-line plus-line-h"></span>
+					  			<span class="plus-line plus-line-v"></span>
+					  		</div>
+					  		Legacy Downloads
+					  	</button>
+					  	
+				  	</div>
 				  	
-			  	</div>
+				  	<div class="tab-content-wrap">
+					  	
+					  	<div class="release-notes tab-content">
+						  	<?php the_field('mac_release_notes');?>
+					  	</div>
+					  	
+					  	<div class="legacy-versions tab-content">
+							<?php if( have_rows('mac_legacy_downloads') ):?>
+								<?php while ( have_rows('mac_legacy_downloads') ) : the_row();?>	
+									
+									<?php if( have_rows('single_legacy_version') ):?>
+										<?php while ( have_rows('single_legacy_version') ) : the_row();?>	
+									
+											<div class="single-legacy-version">
+												
+												<h3>
+													<div class="legacy-name-accent-wrap">
+														<span class="dash"></span>
+														<span class="ring">
+															<svg height="17" width="17">
+															  <circle cx="8.5" cy="8.5" r="8.5" />
+															</svg>
+														</span>
+													</div>
+													<?php the_sub_field('version_name');?>
+												</h3>
+												
+												<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
+												
+												<h4><?php the_sub_field('highlights_of_improvements');?></h4>
+												
+												
+												<?php 
+												$file = get_sub_field('download_file');
+												if( $file ): ?>
+													<h4 class="legacy-link"><a href="<?php echo $file['url']; ?>" download>Download <?php echo $file['title']; ?><span class="legacy-link-underline"></span></a></h4>
+												<?php endif; ?>
+												
+												
+											</div>
+									
+										<?php endwhile;?>
+									<?php endif;?>
+									
+								<?php endwhile;?>
+							<?php endif;?>
+						</div>
+					  	
+				  	</div>					
+				</div>
+				<?php endif;?>
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
 			  	
 		  	</div>
 		  	

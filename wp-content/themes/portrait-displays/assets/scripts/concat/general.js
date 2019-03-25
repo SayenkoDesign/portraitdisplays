@@ -43,10 +43,47 @@
 	};
 	setHeight();
 	
-// Download Page Tabs
+
+// Windows / Mac Tabs
+
+	
+	
+// Single Download  Tabs
 	var singleProductDownload = $('section.single-product-download');
 	
-	$(singleProductDownload ).each(function (i, obj) {
+	var downloadTabs = $('.spd-bottom');
+	
+	var $timing = 300;
+	
+	$(singleProductDownload).each(function (i, obj) {
+		
+		var windowsButton = $(this).find('.windows-button');
+		var macButton = $(this).find('.mac-button');
+		var forWindows = $(this).find('.for-windows');
+		var forMac = $(this).find('.for-mac');
+	
+		$(windowsButton).addClass('clicked');
+		$(forWindows).show();
+		$(forWindows).addClass('visible');
+		
+		$(windowsButton).click(function(){
+			$(macButton).removeClass('clicked');
+			$(forMac).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			$(this).addClass('clicked');
+			$(forWindows).fadeIn($timing).addClass('visible');
+		});	
+		
+		$(macButton).click(function(){
+			$(windowsButton).removeClass('clicked');
+			$(forWindows).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			
+			$(this).addClass('clicked');
+			$(forMac).fadeIn($timing).addClass('visible');
+		});	
+	
+	});
+	
+	$(downloadTabs).each(function (i, obj) {
 		
 		var notesButton = $(this).find('.tab-nav .tab-nav-button.release-notes-button');
 		var legacyButton = $(this).find('.tab-nav .tab-nav-button.legacy-downloads-button');
@@ -59,17 +96,17 @@
 		
 		$(notesButton).click(function(){
 			$(legacyButton).removeClass('clicked');
-			$(legacyContent).fadeOut(300).delay(300).hide().removeClass('visible');
+			$(legacyContent).fadeOut($timing).delay($timing).hide().removeClass('visible');
 			$(this).addClass('clicked');
-			$(notesContent).fadeIn(300).addClass('visible');
+			$(notesContent).fadeIn($timing).addClass('visible');
 		});	
 		
 		$(legacyButton).click(function(){
 			$(notesButton).removeClass('clicked');
-			$(notesContent).fadeOut(300).delay(300).hide().removeClass('visible');
+			$(notesContent).fadeOut($timing).delay($timing).hide().removeClass('visible');
 			
 			$(this).addClass('clicked');
-			$(legacyContent).fadeIn(300).addClass('visible');
+			$(legacyContent).fadeIn($timing).addClass('visible');
 		});	
 	
 	});

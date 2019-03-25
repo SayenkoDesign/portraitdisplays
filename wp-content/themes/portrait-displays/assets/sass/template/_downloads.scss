@@ -3,11 +3,6 @@
 		padding-top: 3.85em;
 		overflow: hidden;
 		
-/*
-		> .row {
-			justify-content: flex-start;
-		}
-*/		
 	&:nth-child(odd) {
 		background-color: $light-gray;	
 	}
@@ -24,10 +19,27 @@
 				padding-bottom: 0.85em;
 			}
 			
+			.os-nav {
+				padding-bottom: 1.55em;
+			}
+			
 			ul.fancy-bullets {
 				margin-top: -0.28em;
 			}
 			
+		}
+		
+		.os-wrap {
+			display: none;
+			position: absolute;
+			transition: transform 0.3s linear;
+			transform: translateY(50px);
+		
+		&.visible {
+			position: relative;
+			transform: translateY(0);
+		}
+		
 		}
 	
 		.tab-nav {
@@ -109,11 +121,11 @@
 			overflow: hidden;
 			padding-top: 2em;
 						
-			.tab-content {
+			.tab-content, .os-wrap {
 				display: none;
 				position: absolute;
-				transition: $transition;
-				transform: translateY(30px);
+				transition: transform 0.3s linear;
+				transform: translateY(50px);
 			
 			&.visible {
 				position: relative;
