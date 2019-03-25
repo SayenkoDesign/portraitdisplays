@@ -37,36 +37,38 @@
 	<?php if (!is_page_template('page-templates/contact.php')):?>
     <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
 	    
-	    <?php if( have_rows('top_bar_message', 'option') ):?>
-	   	    <div id="top-bar-message-wrap">
-	    	<?php while ( have_rows('top_bar_message', 'option') ) : the_row();?>
-	    	
-			    <div id="top-bar-message" class="row align-center text-center">
-				    <p class="text-center"><span><?php the_sub_field('text', 'option');?></span>
-					    <?php 
-						$link = get_sub_field('link', 'option');
-						if( $link ): 
-							$link_url = $link['url'];
-							$link_title = $link['title'];
-							$link_target = $link['target'] ? $link['target'] : '_self';
-							?>
-							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?>
-							
-								<span class="arrow-wrap">
-									<img src="/wp-content/themes/portrait-displays/assets/svg/top-alert-blue-link-arrow.svg"/>
-									<img class="top-arrow" src="/wp-content/themes/portrait-displays/assets/svg/gray-link-arrow.svg"/>
-								</span>
+	    <?php if(is_front_page()):?>
+		    <?php if( have_rows('top_bar_message', 'option') ):?>
+		   	    <div id="top-bar-message-wrap">
+		    	<?php while ( have_rows('top_bar_message', 'option') ) : the_row();?>
+		    	
+				    <div id="top-bar-message" class="row align-center text-center">
+					    <p class="text-center"><span><?php the_sub_field('text', 'option');?></span>
+						    <?php 
+							$link = get_sub_field('link', 'option');
+							if( $link ): 
+								$link_url = $link['url'];
+								$link_title = $link['title'];
+								$link_target = $link['target'] ? $link['target'] : '_self';
+								?>
+								<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?>
 								
-							</a>
-						<?php endif; ?>
-					</p>
-			    </div>
-				    
-	    	<?php endwhile;?>
-	    	        <img class="header-alert-close" src="/wp-content/themes/portrait-displays/assets/svg/gray-close.svg"/>
-
-			</div>
-	    <?php endif; ?>
+									<span class="arrow-wrap">
+										<img src="/wp-content/themes/portrait-displays/assets/svg/top-alert-blue-link-arrow.svg"/>
+										<img class="top-arrow" src="/wp-content/themes/portrait-displays/assets/svg/gray-link-arrow.svg"/>
+									</span>
+									
+								</a>
+							<?php endif; ?>
+						</p>
+				    </div>
+					    
+		    	<?php endwhile;?>
+		    	        <img class="header-alert-close" src="/wp-content/themes/portrait-displays/assets/svg/gray-close.svg"/>
+	
+				</div>
+		    <?php endif; ?>
+		<?php endif;?>
 
 	    
         <div class="wrap row align-bottom">

@@ -35,7 +35,38 @@
 		<div class="hero-content-half top-heading columns small-12 medium-6 large-6">
 		
 			<h1><?php the_field('page_top_heading');?></h1>
-			<h4><?php the_field('page_top_subtext');?></h4>
+			
+			<?php if(!is_page_template('page-templates/downloads.php')):?>
+				<h4><?php the_field('page_top_subtext');?></h4>
+			<?php endif;?>
+			
+			<?php if(is_page_template('page-templates/downloads.php')):?>
+			
+				<ul class="fancy-bullets">
+				<?php
+				$args = array( 
+				'post_type' => 'downloads',
+				'posts_per_page' => -1 ,
+				'order' => 'DESC'
+				
+				);
+				
+				$loop = new WP_Query( $args );
+				
+				while ( $loop->have_posts() ) : $loop->the_post();?>
+	
+	
+				<?php 
+				
+				$download = get_post();?>
+
+				<li><a href="#<?php echo $download->post_name;?>"><?php the_title();?></a></li>
+
+				<?php endwhile; wp_reset_query();?>   
+				</ul>
+				
+				           
+			<?php endif;?>
 			
 			<div id="hero-button-wrap">
 				<?php 

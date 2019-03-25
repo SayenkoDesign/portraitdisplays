@@ -1,3 +1,8 @@
+a {
+	transition: $transition;
+	color: $sky-blue;
+}
+
 .medium-wrap {
 	max-width: 1002px !important;
 	margin-left: auto !important;
@@ -138,6 +143,15 @@ ul.fancy-bullets {
 	li {
 		position: relative;
 		margin-bottom: 0.85em;
+		
+		a {
+			color: $text-black;
+			
+		&:hover {
+			color: $sky-blue;	
+		}
+		
+		}
 		
 		&:before {
 			content: "";

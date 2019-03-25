@@ -34,7 +34,9 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 	
 	while ( $loop->have_posts() ) : $loop->the_post();?>
 	  
-	  	<section class="single-product-download">
+	  <?php $download = get_post();?>
+	  
+	  	<section id ="<?php echo $download->post_name;?>" class="single-product-download">
 		  	
 		  	<div class="row columns">
 		  	
