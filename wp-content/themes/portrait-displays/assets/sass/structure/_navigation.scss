@@ -80,7 +80,6 @@ button {
 			text-align: right;
 			font-size: 1.063rem;
 			color: #fff;
-			background-color: $header-black;
 			
 			a {
 				color: #fff;
@@ -89,6 +88,7 @@ button {
 			.upper-nav {
 				display: flex;
 				flex-wrap: nowrap;
+				overflow: hidden;
 				justify-content: flex-end;
 				margin-bottom: 14px;
 				margin-right: -1.15em;
@@ -150,7 +150,6 @@ button {
 			}
 			
 			ul.primary-menu {
-				display: flex;
 				justify-content: flex-end;
 				list-style: none;
 			    padding: 0;
@@ -163,7 +162,7 @@ button {
 			    li {
 				    font-size: 1.063rem;
 					font-family: $open-sans;
-					margin: 0 8px;
+					margin: 0 1.05em;
 				    
 				    &:last-child {
 					    margin-right: 0;
@@ -260,8 +259,7 @@ button {
         
                         
     &.fixed {
-        .wrap .site-nav-desktop {
-	        .site-nav-wrap {
+        .wrap .site-nav-desktop.site-nav-wrap {
 		        
 		        .site-navigation {
 				        ul li a {
@@ -278,7 +276,7 @@ button {
 							
 						}
 		        
-						#contact-modal-button {
+						.contact-modal-button {
 							background-color: $dark-blue;
 						}
 						
@@ -290,7 +288,7 @@ button {
 				
 				}
 			
-			}
+			
 		
 		}
     }    

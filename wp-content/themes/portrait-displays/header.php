@@ -73,7 +73,7 @@
 	    
         <div class="wrap row align-bottom">
 	        
-            <div class="hide-on-mobile columns small-12 medium-6">
+            <div class="logo-wrap columns small-12 medium-12 large-6">
 
                 <div class="site-branding">
                     <div class="site-title">
@@ -92,7 +92,7 @@
 
 
 
-            <div class="site-nav-wrap site-nav-desktop columns small-12 medium-6">	                    
+            <div class="site-nav-wrap site-nav-desktop columns small-12 medium-12 large-6">	                    
                 <nav class="site-navigation nav-primary" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
 	                          
 					<div class="upper-nav">

@@ -117,7 +117,12 @@ Header
 	z-index: 9;
 	
 	.wrap {
+		position: relative;
+		padding-bottom: 0;
+		
+	@include breakpoint (large) {
 		padding-bottom: 12px;
+	}
 		
 		.site-nav-desktop, .hide-on-mobile  {
 			display: block;

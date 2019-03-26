@@ -31,6 +31,7 @@
     });
     
 //     Mobile Navigation
+/*
 	$('.site-nav-mobile').on('click', '#nav-toggle', function(e){
 		$('.site-nav-mobile .site-navigation').toggleClass('menu-visible');		
 	});    
@@ -50,6 +51,7 @@
 		});
 	  
 	});	  
+*/
 
 
 

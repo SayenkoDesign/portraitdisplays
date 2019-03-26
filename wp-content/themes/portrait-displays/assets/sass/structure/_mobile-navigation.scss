@@ -10,7 +10,9 @@
 }
 
 .menu-toggle {
-    
+	position: absolute;
+	top: 26px;
+	right: 16px;
     background-image: url('assets/images/menu-icon.svg');
     background-size: 34px 34px;
     border-radius: 0;
@@ -23,7 +25,6 @@
 }
 
 .sub-menu-toggle {
-	
 	outline: none;
 	display: inline-block;
 	padding: 10px;
@@ -61,6 +62,16 @@
 	display: block;
 }
 
+	.nav-primary {
+		display: none;
+	}
+
+@include breakpoint(large) {
+	.nav-primary {
+		display: block;
+	}
+}
+
 
 .genesis-responsive-menu .menu li {
 	width: auto;
@@ -74,6 +85,127 @@
 	}
 
 }
+
+#masthead {
+	
+	.wrap {
+		display: flex;
+
+		
+		.logo-wrap {
+			display: flex;
+			background-color: #fff;
+			min-height: 85px;
+			max-height: 85px;	
+		@include breakpoint (large) {
+			background-color: transparent;
+			min-height: 0;
+			max-height: none;
+		}	
+		
+			.site-branding {
+				display: flex;
+				align-items: center;
+			}
+
+		}
+	
+		.site-nav-wrap {
+			overflow-x: hidden;
+			background-color: $header-black;
+			padding-left: 0;
+			padding-right: 0;
+			
+		@include breakpoint (large) {
+			background-color: transparent;
+			padding: 0 map_get($grid-column-gutter, medium) / 2;
+		}
+		
+			.upper-nav {
+				width: 110%;
+				margin-left: -5%;
+				overflow: hidden;
+				
+			@include breakpoint (large) {
+				width: auto;
+				margin-left: 0;
+			}
+		        
+		        a {
+			        min-width: 52.5%;
+			        text-align: center;
+			    
+			    @include breakpoint (large) {
+				    min-width: 0;
+			    }
+			        
+		        }
+		        
+		        span.upper-link-text {
+					
+					&:after {
+						display: none;
+					}
+					
+				}
+        
+				.contact-modal-button {
+					background-color: $dark-blue;
+					
+				@include breakpoint (large) {
+					background-color: transparent;
+				}
+					
+				}
+				
+				.upper-nav-store-link {
+					background-color: $sky-blue;
+					
+				@include breakpoint (large) {
+					background-color: transparent;
+				}
+				
+				}
+			
+			}
+
+		
+			.nav-primary	{
+				padding-bottom: 100vh;
+				
+			@include breakpoint (large) {
+				padding-bottom: 0;
+			}
+				
+				ul.primary-menu {
+					display: block;
+					
+				@include breakpoint (large) {
+					display: flex;
+				}
+					li {
+						width: 100%;
+						display: block;
+						text-align: left;	
+						margin-bottom: 1.25em; 
+						
+					@include breakpoint (large) {
+						width: auto;
+						margin-bottom: 0;
+						text-align: right;
+					}
+						
+					}
+				}
+				
+				
+			}
+		
+		}
+	}
+}
+
+
 
 /*
 #masthead .site-nav-wrap.site-nav-mobile {
