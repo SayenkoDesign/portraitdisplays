@@ -1,11 +1,10 @@
 // Mobile Navigation
 
 .menu-toggle,
-.sub-menu-toggle,
-button#genesis-mobile-nav-primary {
+.sub-menu-toggle {
 	display: block;
     
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
         display: none;
     }
 }
@@ -13,10 +12,14 @@ button#genesis-mobile-nav-primary {
 .menu-toggle {
     
     background-image: url('assets/images/menu-icon.svg');
-    background-size: 38px 34px;
+    background-size: 34px 34px;
     border-radius: 0;
-    width: 38px;
+    width: 34px;
     height: 34px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0;
+    box-shadow: 0 0 0 0;
 }
 
 .sub-menu-toggle {
@@ -52,12 +55,11 @@ button#genesis-mobile-nav-primary {
 	
 }
 
-/*
+
 .genesis-responsive-menu,
 .genesis-responsive-menu .sub-menu {
-	display: none;
+	display: block;
 }
-*/
 
 
 .genesis-responsive-menu .menu li {
@@ -72,4 +74,114 @@ button#genesis-mobile-nav-primary {
 	}
 
 }
+
+/*
+#masthead .site-nav-wrap.site-nav-mobile {
+	background: #fff;
+	width: 100%;
+	position: relative;
+	min-height: 85px;
+	max-height: 85px;
+	z-index: 99999;
+	
+		> .row {
+			position: relative;
+			padding-left: 16px;
+			padding-right: 16px;
+			background: #fff;
+			z-index: 999999;
+		}
+		        
+        .site-navigation {
+	        position: absolute;
+	        top: 85px;
+	        left: 0;
+	        right: 0;
+	        min-height: 100vh;
+	        overflow-x: hidden;
+			background-color: $header-black;
+	        transform: translateY(-100vh);
+			transition: 0.35s ease-out;
+			
+		&.menu-visible {
+			transform: translateY(0);
+		}	
+			
+		        ul.primary-menu {
+		        		display: block;
+		        		li {
+						display: block;
+						width: 100%;
+						text-align: left;
+						margin-bottom: 1.25em; 
+					}
+		        }
+		        
+	        .upper-nav {
+				margin-left: -5%;
+		        
+		        a {
+			        min-width: 50%;
+			        text-align: center;
+		        }
+		        
+		        span.upper-link-text {
+					
+					&:after {
+						display: none;
+					}
+					
+				}
+        
+				.contact-modal-button {
+					background-color: $dark-blue;
+				}
+				
+				.upper-nav-store-link {
+					background-color: $sky-blue;					
+				}
+			
+			}
+		
+		}
+					
+
+}
+
+#masthead .site-nav-wrap.site-nav-mobile .site-navigation ul.primary-menu ul.sub-menu {
+	position: static;
+	height: auto;
+	background: transparent;
+	border: 0;
+	opacity: 1;
+	overflow: hidden;
+	transition: $transition;
+	
+	&.sub-menu-clicked {
+	position: relative;
+	opacity: 1;
+	}
+	
+	&.sub-absolute {
+		position: absolute;
+	}
+	
+	li {
+		a {
+			color: #fff;
+			
+		&:hover {
+			color: #252b33;
+			
+			a {
+				color: #252b33;
+			}
+			
+		}
+			
+		}
+	}
+		
+}
+*/
 

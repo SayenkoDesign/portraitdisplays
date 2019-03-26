@@ -30,13 +30,39 @@
 
     });
     
+//     Mobile Navigation
+	$('.site-nav-mobile').on('click', '#nav-toggle', function(e){
+		$('.site-nav-mobile .site-navigation').toggleClass('menu-visible');		
+	});    
+
+
+	$('.site-nav-wrap.site-nav-mobile .site-navigation li.menu-item-has-children').each(function (i, obj) {
+		
+	var $this = $(this);
+	var $subMenu = $(this).find('ul.sub-menu')	
+	var $subMenuHeight = $($subMenu).innerHeight();
+	var $subMenu = $($subMenu).css('max-height', 0);
+	
+		$('li.menu-item-has-children').toggle(function () {
+		    $($this).find('ul.sub-menu').css('max-height', $subMenuHeight);
+		}, function () {
+		    $($this).find('ul.sub-menu').css('max-height', 0);
+		});
+	  
+	});	  
+
+
+
+
+	
+	
 // Close Header Alert
 	var $topBar = $('#top-bar-message-wrap');
 
 	function setHeight() {
 	var barHeight = $($topBar).innerHeight();
 	
-		$(document).on('click', 'body img.header-alert-close', function() {
+		$(document).on('click', 'body img.header-alert-close', function(e) {
 			$($topBar).css( 'margin-top', -barHeight).delay(500).fadeOut(0);
 		})
 	
@@ -46,30 +72,21 @@
 
 // Core Values Orbit Slider
 
+	$('ul.slick-dots li button').addClass('no-style-button');
+
 	$('#core-values').on('click', 'button.single-value', function() {
-		$('li.is-active').fadeIn();
-		$('.orbit-wrapper').fadeIn();
-		$('.hide-for-orbit').addClass('hidden');
-		$('.orbit-wrapper').addClass('orbit-shown');
-		$('.show-for-orbit').removeClass('hidden');	
-		$('.show-for-orbit').fadeIn();	
+		$('.hide-for-slider').addClass('hidden');	
+		$('.show-for-slider').removeClass('hidden');	
 
 	});
 	
-	$('#core-values').on('click', 'button.hide-value-orbit', function() {
-		$('.hide-for-orbit').removeClass('hidden');
-		$('.orbit-wrapper').hide();
-		$('.orbit-wrapper').removeClass('orbit-shown');
-		$('.show-for-orbit').addClass('hidden');
+	$('#core-values').on('click', 'button.hide-value-slider', function() {
+		$('.hide-for-slider').removeClass('hidden');	
+		$('.show-for-slider').addClass('hidden');	
 
 	});
 	
-	$('#core-values').on('click', '#value-orbit-dot-nav button', function() {
-		$('orbit-slide.no-motionui.is-active.is-in').fadeIn();
-		$('orbit-slide.no-motionui.is-active.is-in').addClass('sucka-mc');
-	    console.log("loaded");
 
-	});
 
 
 	

@@ -74,7 +74,8 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				<img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-top.svg"/>
 				<section id="core-values" class="gray-bg">
 					<div class="gray-bg text-center medium-wrap">
-						<div id="cv-pixel-set" class="hide-for-orbit text-center">
+						
+						<div id="cv-pixel-set" class="hide-for-slider text-center">
 							<?php
 								_s_get_template_part( 'template-parts/global', 'pixel-set' );
 							?>
@@ -82,93 +83,76 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						
 						<?php while ( have_rows('core_values') ) : the_row();?>
 						
-							<h2 class="hide-for-orbit"><?php the_sub_field('heading');?></h2>
+							<h2 class="hide-for-slider"><?php the_sub_field('heading');?></h2>
 
 						
 							<?php $number_of_values = count(get_sub_field('values'));?>							
 							
-							<!-- Modal Loop -->
+							<!-- Slider Loop -->
 							
-							
-							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; autoPlay:false">
+							<div id="value-slider-wrap">
 								
-								<div class="orbit-wrapper show-for-orbit">
-									
-								    <div class="orbit-controls">
-									    
-										<button class="button orbit-previous modal-nav value-before no-style-button" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button">
-													<span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span>
-												</button>	
-												
-												<button class="button orbit-next modal-nav value-after no-style-button" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button">
-													<span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span>
-												</button>												
+								<div class="show-for-slider hidden">
+																					
+								
 												
 												
-									</div>
 										
-									<ul class="orbit-container gray-bg">
+									<div class="value-slider gray-bg">
 											
 											
 									<?php if( have_rows('values') ):?>
 										<?php while ( have_rows('values') ) : the_row();?>						
 									
-											<li class="orbit-slide">	
-											<button class="hide-value-orbit no-style-button" data-close aria-label="Close"><img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/value-modal-close.png"/></button>
-											
-												<figure class="orbit-figure">
+											<div class="value-slide">	
 												
-													<div class="row">
-	
-														<?php if( have_rows('single_value') ):
-															while ( have_rows('single_value') ) : the_row();?>						
-											
-															<div class="smallest-wrap">
+												<div class="slide-content-wrap text-center">
+												
+													<button class="hide-value-slider no-style-button" data-close aria-label="Close"><img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/value-modal-close.png"/></button>
+								
+													<button class="button modal-nav value-before no-style-button" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button"><span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span></button>														
+		
+													<?php if( have_rows('single_value') ):
+														while ( have_rows('single_value') ) : the_row();?>						
+										
+														<div class="smallest-wrap text-center">
+															
+															<?php $image = get_sub_field('icon');
+															if( !empty($image) ): ?>
+															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+															<?php endif; ?>
+														
+														
+															<h2><?php the_sub_field('label');?></h2>									
+															<p><?php the_sub_field('modal_copy');?></p>
+
+														
+												
+														</div>
+				
+														<?php endwhile;?>
+													<?php endif;?>
 																
-																<?php $image = get_sub_field('icon');
-																if( !empty($image) ): ?>
-																<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-																<?php endif; ?>
-															
-															
-																<h2><?php the_sub_field('label');?></h2>									
-																<p><?php the_sub_field('modal_copy');?></p>
-	
-															
+													<button class="button modal-nav value-after no-style-button" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button"><span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span></button>
 													
-															</div>
-					
-															<?php endwhile;?>
-														<?php endif;?>	
-			
-													</div>
+												</div>
 												
-												</figure>
-											
-											</li>						
+											</div>						
 						
 										<?php endwhile;?>
 									<?php endif;?>	
 									
 														
-									</ul>
-								
+									</div>
+									
+									
+										
+
 								</div>
 								
-								<nav id="value-orbit-dot-nav" class="orbit-bullets show-for-orbit">
-									<?php 
-									$count = $number_of_values;
-									$activeValue = 0;
-									$value = 1;											
-									for ($i = 0; $i < $count; $i++) {
-									    echo "<button data-slide=" . $activeValue++ . " class='no-style-button'></button>";
-									} ;?>
-								</nav>	
-	
-								
-								<!-- Orbit Button Nav -->
+								<!-- Slider Button Nav -->
 								<?php if( have_rows('values') ):?>
-									<nav id="values-wrap" class="hide-for-orbit orbit-bullets row small-up-1 medium-up-3 large-up-5 align-justify">
+									<nav id="values-wrap" class="action hide-for-slider row small-up-1 medium-up-3 large-up-5 align-justify">
 																				
 									<?php while ( have_rows('values') ) : the_row();?>
 										

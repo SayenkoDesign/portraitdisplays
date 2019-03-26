@@ -21,6 +21,7 @@ Header
 	padding-top: 0.813em;
 	padding-bottom: 0.813em;
 	position: relative;
+	z-index: 9999999;
 	transition: $transition;
 		
 	img.header-alert-close {
@@ -117,6 +118,29 @@ Header
 	
 	.wrap {
 		padding-bottom: 12px;
+		
+		.site-nav-desktop, .hide-on-mobile  {
+			display: block;
+			@include breakpoint (large) {
+				display: block;
+			}
+		}
+		
+		.site-nav-mobile {
+			display: block;
+			@include breakpoint (large) {
+				display: none;
+			}
+			
+			.site-title a {
+				display: block;
+				margin-top: 20px;
+				max-width: 198px;
+				margin-bottom: 20px;
+			}
+			
+		}
+		
 	}
 	                     
     &.fixed {
@@ -151,16 +175,16 @@ Header
             transition: transform .3s ease 0s; 
         }
         
-        .wrap {
+        .wrap .site-nav-desktop {
 	        
-	        #site-nav-wrap {
+	        .site-nav-wrap {
 		        
-		        #site-navigation {
+		        .site-navigation {
 				        ul li a {
 					        color: $dark-gray;
 				        }
 				        
-			        #upper-nav {
+			        .upper-nav {
 				        
 				        span.upper-link-text {
 							
@@ -170,11 +194,11 @@ Header
 							
 						}
 		        
-						#contact-modal-button {
+						.contact-modal-button {
 							background-color: $dark-blue;
 						}
 						
-						#upper-nav-store-link {
+						.upper-nav-store-link {
 							background-color: $sky-blue;					
 						}
 					

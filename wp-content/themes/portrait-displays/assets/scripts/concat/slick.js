@@ -4,25 +4,24 @@
     
     // Example
     
-    /*$( '<div class="slick-arrows"></div>' ).insertAfter( '.section-videos .slick' ); // add arrows below slick slider, easier to position
     
-    $('.section-videos .slick').slick({
-      dots: false,
+    $('.value-slider').slick({
+      dots: true,
+      fade: true,
       infinite: true,
       speed: 300,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      appendArrows: $('.section-videos .slick-arrows'),
-      responsive: [
-        {
-          breakpoint: 979,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      adaptiveHeight: true,
+      prevArrow: $('button.value-before'),
+      nextArrow: $('button.value-after'),
     }); 
-    */ 
+    
+	 $('button.single-value').click(function(e) {
+		e.preventDefault();
+		var slideno = $(this).data('slide');
+		$('.value-slider').slick('slickGoTo', slideno);
+	});
+    
         
 }(document, window, jQuery));

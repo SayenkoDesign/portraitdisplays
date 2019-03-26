@@ -72,7 +72,8 @@
 
 	    
         <div class="wrap row align-bottom">
-            <div class="columns small-12 medium-6">
+	        
+            <div class="hide-on-mobile columns small-12 medium-6">
 
                 <div class="site-branding">
                     <div class="site-title">
@@ -90,11 +91,12 @@
             </div>
 
 
-            <div id="site-nav-wrap" class="columns small-12 medium-6">	                    
-                <nav id="site-navigation" class="nav-primary columns" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
+
+            <div class="site-nav-wrap site-nav-desktop columns small-12 medium-6">	                    
+                <nav class="site-navigation nav-primary" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
 	                          
-					<div id="upper-nav">
-							<a id="contact-modal-button" data-open="contact-modal" href="#"><span class="upper-nav-skew-correct"><span class="upper-link-text"><?php the_field('lets_talk_label', 'option');?></span></span></a>
+					<div class="upper-nav">
+							<a class="contact-modal-button" data-open="contact-modal" href="#"><span class="upper-nav-skew-correct"><span class="upper-link-text"><?php the_field('lets_talk_label', 'option');?></span></span></a>
 							<?php 
 							$link = get_field('store_link', 'option');
 							if( $link ): 
@@ -102,7 +104,7 @@
 								$link_title = $link['title'];
 								$link_target = $link['target'] ? $link['target'] : '_self';
 								?>
-							<a id="upper-nav-store-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="upper-nav-skew-correct"><img src="/wp-content/themes/portrait-displays/assets/svg/shopping-cart.svg"/><span class="upper-link-text"><?php echo esc_html($link_title); ?></span></span></a>
+							<a class="upper-nav-store-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="upper-nav-skew-correct"><img src="/wp-content/themes/portrait-displays/assets/svg/shopping-cart.svg"/><span class="upper-link-text"><?php echo esc_html($link_title); ?></span></span></a>
 						<?php endif; ?>	                	
 					</div>  
                 	      
@@ -128,6 +130,76 @@
                 
                 </nav>
             </div>
+            
+            
+            
+<!--
+            <div class="site-nav-wrap site-nav-mobile">	
+	            
+				<div class="row align-middle">
+				
+					<div class="site-branding columns small-9">
+						<div class="site-title">
+						<?php
+						$site_url = home_url();
+						$logo = sprintf('<img src="%slogo.svg" alt="site logo" class="" />', trailingslashit( THEME_IMG ) );    
+						printf('<a href="%s" title="%s">%s</a>',
+						        $site_url, 
+						        get_bloginfo( 'name' ), 
+						        $logo );
+						?>
+						</div>
+					</div>
+					
+					<div class="columns small-3 text-right">
+						<button id="nav-toggle" class="no-style-button"><img src="/wp-content/themes/portrait-displays/assets/svg/menu-icon.svg"/></button>
+					</div>
+				
+				</div>
+	                                
+				<nav class="site-navigation nav-primary columns" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
+				          
+					<div class="upper-nav">
+							<a class="contact-modal-button" data-open="contact-modal" href="#"><span class="upper-nav-skew-correct"><span class="upper-link-text"><?php the_field('lets_talk_label', 'option');?></span></span></a>
+							<?php 
+							$link = get_field('store_link', 'option');
+							if( $link ): 
+								$link_url = $link['url'];
+								$link_title = $link['title'];
+								$link_target = $link['target'] ? $link['target'] : '_self';
+								?>
+							<a class="upper-nav-store-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="upper-nav-skew-correct"><img src="/wp-content/themes/portrait-displays/assets/svg/shopping-cart.svg"/><span class="upper-link-text"><?php echo esc_html($link_title); ?></span></span></a>
+						<?php endif; ?>	                	
+					</div>  
+				      
+				<?php
+				                        
+				$args = array(
+				    'theme_location' => 'primary',
+				    'menu' => 'Primary Menu',
+				    'container' => '',
+				    'container_class' => '',
+				    'container_id' => '',
+				    'menu_id'        => 'js-superfish',
+				    'menu_class'     => 'primary-menu menu',
+				    'before' => '',
+				    'after' => '',
+				    'link_before' => '',
+				    'link_after' => '',
+				    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				 );
+				wp_nav_menu($args);
+				?>
+				
+				</nav>
+            </div>
+-->
+
+            
+            
+            
+            
+            
         </div><!-- wrap -->
                  
     </header><!-- #masthead -->

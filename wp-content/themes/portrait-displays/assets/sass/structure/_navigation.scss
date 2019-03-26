@@ -74,18 +74,19 @@ button {
 // Primary Navigation
 #masthead {
 	
-	#site-nav-wrap {
+	.site-nav-wrap {
 		
-		#site-navigation {
+		.site-navigation {
 			text-align: right;
 			font-size: 1.063rem;
 			color: #fff;
+			background-color: $header-black;
 			
 			a {
 				color: #fff;
 			}
 			
-			#upper-nav {
+			.upper-nav {
 				display: flex;
 				flex-wrap: nowrap;
 				justify-content: flex-end;
@@ -130,7 +131,7 @@ button {
 
 					}
 					
-					&#upper-nav-store-link {
+					&.upper-nav-store-link {
 						
 
 					}
@@ -259,15 +260,15 @@ button {
         
                         
     &.fixed {
-        .wrap {
-	        #site-nav-wrap {
+        .wrap .site-nav-desktop {
+	        .site-nav-wrap {
 		        
-		        #site-navigation {
+		        .site-navigation {
 				        ul li a {
 					        color: $dark-gray;
 				        }
 				        
-			        #upper-nav {
+			        .upper-nav {
 				        
 				        span.upper-link-text {
 							
@@ -281,7 +282,7 @@ button {
 							background-color: $dark-blue;
 						}
 						
-						#upper-nav-store-link {
+						.upper-nav-store-link {
 							background-color: $sky-blue;					
 						}
 					
@@ -297,9 +298,9 @@ button {
 
 // Primary Navigation Pseudo Transitions
 .no-touchevents #masthead {
-	#site-nav-wrap {
-		#site-navigation {
-			#upper-nav {
+	.site-nav-wrap {
+		.site-navigation {
+			.upper-nav {
 				a {
 
 					&:hover {
