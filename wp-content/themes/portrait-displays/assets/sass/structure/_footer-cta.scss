@@ -1,9 +1,10 @@
 img#white-footer-wave {
 	position: relative;
 	z-index: 2;
-    margin-bottom: -77px;
     max-width: none;
     width: 100%;
+    margin-top: -2px;
+    margin-bottom: -1.5em;
 }
 
 #footer-cta {
@@ -21,8 +22,8 @@ img#white-footer-wave {
 	
 	.footer-cta-content-wrap {
 		position: relative;
-		padding-top: 5.95em;
-		padding-bottom: 2.95em;
+		padding-top: 0;
+		padding-bottom: 0;
 		justify-content: center;
 	
 		.footer-cta-half {

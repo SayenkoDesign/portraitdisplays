@@ -155,9 +155,11 @@ button {
 			    padding: 0;
 			    margin: 0;
 			    
+/*
 			    button {
 				    display: none;
 			    }
+*/
 			    
 			    li {
 				    font-size: 1.063rem;
@@ -217,35 +219,43 @@ button {
 			    }
 			    
 			    ul.sub-menu {
+				    display: none;
 				    min-width: 190px;
-				    background: #FFFFFF;
-					box-shadow: 0 11px 12px 0 rgba(0,0,0,0.10);
 					letter-spacing: 0;
 					text-align: left;
 					line-height: 31px;
-					border-top: 6px solid $sky-blue;
-
 				    margin: 0;
 				    padding: 0;
-				    opacity: 0;
-				    background: #fff;
 				    top: 0;
-				    left: -99999em;
-				    position: absolute;
 				    list-style: none;
 				    z-index: 0;
 				    
 				    transition: opacity 0.15s ease 0.01s;
 				    
+				@include breakpoint (large) {
+					display: block;
+				    left: -99999em;
+				    position: absolute;		
+				   	opacity: 0;
+				    background: #fff;
+				 	border-top: 6px solid $sky-blue;
+					box-shadow: 0 11px 12px 0 rgba(0,0,0,0.10);
+					}
+				    
 				    li {
 					    margin: 0; 
 				    
-					    a {
+					    a {	
+						    text-align: left;
 						    width: 100%;
 						    display: inline-block;
-						    color: $dark-gray;
+						    color: #fff;
 							padding: 8px 17px;
 							transition: $transition;
+							
+						@include breakpoint (large) {
+							color: $dark-gray;
+						}
 
 					    }
 

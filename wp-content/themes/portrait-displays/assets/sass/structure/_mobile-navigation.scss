@@ -31,18 +31,17 @@
  	position: absolute;
 	right: 0;
 	top: 0;
+	left: 0;
+	bottom: 0;
 	cursor: pointer;
     height: 45px;
     width: 45px;
+    padding: 0;
+    box-shadow: 0 0 0 0;
 	
 	&:after {
 		content: '';
-		display: inline-block;
-  		border: solid $white;
-		border-width: 0 2px 2px 0;
-		transform: rotate(-45deg);
-		width: 10px;
-		height: 10px;
+		display: none;
  	}
 	
 	&.activated {
@@ -117,6 +116,7 @@
 			padding-right: 0;
 			
 		@include breakpoint (large) {
+			overflow: visible;
 			background-color: transparent;
 			padding: 0 map_get($grid-column-gutter, medium) / 2;
 		}
