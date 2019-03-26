@@ -4804,10 +4804,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	setHeight();
 	
 
-// Core Values Orbit Slider: Add active class to first slide
+// Core Values Orbit Slider
 
-$('ul.orbit-container li:first').addClass('is-active');
-$('nav.orbit-bullets button:first').addClass('is-active');
+	$('#core-values').on('click', 'button.single-value', function() {
+		$('li.is-active').fadeIn();
+		$('.orbit-wrapper').fadeIn();
+		$('.hide-for-orbit').addClass('hidden');
+		$('.orbit-wrapper').addClass('orbit-shown');
+		$('.show-for-orbit').removeClass('hidden');	
+		$('.show-for-orbit').fadeIn();	
+
+	});
+	
+	$('#core-values').on('click', 'button.hide-value-orbit', function() {
+		$('.hide-for-orbit').removeClass('hidden');
+		$('.orbit-wrapper').hide();
+		$('.orbit-wrapper').removeClass('orbit-shown');
+		$('.show-for-orbit').addClass('hidden');
+
+	});
+	
+	$('#core-values').on('click', '#value-orbit-dot-nav button', function() {
+		$('orbit-slide.no-motionui.is-active.is-in').fadeIn();
+		$('orbit-slide.no-motionui.is-active.is-in').addClass('sucka-mc');
+	    console.log("loaded");
+
+	});
+
 
 	
 // Single Download  Tabs

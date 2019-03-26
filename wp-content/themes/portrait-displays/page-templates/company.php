@@ -74,7 +74,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				<img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-top.svg"/>
 				<section id="core-values" class="gray-bg">
 					<div class="gray-bg text-center medium-wrap">
-						<div class="text-center">
+						<div id="cv-pixel-set" class="hide-for-orbit text-center">
 							<?php
 								_s_get_template_part( 'template-parts/global', 'pixel-set' );
 							?>
@@ -82,7 +82,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						
 						<?php while ( have_rows('core_values') ) : the_row();?>
 						
-							<h2><?php the_sub_field('heading');?></h2>
+							<h2 class="hide-for-orbit"><?php the_sub_field('heading');?></h2>
 
 						
 							<?php $number_of_values = count(get_sub_field('values'));?>							
@@ -90,22 +90,31 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 							<!-- Modal Loop -->
 							
 							
-							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; autoPlay:false">
 								
-								<div class="orbit-wrapper">
+								<div class="orbit-wrapper show-for-orbit">
 									
 								    <div class="orbit-controls">
-										<button class="orbit-previous no-style-button"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-										<button class="orbit-next no-style-button"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+									    
+										<button class="button orbit-previous modal-nav value-before no-style-button" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button">
+													<span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span>
+												</button>	
+												
+												<button class="button orbit-next modal-nav value-after no-style-button" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button">
+													<span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span>
+												</button>												
+												
+												
 									</div>
 										
-									<ul class="orbit-container">
+									<ul class="orbit-container gray-bg">
 											
 											
 									<?php if( have_rows('values') ):?>
 										<?php while ( have_rows('values') ) : the_row();?>						
 									
 											<li class="orbit-slide">	
+											<button class="hide-value-orbit no-style-button" data-close aria-label="Close"><img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/value-modal-close.png"/></button>
 											
 												<figure class="orbit-figure">
 												
@@ -125,15 +134,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 																<h2><?php the_sub_field('label');?></h2>									
 																<p><?php the_sub_field('modal_copy');?></p>
 	
-																<nav class="orbit-bullets">
-																	<?php 
-																	$count = $number_of_values;
-																	$activeValue = 1;
-																	$value = 1;											
-																	for ($i = 0; $i < $count; $i++) {
-																	    echo "<button data-slide=" . $activeValue++ . " class='no-style-button'></button>";
-																	} ;?>
-																</nav>																
+															
 													
 															</div>
 					
@@ -154,33 +155,51 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								
 								</div>
 								
+								<nav id="value-orbit-dot-nav" class="orbit-bullets show-for-orbit">
+									<?php 
+									$count = $number_of_values;
+									$activeValue = 0;
+									$value = 1;											
+									for ($i = 0; $i < $count; $i++) {
+									    echo "<button data-slide=" . $activeValue++ . " class='no-style-button'></button>";
+									} ;?>
+								</nav>	
+	
+								
+								<!-- Orbit Button Nav -->
+								<?php if( have_rows('values') ):?>
+									<nav id="values-wrap" class="hide-for-orbit orbit-bullets row small-up-1 medium-up-3 large-up-5 align-justify">
+																				
+									<?php while ( have_rows('values') ) : the_row();?>
+										
+									<?php $data_slide_number = get_row_index() - 1;?>
+
+										<button data-slide="<?php echo $data_slide_number ?>" class="single-value columns no-style-button">
+		
+											<?php if( have_rows('single_value') ):
+												while ( have_rows('single_value') ) : the_row();?>
+		
+													<?php $image = get_sub_field('icon');
+													if( !empty($image) ): ?>
+													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+													<?php endif; ?>
+													<h3><?php the_sub_field('label');?></h3>	
+		
+												<?php endwhile;?>
+											<?php endif;?>
+											
+										</button>
+								
+									<?php endwhile;?>
+									</nav>
+								<?php endif;?>
+								
+								
+								
 							</div>								
 				
 						
-						<!-- Modal Trigger Loop -->
-						<?php if( have_rows('values') ):?>
-							<div id="values-wrap" class="row small-up-1 medium-up-3 large-up-5 align-justify">
-							<?php while ( have_rows('values') ) : the_row();?>
 
-								<button class="single-value columns no-style-button" id="button-for-value-<?php echo get_row_index();?>" href="#">
-
-									<?php if( have_rows('single_value') ):
-										while ( have_rows('single_value') ) : the_row();?>
-
-											<?php $image = get_sub_field('icon');
-											if( !empty($image) ): ?>
-											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-											<?php endif; ?>
-											<h3><?php the_sub_field('label');?></h3>	
-
-										<?php endwhile;?>
-									<?php endif;?>
-									
-								</button>
-						
-							<?php endwhile;?>
-							</div>
-						<?php endif;?>
 			
 			
 				<?php endwhile;?>

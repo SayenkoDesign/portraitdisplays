@@ -30,8 +30,8 @@ a {
 }
 
 .gray-wave {
-	max-width: none;
-	width: 100%;
+	max-width: none !important;
+	width: 101%;
 	
 	&.gray-wave-top {
 		margin-bottom: -1px;
