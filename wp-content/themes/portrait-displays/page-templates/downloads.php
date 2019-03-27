@@ -75,14 +75,6 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 					  		<?php endif;?>
 
 
-
-
-
-
-
-
-
-
 							<div class="os-wrap for-windows">
 						  	<?php if( have_rows('system_requirements') ):?>
 						  		<?php while ( have_rows('system_requirements') ) : the_row();?>	
@@ -121,37 +113,23 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						  	<?php endif;?>
 							</div>
 							<?php endif;?>	
-						
-						
-										  	
-					  	
 					  	
 					  	</div>
 					  	
-				  	</div>
-
-
-
-
-
 					  	
-				  	<div class="columns small-12 medium-6 download-form">
+					  	<div class="columns small-12 medium-6 download-form">
 					  	
-					  	<div class="os-wrap for-windows"></div>
+						  	<div class="os-wrap for-windows"><?php the_field('active_campaign_form');?></div>
+						  	
+						  	<?php if(get_field('has_mac_version')):?>
+						  	<div class="os-wrap for-mac"><?php the_field('active_campaign_form_for_mac');?></div>
+						  	<?php endif;?>
 					  	
-					  	<?php if(get_field('has_mac_version')):?>
-					  	<div class="os-wrap for-mac"></div>
-					  	<?php endif;?>
+				  		</div>
 					  	
 				  	</div>
 
 			  	</div>
-			  	
-			  	
-			  	
-			  	
-			  	
-			  	
 			  	
 			  	
 				<div class="spd-bottom os-wrap for-windows">  	
@@ -213,17 +191,21 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 													<?php the_sub_field('version_name');?>
 												</h3>
 												
-												<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
-												
-												<h4><?php the_sub_field('highlights_of_improvements');?></h4>
-												
-												
-												<?php 
-												$file = get_sub_field('download_file');
-												if( $file ): ?>
-													<h4 class="legacy-link"><a href="<?php echo $file['url']; ?>" download>Download <?php echo $file['title']; ?><span class="legacy-link-underline"></span></a></h4>
+												<?php if( get_sub_field('release_date') ): ?>
+													<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
 												<?php endif; ?>
-												
+																								
+												<h4><?php the_sub_field('highlights_of_improvements');?></h4>
+
+
+												<?php 
+												$link = get_sub_field('download_file');
+												if( $link ): 
+													$link_url = $link['url'];
+													$link_title = $link['title'];
+													?>												
+												<h4 class="legacy-link"><a href="<?php echo esc_url($link_url); ?>" download>Download <?php echo esc_html($link_title); ?><span class="legacy-link-underline"></span></a></h4>
+												<?php endif; ?>												
 												
 											</div>
 									
@@ -298,18 +280,23 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 													<?php the_sub_field('version_name');?>
 												</h3>
 												
-												<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
+												
+												<?php if( get_sub_field('release_date') ): ?>
+													<h4 class="release-date"><?php the_sub_field('release_date');?></h4>
+												<?php endif; ?>
+
 												
 												<h4><?php the_sub_field('highlights_of_improvements');?></h4>
 												
-												
 												<?php 
-												$file = get_sub_field('download_file');
-												if( $file ): ?>
-													<h4 class="legacy-link"><a href="<?php echo $file['url']; ?>" download>Download <?php echo $file['title']; ?><span class="legacy-link-underline"></span></a></h4>
-												<?php endif; ?>
-												
-												
+												$link = get_sub_field('download_file');
+												if( $link ): 
+													$link_url = $link['url'];
+													$link_title = $link['title'];
+													?>												
+												<h4 class="legacy-link"><a href="<?php echo esc_url($link_url); ?>" download>Download <?php echo esc_html($link_title); ?><span class="legacy-link-underline"></span></a></h4>
+												<?php endif; ?>	
+																								
 											</div>
 									
 										<?php endwhile;?>

@@ -118,7 +118,7 @@
 		@include breakpoint (large) {
 			overflow: visible;
 			background-color: transparent;
-			padding: 0 map_get($grid-column-gutter, medium) / 2;
+// 			padding: 0 map_get($grid-column-gutter, medium) / 2;
 		}
 		
 			.upper-nav {
@@ -140,14 +140,6 @@
 			    }
 			        
 		        }
-		        
-		        span.upper-link-text {
-					
-					&:after {
-						display: none;
-					}
-					
-				}
         
 				.contact-modal-button {
 					background-color: $dark-blue;
@@ -182,6 +174,8 @@
 					
 				@include breakpoint (large) {
 					display: flex;
+					padding-right: map_get($grid-column-gutter, medium) / 2;
+
 				}
 					li {
 						width: 100%;
@@ -204,116 +198,3 @@
 		}
 	}
 }
-
-
-
-/*
-#masthead .site-nav-wrap.site-nav-mobile {
-	background: #fff;
-	width: 100%;
-	position: relative;
-	min-height: 85px;
-	max-height: 85px;
-	z-index: 99999;
-	
-		> .row {
-			position: relative;
-			padding-left: 16px;
-			padding-right: 16px;
-			background: #fff;
-			z-index: 999999;
-		}
-		        
-        .site-navigation {
-	        position: absolute;
-	        top: 85px;
-	        left: 0;
-	        right: 0;
-	        min-height: 100vh;
-	        overflow-x: hidden;
-			background-color: $header-black;
-	        transform: translateY(-100vh);
-			transition: 0.35s ease-out;
-			
-		&.menu-visible {
-			transform: translateY(0);
-		}	
-			
-		        ul.primary-menu {
-		        		display: block;
-		        		li {
-						display: block;
-						width: 100%;
-						text-align: left;
-						margin-bottom: 1.25em; 
-					}
-		        }
-		        
-	        .upper-nav {
-				margin-left: -5%;
-		        
-		        a {
-			        min-width: 50%;
-			        text-align: center;
-		        }
-		        
-		        span.upper-link-text {
-					
-					&:after {
-						display: none;
-					}
-					
-				}
-        
-				.contact-modal-button {
-					background-color: $dark-blue;
-				}
-				
-				.upper-nav-store-link {
-					background-color: $sky-blue;					
-				}
-			
-			}
-		
-		}
-					
-
-}
-
-#masthead .site-nav-wrap.site-nav-mobile .site-navigation ul.primary-menu ul.sub-menu {
-	position: static;
-	height: auto;
-	background: transparent;
-	border: 0;
-	opacity: 1;
-	overflow: hidden;
-	transition: $transition;
-	
-	&.sub-menu-clicked {
-	position: relative;
-	opacity: 1;
-	}
-	
-	&.sub-absolute {
-		position: absolute;
-	}
-	
-	li {
-		a {
-			color: #fff;
-			
-		&:hover {
-			color: #252b33;
-			
-			a {
-				color: #252b33;
-			}
-			
-		}
-			
-		}
-	}
-		
-}
-*/
-

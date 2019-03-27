@@ -35,6 +35,11 @@
 		.ic-row-img-wrap {
 			position: relative;
 			height: 100%;
+			margin-bottom: 4em;
+			
+		@include breakpoint (large) {
+			margin-bottom: 0;
+		}
 			
 			.ic-row-img {
 								

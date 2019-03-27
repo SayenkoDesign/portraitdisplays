@@ -28,6 +28,38 @@
 				margin-top: -0.28em;
 			}
 			
+			.download-form {
+
+				._button-wrapper {
+					display: flex;
+					align-items: center;
+					flex-wrap: nowrap;
+					
+					.button {
+						margin-right: 1em;
+					}
+					
+					small {
+						line-height: 1.5;
+						
+						a {
+							white-space: nowrap;
+							color: $text-black;
+							text-decoration: underline;
+							transition: $transition;
+							
+						&:hover {
+							color: $sky-blue;
+						}
+							
+						}
+						
+					}
+					
+				}
+			    
+			}
+					
 		}
 		
 		.os-wrap {

@@ -9,9 +9,6 @@
 
 get_header(); ?>
 
-<?php
-get_template_part( 'template-parts/section', 'hero' );
-?>
 
 <div id="primary" class="content-area">
 
@@ -21,7 +18,7 @@ get_template_part( 'template-parts/section', 'hero' );
 			<div class="column row">
 	
 				<div class="entry-content">
-					<p><?php echo get_field( 'content_404', 'option' ); ?></p>
+					<?php echo get_field( 'content_404', 'option' ); ?>
 				</div><!-- .page-content -->
 				
 				</div>

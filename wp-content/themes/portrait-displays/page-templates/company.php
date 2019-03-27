@@ -152,7 +152,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								
 								<!-- Slider Button Nav -->
 								<?php if( have_rows('values') ):?>
-									<nav id="values-wrap" class="action hide-for-slider row small-up-1 medium-up-3 large-up-5 align-justify">
+									<nav id="values-wrap" class="action hide-for-slider row small-up-2 smedium-up-4 medium-up-4 large-up-5">
 																				
 									<?php while ( have_rows('values') ) : the_row();?>
 										

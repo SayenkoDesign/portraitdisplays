@@ -38,12 +38,12 @@
     <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
 	    
 	    <?php if(is_front_page()):?>
-		    <?php if( have_rows('top_bar_message', 'option') ):?>
+		    <?php if( have_rows('top_bar_message') ):?>
 		   	    <div id="top-bar-message-wrap">
-		    	<?php while ( have_rows('top_bar_message', 'option') ) : the_row();?>
+		    	<?php while ( have_rows('top_bar_message') ) : the_row();?>
 		    	
 				    <div id="top-bar-message" class="row align-center text-center">
-					    <p class="text-center"><span><?php the_sub_field('text', 'option');?></span>
+					    <p class="text-center"><span><?php the_sub_field('message');?></span>
 						    <?php 
 							$link = get_sub_field('link', 'option');
 							if( $link ): 
@@ -130,76 +130,7 @@
                 
                 </nav>
             </div>
-            
-            
-            
-<!--
-            <div class="site-nav-wrap site-nav-mobile">	
-	            
-				<div class="row align-middle">
-				
-					<div class="site-branding columns small-9">
-						<div class="site-title">
-						<?php
-						$site_url = home_url();
-						$logo = sprintf('<img src="%slogo.svg" alt="site logo" class="" />', trailingslashit( THEME_IMG ) );    
-						printf('<a href="%s" title="%s">%s</a>',
-						        $site_url, 
-						        get_bloginfo( 'name' ), 
-						        $logo );
-						?>
-						</div>
-					</div>
-					
-					<div class="columns small-3 text-right">
-						<button id="nav-toggle" class="no-style-button"><img src="/wp-content/themes/portrait-displays/assets/svg/menu-icon.svg"/></button>
-					</div>
-				
-				</div>
-	                                
-				<nav class="site-navigation nav-primary columns" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
-				          
-					<div class="upper-nav">
-							<a class="contact-modal-button" data-open="contact-modal" href="#"><span class="upper-nav-skew-correct"><span class="upper-link-text"><?php the_field('lets_talk_label', 'option');?></span></span></a>
-							<?php 
-							$link = get_field('store_link', 'option');
-							if( $link ): 
-								$link_url = $link['url'];
-								$link_title = $link['title'];
-								$link_target = $link['target'] ? $link['target'] : '_self';
-								?>
-							<a class="upper-nav-store-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><span class="upper-nav-skew-correct"><img src="/wp-content/themes/portrait-displays/assets/svg/shopping-cart.svg"/><span class="upper-link-text"><?php echo esc_html($link_title); ?></span></span></a>
-						<?php endif; ?>	                	
-					</div>  
-				      
-				<?php
-				                        
-				$args = array(
-				    'theme_location' => 'primary',
-				    'menu' => 'Primary Menu',
-				    'container' => '',
-				    'container_class' => '',
-				    'container_id' => '',
-				    'menu_id'        => 'js-superfish',
-				    'menu_class'     => 'primary-menu menu',
-				    'before' => '',
-				    'after' => '',
-				    'link_before' => '',
-				    'link_after' => '',
-				    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-				 );
-				wp_nav_menu($args);
-				?>
-				
-				</nav>
-            </div>
--->
 
-            
-            
-            
-            
-            
         </div><!-- wrap -->
                  
     </header><!-- #masthead -->

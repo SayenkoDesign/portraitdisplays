@@ -7,9 +7,25 @@
 	.wrap {
 		border: 1px solid $light-gray;
 		padding-top: 2.45em;
-		padding-bottom: 3.5em;
+		padding-bottom: 0;
 		
 		> .row {
+			
+			.footer-half {
+			    text-align: center;
+			    align-content: center;
+			
+			@include breakpoint (medium) {
+				text-align: left;
+				justify-content: flex-start;
+				align-content: flex-start;
+			}
+			
+			}
+			
+			ul.sub-menu {
+				margin-bottom: 1em;
+			}
 		
 			> .columns {
 				display: flex;
@@ -45,6 +61,7 @@
 					}
 				
 					#footer-social-wrap {
+						margin-bottom: 3em;
 						display: flex;
 						align-items: center;
 						justify-content: center;
@@ -88,6 +105,12 @@
 		> div {
 			
 		}
+		
+		span.footer-dash {
+    			position: relative;
+    			bottom: -2px;
+		}
+		
 	}
 
 }

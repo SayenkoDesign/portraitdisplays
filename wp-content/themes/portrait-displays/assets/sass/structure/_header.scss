@@ -78,12 +78,14 @@ Header
  .no-touchevents #top-bar-message-wrap {
 	
 	#top-bar-message {
+		padding: 0 40px;
 		
 		p {
 			span {
 			}
 			
 			a {
+				white-space: nowrap;
 				transition: $transition;
 				
 				img {
@@ -111,10 +113,15 @@ Header
 
 // Primary Navigation
 #masthead {
-	
-	position: absolute;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+    	position: relative;
 	width: 100%;
 	z-index: 9;
+	
+@include breakpoint (large) {
+	box-shadow: 0 0 0 0;
+	position: absolute;	
+}
 	
 	.wrap {
 		position: relative;
@@ -150,7 +157,7 @@ Header
 	                     
     &.fixed {
 	    background: #fff;
-        position: fixed!important;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -163,7 +170,7 @@ Header
             // Scale fixed header logo
             .site-title {
                 img {
-                   transform-origin: center center;
+                   transform-origin: left center;
                    transform: scale(.891);
                    width: auto;   
                 }
@@ -219,7 +226,25 @@ Header
     }    
 }
 
+.error404 #masthead {
+	background: #fff;
+	position: relative;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.50);
+	border-radius: 1px;
+	
+	.site-navigation {
+        ul li a {
+	        color: $dark-gray;
+        }
+				        
+	}
+	
+	.wrap .site-nav-wrap .upper-nav a {
+		color: $dark-gray;
+	}
 
+
+}
 
 
 

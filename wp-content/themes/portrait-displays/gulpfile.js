@@ -166,7 +166,7 @@ gulp.task('foundation', function () {
 		//paths.foundation + 'foundation.interchange.js',
 		//paths.foundation + 'foundation.magellan.js',
 
-		paths.foundation + 'foundation.orbit.js',
+		//paths.foundation + 'foundation.orbit.js',
 		//paths.foundation + 'foundation.responsiveMenu.js',
 		//paths.foundation + 'foundation.responsiveToggle.js',
 

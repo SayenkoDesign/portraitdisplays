@@ -18,7 +18,7 @@ get_header(); ?>
 _s_get_template_part( 'template-parts/global', 'hero' );
 ?>
 
-<div class="columns row">
+<div class="columns row below-hero">
 	<div id="primary" class="content-area">
 	
 		<main id="main" class="site-main" role="main">
@@ -96,7 +96,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 										
 										<div class="text-center answer-img-wrap">
 											<?php
-											$img_id_wuc_r = get_field('page_top_background_image');
+											$img_id_wuc_r = get_sub_field('image');
 											$img_size_wuc_r = "why-us-circle@2x";
 											$imgarr_wuc_r = wp_get_attachment_image_src( $img_id_wuc_r, $img_size_wuc_r );?>								
 											<div class="retina wuc-img" style="background-image: url(<?php echo $imgarr_wuc_r[0]; ?> );background-repeat:no-repeat;background-size: contain;background-position: center center;"></div>

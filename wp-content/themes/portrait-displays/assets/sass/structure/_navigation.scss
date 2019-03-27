@@ -86,36 +86,60 @@ button {
 			}
 			
 			.upper-nav {
+				text-align: right;
 				display: flex;
 				flex-wrap: nowrap;
 				overflow: hidden;
 				justify-content: flex-end;
 				margin-bottom: 14px;
-				margin-right: -1.15em;
+// 				margin-right: -1.15em;
 				
 				a {
 					font-size: 1.063rem;
 					font-family: $open-sans;
 					color: #fff;
 					padding: 7px 19px;
-					transform: skew(-20deg);
+					
+				&.contact-modal-button {
+					transform: skew(-20deg);	
+				    position: relative;
+					z-index: 1;
+					margin-right: 41px;
+					
+					span.upper-nav-skew-correct {
+						transform: skew(20deg);
+					}
+	
+				}
+				
+				&.upper-nav-store-link {
+					padding-right: map_get($grid-column-gutter, medium) / 2;
+					position: relative;
+				}
 					
 					span.upper-nav-skew-correct {
 						display: inline-block;
-						transform: skew(20deg);
 						
 						span.upper-link-text {
 							position: relative;
 							
-							&:after {
-								content: "";
-								position: absolute;
-								left: 0;
-								bottom: -4px;
-								width: 27px;
-								height: 2px;
-								background-color: $dark-blue;
-							}
+						&:after {
+							display: none;
+							content: "";
+							position: absolute;
+							left: 0;
+							bottom: -4px;
+							width: 27px;
+							height: 2px;
+							background-color: $dark-blue;
+							
+						@include breakpoint (large) {
+							display: block;
+						}
+						
+						}
+						
+						
 							
 						}
 						
@@ -273,10 +297,34 @@ button {
 		        
 		        .site-navigation {
 				        ul li a {
+					        color: #fff;
+				        
+				        @include breakpoint (large) {
 					        color: $dark-gray;
 				        }
 				        
+				        }
+				        
 			        .upper-nav {
+				        
+				        	a.contact-modal-button {
+							margin-right: -30px;
+						}
+				        
+						a.upper-nav-store-link {
+							margin-right: 16px;
+							padding-right: 18px;
+							transform: skew(-20deg);
+							border-left: 30px solid $sky-blue;
+							
+							span.upper-nav-skew-correct {
+								transform: skew(20deg);
+							}
+							
+						}
+						
+						
+								
 				        
 				        span.upper-link-text {
 							
@@ -298,8 +346,6 @@ button {
 				
 				}
 			
-			
-		
 		}
     }    
 }
@@ -334,7 +380,7 @@ button {
 					    &:hover {
 						 	>  ul.sub-menu {
 							 	left: 0;
-							 	top: 25px;
+							 	top: 32px;
 							 	opacity: 1;
 							 	z-index: 1;
 						 	}

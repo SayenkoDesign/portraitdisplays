@@ -2,6 +2,11 @@
 	overflow: hidden;
 }
 
+.below-hero {
+	position: relative;
+	z-index: 1;
+}
+
 a {
 	transition: $transition;
 	color: $sky-blue;
@@ -174,3 +179,102 @@ ul.fancy-bullets {
 .reveal-overlay {
     background-color: hsla(0,0%,4%,.8);
 }
+
+
+// GDPR Plugin
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme {
+	background-color: $header-black !important;
+	font-family: $open-sans !important;
+}
+
+
+
+.lity {
+	background: rgba(0,0,0,0.75) !important;
+}
+
+#moove_gdpr_cookie_modal .moove-gdpr-modal-content {
+	border-radius: 2px !important;
+	font-family: $open-sans !important;	
+	
+	
+	#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-right-content {
+		background-color: $light-gray !important;
+		
+		#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button {
+			border-color: $light-gray !important;
+			background-color: $light-gray !important;
+		}
+	
+		h3 {
+			font-family: $raleway !important;
+			font-weight: 600 !important;
+		}
+
+	
+	}
+	
+			
+
+	
+}
+
+.lity-container {
+
+	#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a {
+		font-weight: 400 !important;
+		color: $text-black !important;
+	}
+	
+	#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu {
+		overflow: visible !important;
+	}
+	
+button {
+	transition: $transition !important;
+	text-align: center !important;
+	-webkit-appearance: none !important;
+	transition: $transition !important;
+	letter-spacing: 1.1px !important;
+	text-align: center !important;
+	line-height: 20px !important;
+	line-height: 15px !important;
+	padding: 1.09em 2.35em !important;	
+	box-shadow: 0 11px 12px 0 rgba(0,0,0,0.12) !important;
+	border-radius: 23px !important;
+	text-transform: uppercase !important;
+	font-size: 13px !important;
+	display: inline-block !important;
+	display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    min-width: 0 !important;
+}
+
+button:hover {
+	background-color: $dark-blue !important;
+	color: #fff !important;
+	border-color: $dark-blue !important;
+}
+		
+	#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i {
+		background: $dark-blue !important;
+		color: #fff !important;
+		border-color: $dark-blue !important;
+	}
+	
+	#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i {
+			background: $dark-blue !important;
+			color: #fff !important;
+	}
+
+}
+
+
+
+
+
+
+
+
+

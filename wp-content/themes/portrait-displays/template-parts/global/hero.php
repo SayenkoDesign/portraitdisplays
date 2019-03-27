@@ -16,15 +16,13 @@
 			<?php if( get_field('page_top_image_mask_color') == 'black' ): ?>
 				<div id="page-top-black-mask" class="page-top-mask"></div>
 			<?php endif; ?>	
-
-<!-- 				<div id="home-hero-curve" style="background: url('/wp-content/themes/portrait-displays/assets/svg/Home Hero Mask.svg');background-repeat: no-repeat;"></div>  -->
 				
 			<?php if(is_front_page()):?>
-			<img id="home-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/home-hero-mask.svg"/>
+			<div class="hero-curve-wrap"><img id="home-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/home-hero-mask.svg"/></div>
 			<?php endif;?>
 			
 			<?php if(!is_front_page()):?>
-			<img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/interior-hero-mask.svg"/>
+			<div class="hero-curve-wrap"><img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/interior-hero-mask.svg"/></div>
 			<?php endif;?>
 	
 		</div>
@@ -90,7 +88,8 @@
 			
 		</div>
 		
-		<div class="hero-content-half text-right columns small-12 medium-6 large-6">				
+		<div class="hero-content-half text-right columns small-12 medium-6 large-6">	
+			<div class="hero-right-img-wrap">		
 			<?php 
 			$image = get_field('display_image_for_page_top');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -98,6 +97,7 @@
 				echo wp_get_attachment_image( $image, $size );
 			}
 			?>	
+			</div>
 		</div>
 		
 	</div>

@@ -22,7 +22,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	    
 	    <div class="row">
 
-			<div class="columns small-12 medium-6 large-3">
+			<div class="columns footer-half small-12 medium-3 large-3">
 				
 				<div id="footer-first-widget">
 				
@@ -89,7 +89,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	                    'container_class' => '',
 	                    'container_id' => '',
 	                    'menu_id'        => 'js-superfish',
-	                    'menu_class'     => 'primary-menu menu row small-12 medium-6 large-9 small-up-1 medium-up-3 large-up-4',
+	                    'menu_class'     => 'primary-menu footer-half menu row small-12 medium-9 large-9 small-up-1 medium-up-3 large-up-4',
 	                    'before' => '',
 	                    'after' => '',
 	                    'link_before' => '',
@@ -108,9 +108,9 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
     <div id="footer-copyright" class="row columns">
 	    <div><small>&copy; <?php echo date('Y'); ?> <?php the_field('footer_copyright_text', 'option');?></small></div>
 	    
-	    <div>
-		<?php 
-			$link = get_field('footer_privacy_link', 'option');
+	    <div class="legal-policy-wrap">
+			<?php 
+			$link = get_field('footer_legal_link', 'option');
 			if( $link ): 
 				$link_url = $link['url'];
 				$link_title = $link['title'];
@@ -118,6 +118,17 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 				?>
 				<a class="single-social-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><small><?php echo esc_html($link_title); ?></small></a>
 			<?php endif; ?>    
+			<span class="footer-dash">/</span>
+			<?php 
+			$link = get_field('footer_privacy_link', 'option');
+			if( $link ): 
+				$link_url = $link['url'];
+				$link_title = $link['title'];
+				$link_target = $link['target'] ? $link['target'] : '_self';
+				?>
+				<a class="single-social-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><small><?php echo esc_html($link_title); ?></small></a>
+			<?php endif; ?>  
+			
 		</div>
 		
 	
