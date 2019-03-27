@@ -96,11 +96,6 @@
 			background-color: #fff;
 			min-height: 85px;
 			max-height: 85px;	
-		@include breakpoint (large) {
-			background-color: transparent;
-			min-height: 0;
-			max-height: none;
-		}	
 		
 			.site-branding {
 				display: flex;
@@ -115,50 +110,38 @@
 			padding-left: 0;
 			padding-right: 0;
 			
-		@include breakpoint (large) {
-			overflow: visible;
-			background-color: transparent;
-// 			padding: 0 map_get($grid-column-gutter, medium) / 2;
-		}
+			.site-navigation {
 		
-			.upper-nav {
-				width: 110%;
-				margin-left: -5%;
-				overflow: hidden;
-				
-			@include breakpoint (large) {
-				width: auto;
-				margin-left: 0;
-			}
-		        
-		        a {
-			        min-width: 52.5%;
-			        text-align: center;
-			    
-			    @include breakpoint (large) {
-				    min-width: 0;
-			    }
+				.upper-nav {
+					width: 110%;
+					margin-left: -5%;
+					overflow: hidden;
+					
 			        
-		        }
-        
-				.contact-modal-button {
-					background-color: $dark-blue;
+			        a {
+				        transform: skew(-20deg);	
+				        min-width: 52.5%;
+				        text-align: center;
+				        
+				        span.upper-nav-skew-correct {
+					        display: inline-block;
+					        transform: skew(20deg);
+				        }
+						
+					&.contact-modal-button {
+						background-color: $dark-blue;
+					}
 					
-				@include breakpoint (large) {
-					background-color: transparent;
-				}
-					
+					&.upper-nav-store-link {
+						background-color: $sky-blue;
+					}					
+				        
+			        }
+	        
+	
+				
 				}
 				
-				.upper-nav-store-link {
-					background-color: $sky-blue;
-					
-				@include breakpoint (large) {
-					background-color: transparent;
-				}
-				
-				}
-			
 			}
 
 		
