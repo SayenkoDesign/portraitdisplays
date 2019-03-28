@@ -22,7 +22,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	    
 	    <div class="row">
 
-			<div class="columns footer-half small-12 medium-3 large-3">
+			<div class="columns footer-half small-12 medium-4 large-4">
 				
 				<div id="footer-first-widget">
 				
@@ -89,7 +89,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	                    'container_class' => '',
 	                    'container_id' => '',
 	                    'menu_id'        => 'js-superfish',
-	                    'menu_class'     => 'primary-menu footer-half menu row small-12 medium-9 large-9 small-up-1 medium-up-3 large-up-4',
+	                    'menu_class'     => 'primary-menu footer-half menu row columns small-12 smedium-12 medium-8 large-8 small-up-1 smedium-up-3 medium-up-4',
 	                    'before' => '',
 	                    'after' => '',
 	                    'link_before' => '',
@@ -132,7 +132,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 		</div>
 		
 	
-	<div><a href="https://www.sayenkodesign.com/" target="_blank"><small>Web Design by Sayenko Design</small></a></div>
+	<div><a href="https://www.sayenkodesign.com/" target="_blank"><small>Web Design</small></a><small> by </small><a href="https://www.sayenkodesign.com/" target="_blank"><small>Sayenko Design</small></a></div>
 	    
     </div>
  

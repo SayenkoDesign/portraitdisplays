@@ -22,16 +22,11 @@
 			}
 			
 			}
-			
-			ul.sub-menu {
-				margin-bottom: 1em;
-			}
 		
 			> .columns {
 				display: flex;
 				flex-wrap: wrap;
-				flex-direction: column;
-				justify-content: flex-start;
+				justify-content: center;
 				
 				#footer-first-widget {
 					max-width: 250px;

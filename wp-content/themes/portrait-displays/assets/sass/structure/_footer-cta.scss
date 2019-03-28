@@ -2,13 +2,12 @@ img#white-footer-wave {
 	position: relative;
 	z-index: 2;
     max-width: none;
-    width: 100%;
     margin-top: -2px;
     margin-bottom: -1.5em;
 }
 
 #footer-cta {
-	
+	overflow: hidden;
 	position: relative;
 	
 	#footer-cta-mask {

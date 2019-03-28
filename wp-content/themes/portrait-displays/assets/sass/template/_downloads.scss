@@ -12,6 +12,15 @@
 			
 			padding-bottom: 2.35em;
 			
+			.columns {
+				margin-bottom: 2em;
+				
+			@include breakpoint (medium) {
+				margin-bottom: 0;
+			}
+				
+			}
+			
 			h2 {
 				padding-bottom: 0.9em;
 			}	
@@ -29,28 +38,38 @@
 			}
 			
 			.download-form {
+				
+				._form {
+					
+					max-width: none;
+					
+				@include breakpoint (medium) {
+					max-width: 460px;
+				}
 
-				._button-wrapper {
-					display: flex;
-					align-items: center;
-					flex-wrap: nowrap;
-					
-					.button {
-						margin-right: 1em;
-					}
-					
-					small {
-						line-height: 1.5;
+					._button-wrapper {
+						display: flex;
+						align-items: center;
+						flex-wrap: nowrap;
 						
-						a {
-							white-space: nowrap;
-							color: $text-black;
-							text-decoration: underline;
-							transition: $transition;
-							
-						&:hover {
-							color: $sky-blue;
+						.button {
+							margin-right: 1em;
 						}
+						
+						small {
+							line-height: 1.5;
+							
+							a {
+								white-space: nowrap;
+								color: $text-black;
+								text-decoration: underline;
+								transition: $transition;
+								
+							&:hover {
+								color: $sky-blue;
+							}
+								
+							}
 							
 						}
 						
@@ -79,15 +98,22 @@
 			text-align: left;
 			display: flex;
 			overflow: hidden;
+			flex-wrap: wrap;
 			
 			button, a {
-				margin-right: 41px;
 				font-family: $raleway;
 				font-size: 1.125rem;
 				color: #454C54;
 				text-align: left;
 				display: flex;
 				align-items: center;
+				margin-bottom: 1em;
+				margin-right: 41px;
+				
+			@include breakpoint (smedium) {
+				margin-right: 41px;
+			}
+		
 				
 				.plus-wrap {
 					position: relative;
@@ -171,8 +197,11 @@
 			
 			
 			&.legacy-versions {
+				width: 100%;
 				
+			@include breakpoint (large) {
 				width: 50%;
+			}
 				
 				.single-legacy-version {
 					border-left: 3px solid $gray;

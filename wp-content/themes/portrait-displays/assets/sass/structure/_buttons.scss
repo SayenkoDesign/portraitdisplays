@@ -17,6 +17,8 @@ button {
 	display: inline-flex;
     flex-wrap: nowrap;
     align-items: center;
+    position: relative;
+    z-index: 1;
 	
 	
 		span.button-text {

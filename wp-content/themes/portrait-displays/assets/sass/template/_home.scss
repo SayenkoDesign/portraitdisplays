@@ -13,7 +13,7 @@
 		li {
 			text-align: center;
 			min-width: 50%;
-			margin-bottom: 1em;
+			margin-bottom: 1.5em;
 			
 			@media screen and (min-width: 450px) {
 				min-width: 33%;
@@ -87,7 +87,14 @@
 		padding-top: 10.35em;
 		padding-bottom: 5em;
 
+		h2 {
+			padding-bottom: 1.1em;
+		}
+
 		#answer-wrap {
+			
+			position: relative;
+			z-index: 1;
 						
 			.single-answer {
 				
@@ -162,11 +169,12 @@
 	}	
 	
 	#industries-served {
-    	margin-top: 1em;
-    	padding-bottom: 0;
+		position: relative;
+	    	margin-top: 1em;
+	    	padding-bottom: 0;
     	
 	    	h2 {
-		    	padding-bottom: 1.75;
+		    	padding-bottom: 1.65em;
 	    	}
 	    	
 	    	#industries-wrap {
