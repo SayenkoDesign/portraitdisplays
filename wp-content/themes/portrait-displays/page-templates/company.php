@@ -38,32 +38,33 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 			</section>
 		
 		
-			<section id="our-vision" class="medium-wrap row align-justify">
-				
-				<div class="text-image-col text-image-txt column small-12 medium-12 large-6">
+			<section id="our-vision" class="medium-wrap">
+				<div class="row align-justify">
+					<div class="text-image-col text-image-txt column small-12 medium-12 large-6">
+						<?php
+						_s_get_template_part( 'template-parts/global', 'pixel-set' );
+						?>
+						<h2><?php the_field('our_vision_heading');?></h2>
+						<p><?php the_field('our_vision_copy');?></p>
+					</div>
+					
 					<?php
-					_s_get_template_part( 'template-parts/global', 'pixel-set' );
+					_s_get_template_part( 'template-parts/global', 'pixel-grid' );
 					?>
-					<h2><?php the_field('our_vision_heading');?></h2>
-					<p><?php the_field('our_vision_copy');?></p>
-				</div>
-				
-				<?php
-				_s_get_template_part( 'template-parts/global', 'pixel-grid' );
-				?>
-				
-				<div class="has-corner-bg text-image-col text-image-img column small-12 medium-12 large-6">
-					<div>
-						<span class="image-corner-bg sky-blue-corner-bg"></span>
-						<span class="image-corner-bg dark-blue-corner-bg"></span>
-						<?php 
-						$image = get_field('our_vision_image');
-						$size = 'company-vision';
-						if( $image ) {
-							echo wp_get_attachment_image( $image, $size );
-						}
-						?>		
-					</div>			
+					
+					<div class="has-corner-bg text-image-col text-image-img column small-12 medium-12 large-6">
+						<div>
+							<span class="image-corner-bg sky-blue-corner-bg"></span>
+							<span class="image-corner-bg dark-blue-corner-bg"></span>
+							<?php 
+							$image = get_field('our_vision_image');
+							$size = 'company-vision';
+							if( $image ) {
+								echo wp_get_attachment_image( $image, $size );
+							}
+							?>		
+						</div>			
+					</div>
 				</div>
 				
 			</section>
