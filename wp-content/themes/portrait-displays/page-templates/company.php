@@ -23,7 +23,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
        <main id="main" class="site-main" role="main">
 		<div class="columns row">
        
-			<section id="about-our-mission" class="medium-wrap row columns align-middle">
+			<section id="about-our-mission" class="medium-wrap row columns align-middle fadeInUp">
 				
 				<div id="about-our-mission-title-wrap" class="column text-center">
 					<span id="about-title-line-blue"><img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/sky-blue-circle.svg"/></span>
@@ -75,7 +75,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				<section id="core-values" class="gray-bg">
 					<div class="gray-bg text-center medium-wrap">
 						
-						<div id="cv-pixel-set" class="hide-for-slider text-center">
+						<div id="cv-pixel-set" class="text-center">
 							<?php
 								_s_get_template_part( 'template-parts/global', 'pixel-set' );
 							?>
@@ -83,7 +83,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						
 						<?php while ( have_rows('core_values') ) : the_row();?>
 						
-							<h2 class="hide-for-slider"><?php the_sub_field('heading');?></h2>
+							<h2><?php the_sub_field('heading');?></h2>
 
 						
 							<?php $number_of_values = count(get_sub_field('values'));?>							
@@ -110,7 +110,12 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 												
 													<button class="hide-value-slider no-style-button" data-close aria-label="Close"><img class="gray-wave gray-wave-top" src="/wp-content/themes/portrait-displays/assets/svg/value-modal-close.png"/></button>
 								
-													<button class="button modal-nav value-before no-style-button" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button"><span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span></button>														
+													<button class="button modal-nav value-before no-style-button slick-arrow desktop" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button">
+														<span class="vs-arrow-wrap">
+															<img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-left-arrow.svg"/>
+															<img class="v-gray-arrow va-previous top-arrow" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/>	
+														</span>
+													</button>														
 		
 													<?php if( have_rows('single_value') ):
 														while ( have_rows('single_value') ) : the_row();?>						
@@ -123,7 +128,14 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 															<?php endif; ?>
 														
 														
-															<h2><?php the_sub_field('label');?></h2>									
+															<h2><?php the_sub_field('label');?></h2>	
+															
+															<div class="mobile-value-arrow-wrap">
+																<button class="button modal-nav value-before no-style-button slick-arrow" data-open="value-<?php echo get_row_index() - 1;?>" aria-label="Previous Step" type="button"><span class="vm-arrow-wrap"><img class="v-gray-arrow va-previous" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/></span></button>
+																
+																<button class="button modal-nav value-after no-style-button slick-arrow" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button"><span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span></button>
+															</div>
+																							
 															<p><?php the_sub_field('modal_copy');?></p>
 
 														
@@ -133,7 +145,13 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 														<?php endwhile;?>
 													<?php endif;?>
 																
-													<button class="button modal-nav value-after no-style-button" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button"><span class="vm-arrow-wrap"><img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/></span></button>
+													<button class="button modal-nav value-after no-style-button slick-arrow desktop" data-open="value-<?php echo get_row_index() + 1;?>" aria-label="Next Step" type="button">
+														<span class="vs-arrow-wrap">
+															<img class="v-blue-arrow va-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/>
+															<img class="v-blue-arrow va-next top-arrow" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-right-arrow.svg"/>
+														</span>
+														
+													</button>
 													
 												</div>
 												
@@ -196,7 +214,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 					
 			
 			
-<div class="columns row">
+		<div class="columns row">
 		
 			<section id="careers-button" class="text-center">
 				<?php 
@@ -210,9 +228,11 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				<?php endif; ?>
 			</section>
 			
+<!--
 			<div class="pixel-set collage-pixel-set text-center">
 				<span class="pixel-set-1"></span><span class="pixel-set-2"></span>
-			</div>		
+			</div>	
+-->	
 
 			<section id="company-culture" class="row align-middle">
 		

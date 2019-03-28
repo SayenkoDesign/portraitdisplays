@@ -70,6 +70,15 @@
 	#our-vision {
 		position: relative;
 		
+		.text-image-txt {
+			padding-bottom: 1.562em;
+			
+		@include breakpoint (large) {
+			padding-bottom: 0;
+		}	
+		
+		}
+		
 		p {
 			
 		@include breakpoint (large) {
@@ -101,11 +110,63 @@
 		
 		h2 {
 			padding-top: 0.57em;
+			padding-bottom: 0;
+			
+		@include breakpoint (medium) {
 			padding-bottom: 1.35em;
+		}
+			
 		}
 		
 		#value-slider-wrap {
+			padding: 0 10px;
 			position: relative;
+			
+			.mobile-value-arrow-wrap {
+				display: flex;
+				justify-content: space-between;
+				padding-bottom: 1em;
+				
+			@include breakpoint (medium) {
+				display: none;
+			}
+				
+			}
+			
+			.slick-arrow.desktop {
+				max-width: 0;
+				overflow: hidden;
+				max-height: 36px;
+				
+			@include breakpoint (medium) {
+				max-width: none;
+				overflow: visible;
+			}
+			
+				.vs-arrow-wrap {
+					display: inline-block;
+					position: relative;
+					width: 46px;
+					height: 25px;
+					
+					img{
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						transition: $transition;
+					}
+					
+				}
+				
+			&:hover {
+				img.top-arrow {
+					opacity: 0;
+				}
+			}
+				
+			}
 			
 			nav#values-wrap {
 				justify-content: center;	
@@ -122,6 +183,7 @@
 			.slide-content-wrap {
 				position: relative;
 				display: flex;
+				align-items: center;
 			}
 			
 			.slick-slide img {
@@ -133,7 +195,7 @@
 			    top: 2px;
 			    right: 0;
 			    margin-bottom: 3em;
-			    
+			    z-index: 5;
 			    
 			}
 			
@@ -221,7 +283,7 @@
 	}
 	
 	#company-culture {
-		
+		display: none;
 		#culture-collage {
 			min-height: 505px;
 			min-width: 58.33333%;

@@ -89,7 +89,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	                    'container_class' => '',
 	                    'container_id' => '',
 	                    'menu_id'        => 'js-superfish',
-	                    'menu_class'     => 'primary-menu footer-half menu row columns small-12 smedium-12 medium-8 large-8 small-up-1 smedium-up-3 medium-up-4',
+	                    'menu_class'     => 'primary-menu footer-half menu row columns small-12 smedium-12 medium-8 large-8 small-up-1 smedium-up-4 medium-up-4',
 	                    'before' => '',
 	                    'after' => '',
 	                    'link_before' => '',

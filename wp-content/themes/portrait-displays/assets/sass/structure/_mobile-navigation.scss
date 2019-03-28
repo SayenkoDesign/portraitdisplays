@@ -114,7 +114,7 @@
 		
 				.upper-nav {
 					width: 110%;
-					margin-left: -5%;
+					margin-left: -2.5%;
 					overflow: hidden;
 					
 			        
@@ -126,6 +126,11 @@
 				        span.upper-nav-skew-correct {
 					        display: inline-block;
 					        transform: skew(20deg);
+					        
+					        img {
+						        margin-right: 9px;
+					        }
+					        
 				        }
 						
 					&.contact-modal-button {

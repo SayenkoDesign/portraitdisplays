@@ -9,20 +9,35 @@
 	$img_id = get_field('page_top_background_image');
 	$img_size = "hero";
 	$imgarr = wp_get_attachment_image_src( $img_id, $img_size );?>
-		<div id="page-top-image" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat:no-repeat;background-size: cover;background-position: center center;">
-			<?php if( get_field('page_top_image_mask_color') == 'blue' ): ?>
-				<div id="page-top-blue-mask" class="page-top-mask"></div>
-			<?php endif; ?>
-			<?php if( get_field('page_top_image_mask_color') == 'black' ): ?>
-				<div id="page-top-black-mask" class="page-top-mask"></div>
-			<?php endif; ?>	
+		<div id="page-top-image">
 				
 			<?php if(is_front_page()):?>
-			<div class="hero-curve-wrap"><img id="home-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/home-hero-mask.svg"/></div>
+			<div class="hero-curve-wrap" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat:no-repeat;background-size: cover;background-position: center center;">
+				
+				<?php if( get_field('page_top_image_mask_color') == 'blue' ): ?>
+					<div id="page-top-blue-mask" class="page-top-mask"></div>
+				<?php endif; ?>
+				<?php if( get_field('page_top_image_mask_color') == 'black' ): ?>
+					<div id="page-top-black-mask" class="page-top-mask"></div>
+				<?php endif; ?>	
+				
+				<img id="home-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/home-hero-mask.svg"/>
+				
+			</div>
 			<?php endif;?>
 			
 			<?php if(!is_front_page()):?>
-			<div class="hero-curve-wrap"><img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/interior-hero-mask.svg"/></div>
+			<div class="hero-curve-wrap" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat:no-repeat;background-size: cover;background-position: center center;">
+				
+				<?php if( get_field('page_top_image_mask_color') == 'blue' ): ?>
+					<div id="page-top-blue-mask" class="page-top-mask"></div>
+				<?php endif; ?>
+				<?php if( get_field('page_top_image_mask_color') == 'black' ): ?>
+					<div id="page-top-black-mask" class="page-top-mask"></div>
+				<?php endif; ?>	
+				
+				<img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/interior-hero-mask.svg"/></div>
+				
 			<?php endif;?>
 	
 		</div>
