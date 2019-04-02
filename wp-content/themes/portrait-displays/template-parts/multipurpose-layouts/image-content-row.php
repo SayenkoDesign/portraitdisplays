@@ -11,7 +11,7 @@ if( get_row_layout() == 'image_and_content_row' ):
 	$size = 'flex-page-standard';
 	?>
 
-	<section class="image-content-row row-bg-<?php echo $row_bg_color ?> row-img-align-<?php echo $image_alignment ?>">
+	<section class="image-content-row row-bg-<?php echo $row_bg_color ?> img-style-<?php echo $image_style ?> row-img-align-<?php echo $image_alignment ?>">
 		
 		<div class="row">
 								
@@ -21,7 +21,9 @@ if( get_row_layout() == 'image_and_content_row' ):
 				<div class="ic-row-img-blue-bg"></div>
 				<div class="ic-row-img-gray-bg"></div>	
 -->			
+				
 				<span class="ic-row-img">
+					<span class="color-bg-block"></span>
 					<?php echo wp_get_attachment_image( $image, $size );?>
 				</span>
 					
@@ -73,7 +75,7 @@ if( get_row_layout() == 'image_and_content_row' ):
 					if( have_rows('list') ):?>
 						<ul class="ic-list fancy-bullets">
 						<?php while ( have_rows('list') ) : the_row();?>	
-							<li><?php the_sub_field('single_row');?></li>
+							<li><span><?php the_sub_field('single_row');?></span></li>
 						<?php endwhile;?>
 						</ul>
 					<?php endif;

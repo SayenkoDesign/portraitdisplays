@@ -26,7 +26,7 @@ $imgarr = wp_get_attachment_image_src( $img_id, $img_size );?>
 				<?php if( have_rows('footer_cta_with_one_button') ):?>
 					<?php while ( have_rows('footer_cta_with_one_button') ) : the_row();?>	
 				
-						<h2><?php the_sub_field('text');?></h2>
+						<h2 class="fadeInUp"><?php the_sub_field('text');?></h2>
 					
 						<?php 
 						$link = get_sub_field('link_button');
@@ -56,7 +56,7 @@ $imgarr = wp_get_attachment_image_src( $img_id, $img_size );?>
 							<?php while ( have_rows('left_button') ) : the_row();?>	
 				
 							<div class="footer-cta-half small-12 medium-8 large-6 text-center">
-								<h2><?php the_sub_field('text');?></h2>
+								<h2 class="fadeInUp"><?php the_sub_field('text');?></h2>
 							
 								<?php 
 								$link = get_sub_field('link_button');
@@ -83,7 +83,7 @@ $imgarr = wp_get_attachment_image_src( $img_id, $img_size );?>
 							<?php while ( have_rows('right_button') ) : the_row();?>	
 				
 							<div class="footer-cta-half small-12 medium-8 large-6 text-center">
-								<h2><?php the_sub_field('text');?></h2>
+								<h2 class="fadeInUp"><?php the_sub_field('text');?></h2>
 							
 								<?php 
 								$link = get_sub_field('link_button');

@@ -1,4 +1,14 @@
+html {
+	background-color: $light-gray;
+}
+body {
+	background-color: #fff;
+	max-width: 1770px;
+	margin: 0 auto;
+}
+
 #page {
+	background-color: #fff;
 	overflow: hidden;
 }
 
@@ -41,7 +51,7 @@ a {
 .gray-wave {
 	max-width: none !important;
 	width: 101%;
-	
+	margin-left: -0.5%;
 	&.gray-wave-top {
 		margin-bottom: -1px;
 	}
@@ -152,6 +162,10 @@ ul.fancy-bullets {
 	li {
 		position: relative;
 		margin-bottom: 0.85em;
+		
+		span {
+			display: inline-block;
+		}
 		
 		a {
 			color: $text-black;

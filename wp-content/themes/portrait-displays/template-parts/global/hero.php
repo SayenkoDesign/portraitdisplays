@@ -45,7 +45,7 @@
 					
 	<div class="row align-middle">
 		
-		<div class="hero-content-half top-heading columns small-12 medium-6 large-6">
+		<div class="hero-content-half top-heading columns small-12 medium-6 large-6 fadeInUp">
 		
 			<h1><?php the_field('page_top_heading');?></h1>
 			
@@ -104,7 +104,7 @@
 		</div>
 		
 		<div class="hero-content-half text-right columns small-12 medium-6 large-6">	
-			<div class="hero-right-img-wrap">		
+			<div class="hero-right-img-wrap fadeInRight">		
 			<?php 
 			$image = get_field('display_image_for_page_top');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)

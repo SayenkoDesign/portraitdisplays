@@ -52,12 +52,12 @@
 				bottom: 0;
 				
 			&#about-title-line-blue {
-				transform: translateX(-4px);
+				transform: translateX(-7px);
 				
 			}
 			
 			&#about-title-line-gray {
-				transform: translateX(4px);
+				transform: translateX(7px);
 			}
 				
 			}
@@ -68,7 +68,7 @@
 	
 	
 	#our-vision {
-		position: relative;
+		position: relative;padding-bottom: 5em;
 		
 		.text-image-txt {
 			padding-bottom: 1.562em;
@@ -104,6 +104,7 @@
 	}	
 
 	#core-values {
+		display: none;
 		overflow: hidden;
 		padding-top: 1.25em;
 		padding-bottom: 4.6em;

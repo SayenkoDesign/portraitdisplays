@@ -46,7 +46,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 			<h2 class="text-center"><?php the_sub_field('heading');?></h2>
 			
 			<?php if( have_rows('solutions') ):?>
-				<div id="solutions-wrap" class="collapse medium-wrap row small-up-1 medium-up-2 large-up-3">
+				<div id="solutions-wrap" class="staggerUp collapse medium-wrap row small-up-1 medium-up-2 large-up-3">
 				<?php while ( have_rows('solutions') ) : the_row();
 			
 					if( have_rows('single_solution') ):
@@ -56,7 +56,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						$img_size = "home-solution-link";
 						$imgarr = wp_get_attachment_image_src( $img_id, $img_size );
 							if( !empty($image) ): ?>
-							<div class="single-solution columns" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat: no-repeat; background-position: center center; background-size: cover;" href="<!-- <?php the_sub_field('link');?> -->">
+							<div class="single-solution columns staggered" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat: no-repeat; background-position: center center; background-size: cover;" href="<!-- <?php the_sub_field('link');?> -->">
 								<h3 class="text-center"><?php the_sub_field('label');?></h3>
 	<!-- 						<p class="solution-hover-text"><?php the_sub_field('hover_text');?></p> -->
 							</div>
@@ -126,7 +126,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 	
 			
 		
-		<section id="below-why-us-button" class="text-center has-gray-fins gray-curve-bottom">
+		<section id="below-why-us-button" class="text-center has-gray-fins gray-curve-bottom bounce-button">
 			
 			<img class="gray-fins" src="/wp-content/themes/portrait-displays/assets/svg/gray-section-fins.svg"/>
 			<?php 
@@ -164,9 +164,9 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 							<?php 
 							$image = get_sub_field('icon');
 							if( !empty($image) ): ?>
-							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+							<img class="fadeInLeft" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 							<?php endif; ?>
-							<h3><?php the_sub_field('label');?></h3>									
+							<h3 class="fadeInUp"><?php the_sub_field('label');?></h3>									
 						</div>
 					
 						<?php endwhile;?>

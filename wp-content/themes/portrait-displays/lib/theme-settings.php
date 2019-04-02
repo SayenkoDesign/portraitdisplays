@@ -28,8 +28,8 @@ add_image_size( 'home-solution-link', 487, 288 );
 
 // Retina Images
 add_image_size( 'hero-display', 429, 9999 );
-add_image_size( 'why-us-circle', 130, 130, true );
-add_image_size( 'why-us-circle@2x', 260, 260, true );
+add_image_size( 'why-us-circle', 169, 169, true );
+add_image_size( 'why-us-circle@2x', 338, 338, true );
 add_image_size( 'multi-purpose-row', 554, 348 );
 add_image_size( 'company-vision', 564, 367 );
 add_image_size( 'company-collage', 500, 9999 );

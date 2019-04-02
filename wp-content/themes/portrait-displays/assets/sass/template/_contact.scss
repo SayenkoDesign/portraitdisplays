@@ -1,9 +1,10 @@
 .page-template-contact {
 	
 	#main {
-		
-		display: flex;	
-
+		@include breakpoint(large) {
+			display: flex;
+		}
+				
 		a#back-to-previous-link {
 			margin-top: 1.9em;
 			margin-left: 50px;
@@ -37,6 +38,30 @@
 		form,
 		#_form_23_ {
 			padding-top: 1.8em
+		}
+		
+		._form-title {
+		display: none !important;
+		}
+		
+		.google-map {
+			min-height: 100vh;
+			width: 100%;
+			
+		@include breakpoint(large) {
+				min-height: 0;
+				width:auto;
+			}
+		}
+			
+		.wpgmza_map {
+		    min-width: 100vw;
+		    min-height: 100vh;
+		
+		@include breakpoint(large) {
+			min-width: 0;
+		    min-height: 0;			
+			}
 		}
 		
 	}

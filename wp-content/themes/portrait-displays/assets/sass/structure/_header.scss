@@ -123,6 +123,10 @@ Header
 @include breakpoint (large) {
 	box-shadow: 0 0 0 0;
 	position: absolute;	
+	max-width: 1770px;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 	.site-title {

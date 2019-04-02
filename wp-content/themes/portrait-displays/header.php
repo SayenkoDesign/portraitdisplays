@@ -23,6 +23,15 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2B70AA">
 <meta name="msapplication-TileColor" content="#2B70AA">
 <meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10195773-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10195773-1');
+</script>
 <?php wp_head(); ?>
 </head>
 

@@ -69,10 +69,11 @@ $breakpoints: (
   large: 992px,
   xlarge: 1024px,
   xxlarge: 1200px,
-  xxxlarge: 1440px
+  xxxlarge: 1440px,
+  body-max: 1770px
 );
 // must match $breakpoints
-$breakpoint-classes: (small smedium medium large xlarge xxlarge xxxlarge);
+$breakpoint-classes: (small smedium medium large xlarge xxlarge xxxlarge body-max);
 
 
 // 3. The Grid

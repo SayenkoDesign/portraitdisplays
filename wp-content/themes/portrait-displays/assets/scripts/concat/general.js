@@ -30,34 +30,7 @@
 
     });
     
-//     Mobile Navigation
-/*
-	$('.site-nav-mobile').on('click', '#nav-toggle', function(e){
-		$('.site-nav-mobile .site-navigation').toggleClass('menu-visible');		
-	});    
-
-
-	$('.site-nav-wrap.site-nav-mobile .site-navigation li.menu-item-has-children').each(function (i, obj) {
-		
-	var $this = $(this);
-	var $subMenu = $(this).find('ul.sub-menu')	
-	var $subMenuHeight = $($subMenu).innerHeight();
-	var $subMenu = $($subMenu).css('max-height', 0);
-	
-		$('li.menu-item-has-children').toggle(function () {
-		    $($this).find('ul.sub-menu').css('max-height', $subMenuHeight);
-		}, function () {
-		    $($this).find('ul.sub-menu').css('max-height', 0);
-		});
-	  
-	});	  
-*/
-
-
-
-
-	
-	
+    	
 // Close Header Alert
 	var $topBar = $('#top-bar-message-wrap');
 
@@ -88,9 +61,6 @@
 
 	});
 	
-
-
-
 	
 // Single Download  Tabs
 
@@ -139,9 +109,7 @@
 		var notesContent = $(this).find('.release-notes.tab-content');
 		var legacyContent = $(this).find('.legacy-versions.tab-content');
 	
-		$(notesButton).addClass('clicked');
 		$(notesContent).show();
-		$(notesContent).addClass('visible');
 		
 		$(notesButton).click(function(){
 			$(legacyButton).removeClass('clicked');

@@ -1,7 +1,10 @@
 //--------------------------------------------------------------
 // Navigation
 //--------------------------------------------------------------
-
+// Temporary Fix
+ #masthead .wrap .site-nav-wrap .site-navigation ul.primary-menu ul.sub-menu li.hide-in-header-nav {
+	display: none;
+}
 // Default menu (active after a fresh WordPress install)
 .menu {
 	@include list-reset;
@@ -486,11 +489,30 @@ button {
 	}
 }
 
+.error404 {
+	#masthead .wrap .site-nav-wrap .site-navigation a, 
+	#masthead .wrap .site-nav-wrap .site-navigation .upper-nav a {
+		
+		@include breakpoint (large) {
+			color: $dark-gray;
+		}
+	}
+}
+
 // Footer Navigation
 #site-footer {
 	ul.primary-menu {
 		
 		padding-bottom: 2em;
+		
+		> li {
+			min-width: 100%;
+			
+		@include breakpoint (smedium) {
+			min-width: 0;
+		}
+			
+		}
 		
 		li {
 			

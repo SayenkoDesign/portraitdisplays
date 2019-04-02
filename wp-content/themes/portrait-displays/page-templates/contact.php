@@ -24,8 +24,8 @@ get_header(); ?>
 				<div class="row columns small-12 medium-12 large-5">
 					<a id="back-to-previous-link" href="javascript:history.back()"><img src="/wp-content/themes/portrait-displays/assets/svg/back-arrow.svg"/><span id="back-to-previous-text">Back to website</span></a>
 					
-					<h1 class="text-center"><?php the_field('heading');?></h1>
-					<h4 class="text-center"><?php the_field('subtitle');?></h4>
+					<h1 class="text-center"><?php the_field('page_top_heading');?></h1>
+					<h4 class="text-center"><?php the_field('page_top_subtext');?></h4>
 					
 					<?php
 					_s_get_template_part( 'template-parts/global', 'contact-form' );
