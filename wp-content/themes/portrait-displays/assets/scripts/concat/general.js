@@ -129,6 +129,14 @@
 	});
 
 
+// 	Add Class to Current Blog Page in Fake Pagination
+    $('ul.nav-links a').each(function() {
+        if ($(this).prop('href') == window.location.href) {
+            $(this).addClass('current-blog-page');
+        }
+    });
+
+
 
 }(document, window, jQuery));
 

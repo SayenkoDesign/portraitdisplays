@@ -19,13 +19,12 @@ add_filter( 'the_category', function( $the_list ) {
     return $dom->saveHtml();
 });
 
-
 // Custom paginate links function
 function _s_paginate_links( $args = [] ) {
     
     $defaults = array(
-        'prev_text'          => __('<span>« Previous Page</span>'),
-        'next_text'          => __('<span>Next Page »</span>'),
+        'prev_text'          => __('<span><img class="page-nav-arrow page-nav-gray-arrow-prev" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-left-arrow.svg"/><img class="page-nav-arrow page-nav-blue-arrow-prev" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-left-arrow.svg"/></span>'),
+        'next_text'          => __('<span><img class="page-nav-arrow page-nav-blue-arrow-next" src="/wp-content/themes/portrait-displays/assets/svg/blue-value-modal-right-arrow.svg"/><img class="page-nav-arrow page-nav-gray-arrow-next" src="/wp-content/themes/portrait-displays/assets/svg/gray-value-modal-right-arrow.svg"/></span>'),
         'type'               => 'array'
     );
     

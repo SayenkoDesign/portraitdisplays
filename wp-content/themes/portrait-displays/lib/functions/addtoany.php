@@ -17,6 +17,7 @@ function addtoany_share( $label = 'Share' ) {
 }
 
 // Social icons used in header/footer
+/*
 function _s_get_addtoany_share_icons( $url = '', $title = '' ) {
 	
 	global $post;
@@ -59,5 +60,6 @@ function _s_get_addtoany_share_email( $url = '', $title = '' ) {
 		
 	return sprintf( '<div class="a2a_kit clearfix" data-a2a-url="%s" data-a2a-title="%s">%s</div>', $url, $title, $share );
 }
+*/
 
 

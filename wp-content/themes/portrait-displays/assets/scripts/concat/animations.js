@@ -21,6 +21,7 @@ if($('.hero-right-img-wrap > img').is(':visible')) {
 
 
 // Right Fins
+/*
 var rightFins = $('img#header-right-fins');
 if($(rightFins).is(':visible')) {
 	
@@ -28,8 +29,6 @@ if($(rightFins).is(':visible')) {
 	
 	tl
 	.fromTo(rightFins, 3, {x:'70%', scale: 0.2, opacity:0}, {x:'0%', scale: 1, opacity:1, ease: Power3.easeIn}, '-=2' )
-	
-	
 	
 	var scene = new ScrollMagic.Scene({
 	        triggerElement: '.hero-content-half h1',
@@ -42,6 +41,7 @@ if($(rightFins).is(':visible')) {
 	
 	
 };
+*/
 
 
 // Pixel Grids	

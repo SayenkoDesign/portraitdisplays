@@ -44,7 +44,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 					
 					
 					<?php if( have_rows('social_media_links', 'option') ):?>
-						<div id="footer-social-wrap">
+						<div class="social-wrap">
 						<?php while ( have_rows('social_media_links', 'option') ) : the_row();?>	
 					
 							<?php if( have_rows('single_social_link', 'option') ):?>

@@ -1,3 +1,13 @@
+.page-template-blog #page-top #page-top-image .hero-curve-wrap:after {
+   content: "";
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 99%;
+   height: 100px;
+   background: #FCFBFB;
+}
+
 #page-top {
 	padding-top: 84vw;
     min-height: 483px;
@@ -318,7 +328,27 @@
     }     
 }
 
-
+.single-post {
+	#page-top {
+		.hero-content-half{
+			
+			>h1 {
+				margin-top: 0;
+				padding-bottom: 0.09em;
+			}
+			
+			.entry-meta {
+				font-family: $raleway;
+			    font-size: 1.125rem;
+			    color: #454C54;
+			    text-align: left;
+			    line-height: 26px;
+			    padding-bottom: 2.8em;
+			}
+			
+		}
+	}
+}
 
 
 

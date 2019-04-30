@@ -148,7 +148,6 @@ button {
 								position: relative;
 								
 							&:after {
-								display: none;
 								content: "";
 								position: absolute;
 								left: 0;
@@ -156,10 +155,6 @@ button {
 								width: 27px;
 								height: 2px;
 								background-color: $dark-blue;
-								
-							@include breakpoint (large) {
-								display: block;
-							}
 							
 							}
 

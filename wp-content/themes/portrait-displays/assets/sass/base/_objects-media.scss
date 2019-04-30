@@ -72,7 +72,7 @@ img.alignleft,
 	
 	margin-bottom: $global-margin;
     
-    @include breakpoint(large) {
+    @media screen and (min-width: 600px) {
         margin-right: $global-margin;
     }
 }
@@ -81,7 +81,7 @@ img.alignright,
 .wp-caption.alignright {
 	margin-bottom: $global-margin;
 	
-    @include breakpoint(large) {
+    @media screen and (min-width: 600px) {
         margin-left: $global-margin;
     }
 }
@@ -104,7 +104,7 @@ img.aligncenter {
 
 
 
-@include breakpoint(large) {
+@media screen and (min-width: 600px) {
       
 	.alignleft {
 		float: left;

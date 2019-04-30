@@ -1,12 +1,18 @@
 <?php
 /**
- * Template part for displaying single posts.
+ * Template Name: Single Blog Post
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
-?>
+
+get_header(); ?>
 
 <article id="post-<?php the_ID(); ?>">
 	
@@ -35,31 +41,23 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 		    
 		    <div class="entry-content">
 			
-				<?php 
-				the_content(); 		
-				?>
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php the_content(); ?>
+				<?php endwhile; endif; ?>
 				
 			</div><!-- .entry-content -->
 		
 			<footer class="entry-footer">
+<!--
 		        <?php
 		        $previous = sprintf( '<span>%s</span>',  __( 'Previous Post', '_s') );
 		                    
 		        $next = sprintf( '<span>%s</span>',  __( 'Next Post', '_s') );
 		        
 		        $navigation = _s_get_the_post_navigation( array( 'prev_text' => $previous, 'next_text' => $next ) );
-		        
-/*
-			        printf( '<h3><span>%s</span></h3><div class="wrap text-center">%s%s</div>', 
-		                __( 'Share This', '_s' ),
-		                _s_get_addtoany_share_icons(),
-		                $navigation  
-		              );
-*/
-	
-		              
-		            
+
 		        ?>  
+-->
 		        
 		        
 		        <div class="social-wrap share-icons a2a_kit clearfix" data-a2a-url="" data-a2a-title="">
@@ -79,3 +77,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 	</div>
     
 </article><!-- #post-## -->
+
+
+<?php
+get_footer();

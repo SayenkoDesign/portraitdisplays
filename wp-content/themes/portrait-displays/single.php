@@ -9,9 +9,7 @@
 
 get_header(); ?>
 
-<div class="row">
 
-	<div class="medium-8 columns">
 
 		<div id="primary" class="content-area">
 
@@ -21,13 +19,8 @@ get_header(); ?>
 
 				the_post();
 
-				get_template_part( 'template-parts/content', 'single' );
+				get_template_part( 'template-parts/content-post', 'single' );
 
-				the_post_navigation();
-
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
 
 				endwhile; ?>
 
@@ -35,15 +28,7 @@ get_header(); ?>
 
 		</div>
 
-	</div>
 
-	<div class="medium-4 columns">
-
-		<?php get_sidebar(); ?>
-
-	</div>
-
-</div>
 
 <?php
 get_footer();

@@ -5,6 +5,13 @@ body {
 	background-color: #fff;
 	max-width: 1770px;
 	margin: 0 auto;
+	&.blog {
+		background: #FCFBFB;
+		
+		#page {
+			background: #FCFBFB;	
+		}
+	}
 }
 
 #page {

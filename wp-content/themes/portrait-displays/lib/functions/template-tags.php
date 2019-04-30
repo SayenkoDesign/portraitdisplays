@@ -340,7 +340,7 @@ function _s_the_excerpt( $more, $read_more, $length ) {
 	echo _s_get_the_excerpt( $more, $read_more, $length );
 }
 
-function _s_get_the_excerpt( $more = '', $read_more = '', $length = 40 ) {
+function _s_get_the_excerpt( $more = '', $read_more = '', $length = 20 ) {
 	
 	global $post;
 		
@@ -351,7 +351,7 @@ function _s_get_the_excerpt( $more = '', $read_more = '', $length = 40 ) {
 }
 
 
-function _s_maybe_get_excerpt( $post_content, $post_excerpt, $more = '<span class="meta-nav">&#8230;</span>', $read_more = 'read more', $length = 40 ) {
+function _s_maybe_get_excerpt( $post_content, $post_excerpt, $more = '<span class="meta-nav">&#8230;</span>', $read_more = 'read more', $length = 20 ) {
 	
 	$out = '';
                     

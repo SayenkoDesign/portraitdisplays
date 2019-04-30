@@ -2,8 +2,13 @@
 // Footer
 // --------------------------------------------------
 
+.blog .site-footer .wrap {	
+		background: #fcfbfb;
+}
 
 .site-footer {	
+		background: #fff;
+	
 	.wrap {
 		border: 1px solid $light-gray;
 		padding-top: 2.45em;
@@ -56,36 +61,6 @@
 						padding-left: 57px;
 					}
 				
-					#footer-social-wrap {
-						margin-bottom: 3em;
-						padding-left: 57px;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						
-						a {
-							display: inline-block;
-							width: 30px;
-							height: 30px;
-							border-radius: 100%;
-							background-color: $sky-blue;
-							margin-right: 13px;
-							text-align: center;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							
-							&:last-child {
-								margin-right: 0;
-							}
-							
-							img {
-								max-width: 10px;
-			// 					margin-top: 6px;
-							}
-							
-						}
-					}
 				}
 			}
 			

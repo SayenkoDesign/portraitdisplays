@@ -41,6 +41,12 @@ wp_reset_postdata();
 
 ?>
 
+<?php
+if( ! is_paged() ) {
+	_s_get_template_part( 'template-parts/global', 'hero' );
+}
+?>
+
 <div class="row column">
 
     <div id="primary" class="content-area">
@@ -56,21 +62,7 @@ wp_reset_postdata();
             <?php
              
             if ( have_posts() ) : ?>
-            
-                <header>
-                <?php
-                $heading = 'News';
-                
-                if( is_category() ) {
-                    $heading = single_cat_title( '', false );
-                }
-                
-                if( ! is_paged() ) {
-                    printf( '<h2>%s</h2>', $heading );
-                }
-                ?>
-                
-                </header>
+ 
                 
                <?php
                
