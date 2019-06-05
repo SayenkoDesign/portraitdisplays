@@ -93,6 +93,21 @@ button.white-button {
 	
 }
 
+a.button.clear-button,
+button.clear-button {
+	background-color: transparent;
+	border: 2px solid $sky-blue;
+	color: $sky-blue;
+	letter-spacing: 1.1px;
+	text-align: center;
+
+	&:hover {
+		color: #fff;
+		background-color: $dark-blue; 
+	}
+	
+}
+
 .arrow-wrap {
 	position: relative;
 	top: 1px;

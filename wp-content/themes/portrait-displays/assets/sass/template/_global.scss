@@ -94,7 +94,8 @@ a {
 
 }
 
-.pixel-grid {
+.pixel-grid,
+.product-pixel-grid {
 	position: absolute;
 	display: flex;
     justify-content: space-between;
@@ -195,10 +196,280 @@ ul.fancy-bullets {
 			background-position: center center;
 		}
 	}
+	
+}
+
+ul.fancy-bullets.fancy-arrow-bullets li:before {
+    width: 27px;
+    height: 27px;
+    top: -2px;
+	background: url('/wp-content/themes/portrait-displays/assets/svg/fancy-list-check.svg');
 }
 
 .reveal-overlay {
     background-color: hsla(0,0%,4%,.8);
+}
+
+
+// Pop-up Sliders
+.mobile-value-arrow-wrap {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 1em;
+	
+@include breakpoint (medium) {
+	display: none;
+}
+	
+}
+
+.slick-arrow.desktop {
+	max-width: 0;
+	overflow: hidden;
+	max-height: 36px;
+	
+@include breakpoint (medium) {
+	max-width: none;
+	overflow: visible;
+}
+
+	.vs-arrow-wrap {
+		display: inline-block;
+		position: relative;
+		width: 46px;
+		height: 25px;
+		
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: $transition;
+		}
+		
+	}
+	
+&:hover {
+	img.top-arrow {
+		opacity: 0;
+	}
+}
+	
+}
+
+nav#values-wrap {
+	justify-content: center;	
+	
+	button {
+		margin-bottom: 2em;
+	    h3 {
+		    padding-top: 0.9em;
+    		}
+	}
+	
+}
+
+.slide-content-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.slick-slide img {
+	margin: auto;
+}
+
+button.hide-value-slider.no-style-button {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    margin-bottom: 3em;
+    z-index: 5;
+    
+}
+
+.show-for-slider {
+	display: block;
+	transform: scaleY(1);
+	opacity: 1;
+	transition: $transition;
+	
+&.hidden {
+	transform: scaleY(0);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	opacity: 0;
+	position: absolute;
+}
+
+}
+
+
+.hide-for-slider {
+	transform: scaleY(1);
+	transition: $transition;
+
+&.hidden {
+	transform: scaleY(0);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}	
+
+}
+
+ul.slick-dots {
+	li, li button {
+		width: 15px;
+		height: 15px;
+		box-shadow: 0 0 0 0;
+	}
+
+	li button {
+	    position: absolute;
+	    background: #fff;
+	    border: 2px solid #d7d5d5;
+	    
+	&:before {
+		display: none;
+	}
+					    
+	}
+	
+	li.slick-active {
+		button {
+			background: $sky-blue;
+			border-color: $sky-blue;
+		}
+	}
+	
+}
+
+
+.left-blue-right-gray-wedges {
+	position: relative;
+	&:before {
+	    content: "";
+	    position: absolute;
+	    z-index: 0;
+	    top: -20px;
+	    left: -20px;
+	    width: 40%;
+	    height: 60px;
+	    background: #0097f4;
+	    transform: rotate(3deg);
+	}
+	&:after {
+		content: "";
+	    position: absolute;
+	    z-index: 0;
+	    top: -40px;
+	    left: -5%;
+	    right: 0;
+	    width: 110%;
+	    height: 150px;
+	    background: #ececec;
+	    transform: rotate(-3deg);
+	}
+	
+}
+
+// Plus Buttons
+.tab-nav {
+	text-align: left;
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+	
+	button, a {
+		font-family: $raleway;
+		font-size: 1.125rem;
+		color: #454C54;
+		text-align: left;
+		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+		margin-right: 41px;
+		padding-right: 1em;
+		
+	@include breakpoint (smedium) {
+		margin-right: 41px;
+	}
+
+		
+		.plus-wrap {
+			position: relative;
+			margin-right: 10px;
+			min-width: 59px;
+			max-width: 59px;
+			min-height: 32px;
+			max-height: 32px;
+			display: flex;
+			flex-wrap: nowrap;
+			
+			span.plus-line {
+				display: inline-block;
+				position: absolute;
+				background-color: $sky-blue;
+				transition: $transition;
+				
+				&.plus-line-h {
+					height: 3px;
+					width: 100%;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: 100%;
+				}
+				
+				&.plus-line-v {
+					width: 3px;
+					top: 16px;
+					left: 0;
+					right: 0;
+					bottom: 16px;
+					margin: auto;
+				}
+				
+			}
+		}
+		
+	&:last-child {
+		margin-right: 0;
+	}
+		
+	&:hover, &.clicked {
+		
+		.plus-wrap span.plus-line.plus-line-h {
+			width: 32px;	
+		}
+
+		.plus-wrap span.plus-line.plus-line-v {
+			top: 0;
+			bottom: 0;
+		}
+		
+	}
+		
+	}
+
+&.centered-tab-nav {
+	
+	button {
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+}
+	
 }
 
 

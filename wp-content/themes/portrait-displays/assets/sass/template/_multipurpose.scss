@@ -1,4 +1,5 @@
-.page-template-multipurpose {
+.page-template-multipurpose,
+.page-template-individual-solution {
 	
 	section {
 		
@@ -138,6 +139,11 @@
 				left: auto;
 				right: -27px;
 				bottom: 35px;
+				
+			@media screen and (min-width: 1200px) {
+				width: 100%;
+			}
+				
 			}
 			
 			}

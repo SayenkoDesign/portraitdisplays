@@ -80,3 +80,4 @@ function _s_remove_page_template( $pages_templates ) {
 }
 
 add_filter( 'theme_page_templates', '_s_remove_page_template', 20 );
+

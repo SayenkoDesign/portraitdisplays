@@ -64,3 +64,5 @@
     
     include_once( 'post-types/cpt-people.php' );  
     include_once( 'post-types/cpt-downloads.php' );  
+    include_once( 'post-types/cpt-software.php' );  
+    include_once( 'post-types/cpt-hardware.php' );  

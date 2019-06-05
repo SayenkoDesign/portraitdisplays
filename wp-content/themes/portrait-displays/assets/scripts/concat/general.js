@@ -5,16 +5,6 @@
 	// Load Foundation
 	$(document).foundation();
     
-    // Example scroll to element
-    /*  
-    $('.scroll-next').on('click',function(e){
-        
-        $.smoothScroll({
-            offset: -100,
-            scrollTarget: $('main section:first-child'),
-        });
-    });
-    */
     
     // Mobile, allow top lvel menu item to toggle sub menu
     $('li.menu-item-has-children > a').on('click',function(e){
@@ -45,8 +35,13 @@
 	setHeight();
 	
 
-// Core Values Orbit Slider
+// Add Classes to Industry Rows for Wedges
+	if ($("body").hasClass("page-template-individual-industry")) {
+	$('#main').find('.row-bg-gray:first').addClass('top-wedge');
+	$('#main').find('.row-bg-gray:last').addClass('bottom-wedge');
+	}
 
+// Core Values Slider
 	$('ul.slick-dots li button').addClass('no-style-button');
 
 	$('#core-values').on('click', 'button.single-value', function() {
@@ -60,7 +55,21 @@
 		$('.show-for-slider').addClass('hidden');	
 
 	});
+
+// Ingredient Brands Slider
+	$('ul.slick-dots li button').addClass('no-style-button');
+
+	$('#ingredient-brands').on('click', 'button.single-value', function() {
+		$('.hide-for-slider').addClass('hidden');	
+		$('.show-for-slider').removeClass('hidden');	
+
+	});
 	
+	$('#ingredient-brands').on('click', 'button.hide-value-slider', function() {
+		$('.hide-for-slider').removeClass('hidden');	
+		$('.show-for-slider').addClass('hidden');	
+
+	});	
 	
 // Single Download  Tabs
 
@@ -127,6 +136,91 @@
 		});	
 	
 	});
+	
+	// 	Software Comparison Table Toggle	
+	$('#compare-calman-software').each(function (i, obj) {
+		
+		var softwareButton = $('.tab-nav .tab-nav-button.pro-software-button');
+		var hardwareButton = $('.tab-nav .tab-nav-button.home-theater-button');
+		var softwareTable = $('#pro-cal-software');
+		var hardwareTable = $('#home-theater-software');		
+	
+		$(softwareTable).show().addClass('visible');
+		$(softwareButton).addClass('clicked');
+				
+		$(softwareButton).click(function(){
+			$(hardwareButton).removeClass('clicked');
+			$(hardwareTable).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			$(this).addClass('clicked');
+			$(softwareTable).fadeIn($timing).addClass('visible');
+		});	
+		
+		$(hardwareButton).click(function(){
+			$(softwareButton).removeClass('clicked');
+			$(softwareTable).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			
+			$(this).addClass('clicked');
+			$(hardwareTable).fadeIn($timing).addClass('visible');
+		});	
+		
+	});
+
+	// 	Software Product Toggle	
+	$('#software-products').each(function (i, obj) {
+		
+		var proSoftwareButton = $('.tab-nav .tab-nav-button.pro-software-grid-button');
+		var consumerSoftwareButton = $('.tab-nav .tab-nav-button.consumer-software-grid-button');
+		var proSoftwareGrid = $('#pro-software-grid');
+		var consumerSoftwareGrid = $('#consumer-software-grid');		
+	
+		$(proSoftwareGrid).show().addClass('visible');
+		$(proSoftwareButton).addClass('clicked');
+				
+		$(proSoftwareButton).click(function(){
+			$(consumerSoftwareButton).removeClass('clicked');
+			$(consumerSoftwareGrid).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			$(this).addClass('clicked');
+			$(proSoftwareGrid).fadeIn($timing).addClass('visible');
+		});	
+		
+		$(consumerSoftwareButton).click(function(){
+			$(proSoftwareButton).removeClass('clicked');
+			$(proSoftwareGrid).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			
+			$(this).addClass('clicked');
+			$(consumerSoftwareGrid).fadeIn($timing).addClass('visible');
+		});	
+		
+	});
+
+
+	// 	Hardware Product Toggle	
+	$('#hardware-products').each(function (i, obj) {
+		
+		var measurementDevicesButton = $('.tab-nav .tab-nav-button.measurement-devices-grid-button');
+		var patternGeneratorsButton = $('.tab-nav .tab-nav-button.pattern-generators-grid-button');
+		var measurementDevicesGrid = $('#measurement-devices-grid');
+		var patternGeneratorsGrid = $('#pattern-generators-grid');		
+	
+		$(measurementDevicesGrid).show().addClass('visible');
+		$(measurementDevicesButton).addClass('clicked');
+				
+		$(measurementDevicesButton).click(function(){
+			$(patternGeneratorsButton).removeClass('clicked');
+			$(patternGeneratorsGrid).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			$(this).addClass('clicked');
+			$(measurementDevicesGrid).fadeIn($timing).addClass('visible');
+		});	
+		
+		$(patternGeneratorsButton).click(function(){
+			$(measurementDevicesButton).removeClass('clicked');
+			$(measurementDevicesGrid).fadeOut($timing).delay($timing).hide().removeClass('visible');
+			
+			$(this).addClass('clicked');
+			$(patternGeneratorsGrid).fadeIn($timing).addClass('visible');
+		});	
+		
+	});
 
 
 // 	Add Class to Current Blog Page in Fake Pagination
@@ -135,6 +229,39 @@
             $(this).addClass('current-blog-page');
         }
     });
+
+
+
+// Partner Grid
+	$('.single-partner-cube').each(function (i, obj) {
+		
+		var spLogo = $(this).find('.sp-logo-wrap');
+		var spCopy = $(this).find('.sp-copy-wrap');
+		var spClose = $(this).find('.sp-copy-close');
+		
+		$(spLogo).hover(
+		  function() {
+		    $( spCopy ).fadeIn(200);
+		  }, function() {
+		    $( spCopy ).hide();
+		  }
+		);
+		
+		$(spLogo).click(
+		  function() {
+		    $( spCopy ).fadeIn(250);
+		  }
+		);	
+		
+		$(spClose).click(
+		  function() {
+		    $( spCopy ).fadeOut(250);
+		  }
+		);		
+		
+	
+	});
+	
 
 
 
