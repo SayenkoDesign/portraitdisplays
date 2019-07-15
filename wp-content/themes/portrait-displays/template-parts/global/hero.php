@@ -32,6 +32,9 @@
 				
 				<img id="home-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/home-hero-mask.svg"/>
 				
+				<img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/hero-right-fins.svg"/>
+
+				
 			</div>
 				
 			<?php elseif(is_single()):?>
@@ -44,6 +47,9 @@
 					<?php endif; ?>	
 					
 					<img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/interior-hero-mask.svg"/>
+					
+					<img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/hero-right-fins.svg"/>
+
 				</div>
 				
 		
@@ -58,6 +64,9 @@
 					<?php endif; ?>	
 					
 					<img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/blog-hero-mask.svg"/>
+					
+					<img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/hero-right-fins.svg"/>
+
 				</div>
 			
 			<?php else:?>
@@ -71,6 +80,9 @@
 					<?php endif; ?>	
 					
 					<img id="interior-hero-curve" class="hero-curve" src="/wp-content/themes/portrait-displays/assets/svg/interior-hero-mask.svg"/>
+							
+					<img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/hero-right-fins.svg"/>
+
 				</div>
 				
 			<?php endif;?>			
@@ -103,33 +115,70 @@
 				<h1><?php the_field('page_top_heading');?></h1>
 				
 			
-				<?php if(!is_page_template('page-templates/downloads.php')):?>
 					<h4><?php the_field('page_top_subtext');?></h4>
-				<?php endif;?>
 				
 			
 				<?php if(is_page_template('page-templates/downloads.php')):?>
+									
+<!--
+					<button class="button no-style-button" type="button" style="padding: 1em; border: 1px solid gray;
+					margin-bottom: 1em;" data-toggle="example-dropdown">Software Products</button>
+					<div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+						<ul class="fancy-bullets dropdown" style="background: #fff;">
+						<?php
+						$args = array( 
+						'post_type' => 'downloads',
+						'posts_per_page' => -1 ,
+						'order' => 'DESC'
+						
+						);
+						
+						$loop = new WP_Query( $args );
+						
+						while ( $loop->have_posts() ) : $loop->the_post();?>
+			
+			
+						<?php $download = get_post();?>
+		
+						<li><a href="#<?php echo $download->post_name;?>"><?php the_title();?></a></li>
+		
+						<?php endwhile; wp_reset_query();?>   
+						</ul>
+						
+					</div>
+-->
+
 				
-					<ul class="fancy-bullets">
-					<?php
-					$args = array( 
-					'post_type' => 'downloads',
-					'posts_per_page' => -1 ,
-					'order' => 'DESC'
-					
-					);
-					
-					$loop = new WP_Query( $args );
-					
-					while ( $loop->have_posts() ) : $loop->the_post();?>
-		
-		
-					<?php $download = get_post();?>
-	
-					<li><a href="#<?php echo $download->post_name;?>"><?php the_title();?></a></li>
-	
-					<?php endwhile; wp_reset_query();?>   
-					</ul>
+					<div id="download-accordion-wrap" class="accordion" data-allow-all-closed="true" data-accordion>
+						
+						<div class="accordion-item" data-accordion-item>
+							
+							<a href="#" class="accordion-title">Software Products</a>
+				
+							<ul class="fancy-bullets accordion-content" data-tab-content>
+							<?php
+							$args = array( 
+							'post_type' => 'downloads',
+							'posts_per_page' => -1 ,
+							'order' => 'DESC'
+							
+							);
+							
+							$loop = new WP_Query( $args );
+							
+							while ( $loop->have_posts() ) : $loop->the_post();?>
+				
+				
+							<?php $download = get_post();?>
+			
+							<li><a href="#<?php echo $download->post_name;?>"><?php the_title();?></a></li>
+			
+							<?php endwhile; wp_reset_query();?>   
+							</ul>
+						
+						</div>
+						
+					</div>
 					
 				<?php endif;?>
 				
@@ -175,6 +224,6 @@
 		
 	</div>
 	
-		<img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/hero-right-fins.svg"/>
+<!-- 		<img id="header-right-fins" src="/wp-content/themes/portrait-displays/assets/svg/hero-right-fins.svg"/> -->
 			
 </div>

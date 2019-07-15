@@ -208,7 +208,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				<?php endwhile;?>
 					</div>
 				</section>
-<!-- 				<img class="gray-wave gray-wave-bottom" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-bottom.svg"/> -->
+				<img class="gray-wave gray-wave-bottom" src="/wp-content/themes/portrait-displays/assets/svg/gray-wave-bottom.svg"/>
 			<?php endif;?>
 			
 			

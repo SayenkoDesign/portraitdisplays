@@ -127,7 +127,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 							<span class="plus-line plus-line-h"></span>
 							<span class="plus-line plus-line-v"></span>
 						</div>
-						Home Theater Software
+						Consumer Calibration Software
 					</button>
 				</div>
 				
@@ -199,48 +199,44 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								
 								while ( $loop->have_posts() ) : $loop->the_post();?>
 								  
-								  	<div class="single-product-card columns">
-							  			<?php 
-										$link = get_field('link');
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-			
-										<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-										  	<div class="spc-inner row">	
-											  							
-												<div class="product-card-top">
-													<div class="product-card-title-row">
-														<h3><?php the_title();?></h3>
-														<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
-													</div>
-													
-													<div class="product-card-content">
-														<?php the_content();?>
-													</div>
-													
+						  			<?php 
+									$link = get_field('link');
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+										?>
+		
+									<a class="single-product-card columns" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+									  	<div class="spc-inner row">	
+										  							
+											<div class="product-card-top">
+												<div class="product-card-title-row">
+													<h3><?php the_title();?></h3>
+													<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
 												</div>
-											
-												<div class="product-card-bottom">
-													
-													<div class="tab-nav">
-														<button class="no-style-button plus-link tab-nav-button">
-															<div class="plus-wrap">
-																<span class="plus-line plus-line-h"></span>
-																<span class="plus-line plus-line-v"></span>
-															</div>
-														<?php echo esc_html($link_title); ?>
-														</button>
-													</div>
-													<?php endif; ?>
+												
+												<div class="product-card-content">
+													<?php the_content();?>
 												</div>
-											
+												
 											</div>
 										
-										</a>
-									</div>
+											<div class="product-card-bottom">
+												
+												<div class="tab-nav">
+													<button class="no-style-button plus-link tab-nav-button">
+														<div class="plus-wrap">
+															<span class="plus-line plus-line-h"></span>
+															<span class="plus-line plus-line-v"></span>
+														</div>
+													<?php echo esc_html($link_title); ?>
+													</button>
+												</div>
+											</div>
+										
+										</div>
+									
+									</a>
 								  
 								<?php endwhile; wp_reset_query();?>  
 					  		</div>
@@ -263,48 +259,37 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								
 								while ( $loop->have_posts() ) : $loop->the_post();?>
 								  
-								  	<div class="single-product-card columns">
-							  			<?php 
-										$link = get_field('link');
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-			
-										<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-										  	<div class="spc-inner row">	
-											  							
-												<div class="product-card-top">
-													<div class="product-card-title-row">
-														<h3><?php the_title();?></h3>
-														<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
-													</div>
-													
-													<div class="product-card-content">
-														<?php the_content();?>
-													</div>
-													
+									<a class="single-product-card columns" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+									  	<div class="spc-inner row">	
+										  							
+											<div class="product-card-top">
+												<div class="product-card-title-row">
+													<h3><?php the_title();?></h3>
+													<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
 												</div>
-											
-												<div class="product-card-bottom">
-													
-													<div class="tab-nav">
-														<button class="no-style-button plus-link tab-nav-button">
-															<div class="plus-wrap">
-																<span class="plus-line plus-line-h"></span>
-																<span class="plus-line plus-line-v"></span>
-															</div>
-														<?php echo esc_html($link_title); ?>
-														</button>
-													</div>
-													<?php endif; ?>
+												
+												<div class="product-card-content">
+													<?php the_content();?>
 												</div>
-											
+												
 											</div>
 										
-										</a>
-									</div>
+											<div class="product-card-bottom">
+												
+												<div class="tab-nav">
+													<button class="no-style-button plus-link tab-nav-button">
+														<div class="plus-wrap">
+															<span class="plus-line plus-line-h"></span>
+															<span class="plus-line plus-line-v"></span>
+														</div>
+													<?php echo esc_html($link_title); ?>
+													</button>
+												</div>
+											</div>
+										
+										</div>
+									
+									</a>
 								  
 								<?php endwhile; wp_reset_query();?>  
 								
@@ -354,49 +339,38 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								
 								while ( $loop->have_posts() ) : $loop->the_post();?>
 								  
-								  	<div class="single-product-card columns">
-							  			<?php 
-										$link = get_field('link');
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-			
-										<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-										  	<div class="spc-inner row">	
-											  							
-												<div class="product-card-top">
-													<div class="product-card-title-row">
-														<h3><?php the_title();?></h3>
-														<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
-													</div>
-													
-													<div class="product-card-content">
-														<?php the_content();?>
-													</div>
-													
+									<a class="single-product-card columns" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+									  	<div class="spc-inner row">	
+										  							
+											<div class="product-card-top">
+												<div class="product-card-title-row">
+													<h3><?php the_title();?></h3>
+													<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
 												</div>
-											
-												<div class="product-card-bottom">
-													
-													<div class="tab-nav">
-														<button class="no-style-button plus-link tab-nav-button">
-															<div class="plus-wrap">
-																<span class="plus-line plus-line-h"></span>
-																<span class="plus-line plus-line-v"></span>
-															</div>
-														<?php echo esc_html($link_title); ?>
-														</button>
-													</div>
-													<?php endif; ?>
+												
+												<div class="product-card-content">
+													<?php the_content();?>
 												</div>
-											
+												
 											</div>
 										
-										</a>
-									</div>
-								  
+											<div class="product-card-bottom">
+												
+												<div class="tab-nav">
+													<button class="no-style-button plus-link tab-nav-button">
+														<div class="plus-wrap">
+															<span class="plus-line plus-line-h"></span>
+															<span class="plus-line plus-line-v"></span>
+														</div>
+													<?php echo esc_html($link_title); ?>
+													</button>
+												</div>
+											</div>
+										
+										</div>
+									
+									</a>
+																	  
 								<?php endwhile; wp_reset_query();?>  
 					  		</div>
 				  		</div>      
@@ -420,58 +394,42 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 								
 								while ( $loop->have_posts() ) : $loop->the_post();?>
 								  
-								  	<div class="single-product-card columns">
-							  			<?php 
-										$link = get_field('link');
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-			
-										<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-										  	<div class="spc-inner row">	
-											  							
-												<div class="product-card-top">
-													<div class="product-card-title-row">
-														<h3><?php the_title();?></h3>
-														<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
-													</div>
-													
-													<div class="product-card-content">
-														<?php the_content();?>
-													</div>
-													
+									<a class="single-product-card columns" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+									  	<div class="spc-inner row">	
+										  							
+											<div class="product-card-top">
+												<div class="product-card-title-row">
+													<h3><?php the_title();?></h3>
+													<img src="/wp-content/themes/portrait-displays/assets/svg/display-icon.svg"/>
 												</div>
-											
-												<div class="product-card-bottom">
-													
-													<div class="tab-nav">
-														<button class="no-style-button plus-link tab-nav-button">
-															<div class="plus-wrap">
-																<span class="plus-line plus-line-h"></span>
-																<span class="plus-line plus-line-v"></span>
-															</div>
-														<?php echo esc_html($link_title); ?>
-														</button>
-													</div>
-													<?php endif; ?>
+												
+												<div class="product-card-content">
+													<?php the_content();?>
 												</div>
-											
+												
 											</div>
 										
-										</a>
-									</div>
+											<div class="product-card-bottom">
+												
+												<div class="tab-nav">
+													<button class="no-style-button plus-link tab-nav-button">
+														<div class="plus-wrap">
+															<span class="plus-line plus-line-h"></span>
+															<span class="plus-line plus-line-v"></span>
+														</div>
+													<?php echo esc_html($link_title); ?>
+													</button>
+												</div>
+											</div>
+										
+										</div>
+									
+									</a>
 								  
 								<?php endwhile; wp_reset_query();?>  
 					  		</div>
 				  		</div>      
 
-				  		
-				  		
-				  		
-				  		
-				  		
 				  	</div>			  	
 			  	
 			  	<?php endif;?>

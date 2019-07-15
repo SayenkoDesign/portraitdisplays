@@ -40,7 +40,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 			<?php if( have_rows('individual_solution_page_intro') ):?>
 			<section class="individual-solution-intro gray-bg left-blue-right-gray-wedges">
 				<?php while ( have_rows('individual_solution_page_intro') ) : the_row();?>
-					<div class="small-wrap text-center">
+					<div class="small-wrap text-center row columns">
 						
 						<div class="text-center">
 							<?php
@@ -145,11 +145,15 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 			</section>
 				<?php endwhile;?>
 			<?php endif;?>
+
+
+			<?php
+			// vars	
+			$ingredient_brands = get_field('show_ingredient_brands');
+			// check
+			if( $ingredient_brands && in_array('yes', $ingredient_brands) ):
+			if( have_rows('ingredient_brands') ):?>
 			
-
-
-
-			<?php if( have_rows('ingredient_brands') ):?>
 				<section id="ingredient-brands">
 					<div class="text-center medium-wrap">
 						
@@ -233,12 +237,8 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						
 										<?php endwhile;?>
 									<?php endif;?>	
-									
 														
 									</div>
-									
-									
-										
 
 								</div>
 								
@@ -270,21 +270,15 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 									</nav>
 								<?php endif;?>
 								
-								
-								
 							</div>								
-				
-						
 
-			
-			
-				<?php endwhile;?>
+						<?php endwhile;?>
 					</div>
 				</section>
-			<?php endif;?>			
+			<?php endif;		
 			
-			
-			
+			endif;?>			
+						
 			
 
 			<?php if( have_rows('how_it_works') ):?>

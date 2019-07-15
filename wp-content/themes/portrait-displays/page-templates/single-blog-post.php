@@ -23,7 +23,7 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 	
 	<div class="row">
 		
-		<div class="columns small-12 medium-12 large-7">
+		<div class="columns">
 	
 			<?php
 		    

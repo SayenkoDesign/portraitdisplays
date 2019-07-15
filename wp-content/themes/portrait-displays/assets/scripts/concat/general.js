@@ -15,11 +15,28 @@
             $toggle.trigger('click');
             e.preventDefault();
         }
-        
-        
-
     });
     
+// Add hash to Downloads scrolling anchor links
+/*
+$(".fancy-bullets.accordion-content a").click(function(e){ 
+  window.location.hash = this.hash;
+});
+*/
+    
+//Check to see if the window is top if not then display button
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 700) {
+        $('a#back-top-top').fadeIn();
+    } else {
+        $('a#back-top-top').fadeOut();
+    }
+});
+    
+// Close Dropdown when a link is clicked    
+	$('#example-dropdown').on('click', 'ul.dropdown li', function() {
+		$('#example-dropdown').foundation('close');
+	});  
     	
 // Close Header Alert
 	var $topBar = $('#top-bar-message-wrap');
@@ -57,11 +74,10 @@
 	});
 
 // Ingredient Brands Slider
-	$('ul.slick-dots li button').addClass('no-style-button');
-
 	$('#ingredient-brands').on('click', 'button.single-value', function() {
 		$('.hide-for-slider').addClass('hidden');	
 		$('.show-for-slider').removeClass('hidden');	
+		$('#value-slide').slick("refresh");
 
 	});
 	
@@ -123,16 +139,15 @@
 		$(notesButton).click(function(){
 			$(legacyButton).removeClass('clicked');
 			$(legacyContent).fadeOut($timing).delay($timing).hide().removeClass('visible');
-			$(this).addClass('clicked');
-			$(notesContent).fadeIn($timing).addClass('visible');
+			$(this).toggleClass('clicked');
+			$(notesContent).fadeIn($timing).toggleClass('visible');
 		});	
 		
 		$(legacyButton).click(function(){
 			$(notesButton).removeClass('clicked');
 			$(notesContent).fadeOut($timing).delay($timing).hide().removeClass('visible');
-			
-			$(this).addClass('clicked');
-			$(legacyContent).fadeIn($timing).addClass('visible');
+			$(this).toggleClass('clicked');
+			$(legacyContent).fadeIn($timing).toggleClass('visible');
 		});	
 	
 	});
@@ -261,8 +276,6 @@
 		
 	
 	});
-	
-
 
 
 }(document, window, jQuery));

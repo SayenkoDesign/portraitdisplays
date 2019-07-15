@@ -72,7 +72,6 @@
 			background-color: white;
 			
 			.ic-copy-wrap {
-				background-color: #fff;
 				position: relative;
 			&:before {
 				content: '';
@@ -197,6 +196,13 @@
 				    z-index: 1;
 				}
 				
+			&.row-img-align-right {
+				.pixel-grid {
+					left: auto;
+					right: -93px;
+				}
+			}	
+				
 			}
 			
 			&.row-img-align-left {
@@ -268,6 +274,7 @@
 				&:before {
 					right: 0;
 					left: -50%;
+					width: 100%;
 				}
 				
 				}
@@ -326,6 +333,7 @@
 					}
 					
 					img {
+						min-width: 86px;
 						max-width: 86px;
 						margin-right: 1.1em;
 					}

@@ -17,21 +17,15 @@ get_header(); ?>
 <?php
 _s_get_template_part( 'template-parts/global', 'hero' );
 ?>
-
-
-			
-
-					
 					
 	<div class="row column">
 			
 		<div id="primary" class="content-area site-content">
 			    
-			<main id="main" class="site-main" role="main">            
+			<main id="main" class="site-main columns row" role="main">            
 			                        
 				<div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-4 grid" data-equalizer data-equalize-on="large" data-equalize-by-row="true">
 			                               
-					<div class="column column-block">
 			                    
 					<?php if( have_rows('post_links') ):?>
 						<?php while ( have_rows('post_links') ) : the_row();?>	
@@ -41,37 +35,48 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 							$post = $post_object;
 							setup_postdata( $post );?>
 								
-							<article>
+							<article class="columns column-block">
+								
+								<div class="row">
+									
+									<?php
+										$imgID = get_field('page_top_background_image');
+										$imgSize = "large";
+										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+									?>
 							    
-							    <a href="<?php echo get_permalink();?>" class="post-hero">
-								    <?php 
-										$image = get_field('page_top_background_image');
-										$size = 'large';
-										if( $image ) {
+								    <a href="<?php echo get_permalink();?>" class="post-hero" style="background-image: url(<?php echo $imgArr[0]; ?> );background-repeat: no-repeat; background-position: center center;">
+	
+								    </a>
+							    
+								    <div class="post-copy-wrap">     
+									    
+									    <header class="entry-header">
+								    
+										    <?php echo $post_date = _s_get_posted_on( 'M d, Y' );?>
+										    
+										    <div class="post-anchor-copy-wrap">
+											    <h3>
+												    <a href="<?php echo get_permalink();?>">
+											    		<?php echo get_the_title();?>
+											    	</a>
+										    	</h3>
+										    
+										    <div class="archive-post-excerpt">
+											    <a href="<?php echo get_permalink();?>">
+												    <?php the_field('introduction');?>
+											    </a>
+											</div>
 										
-											echo wp_get_attachment_image( $image, $size );
+										    </div>
 										
-										}
-										?>
-							    </a>
-							    
-							    <div class="post-copy-wrap">     
-							    
-							    <?php
-							    $post_date = _s_get_posted_on( 'M d, Y' );
-							       
-							    $post_title = sprintf( '<div class="post-achor-copy-wrap"><h3><a href="%s">%s...</a></h3>', get_permalink(), get_the_title() );
-							    
-							    $this_post_excerpt = sprintf( '<p><a href="%s">%s</a></p></div>', get_permalink(), _s_get_the_excerpt() );
-							                	
-							    printf( '<header class="entry-header">%s%s%s</header>', $post_date, $post_title, $this_post_excerpt );
-							    
-							    
-							    ?>
-							    
+										</header>
+
 							    <a class="read-more" href="<?php echo get_permalink();?>">Read More<span></span></a>
 							    
 							    </div>
+							    
+								</div>
 							    
 							</article><!-- #post-## -->
 					
@@ -81,7 +86,6 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						<?php endwhile;?>
 					<?php endif;?>
 
-			        </div>
 			    
 				</div>
 			                             

@@ -49,9 +49,7 @@
 			justify-content: center;
 			
 			.single-solution {
-				cursor: default;
 				display: block;
-				min-height: 190px;
 				max-width: 324px;
 				margin-bottom: 4%;
 				
@@ -65,10 +63,68 @@
 				}
 				
 				h3 {
+					position: relative;
 					background-color: $sky-blue;
 					color: #fff;
 					padding: 7px 10px;
+					margin-bottom: 0;
 					
+				}
+			
+				.hover-text-wrap {
+					position: relative;
+					min-height: 190px;
+					display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    text-align: center;
+    
+					.mask {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-color: #000;
+						opacity: 0;
+						transition: $transition;
+					}
+					
+					p {
+						opacity: 0;
+						padding: 10px;
+						color: #fff;
+						position: relative;
+						margin-bottom: 0;
+						transform: translateY(20px);
+						transition: $transition;
+						
+						img {
+							transform: translateX(0);
+							transition: transform 0.3s ease 0.2s;
+						}
+					}
+					
+				}
+				
+				&:hover {
+					> .hover-text-wrap {
+						
+						.mask {
+						opacity: 0.6;
+						}
+						
+						p {
+							opacity: 1;
+							transform: translateY(0);
+							
+							img {
+								transform: translateX(6px);
+							}
+							
+						}
+						
+					}
 				}
 				
 			}
@@ -200,6 +256,58 @@
 			    	@include breakpoint(smedium) {
 				    max-width: 33%;
 			    	}
+			    
+					
+			    
+		    		.plus-wrap {
+						position: relative;
+						margin: auto;
+						min-width: 59px;
+						max-width: 59px;
+						min-height: 32px;
+						max-height: 32px;
+						display: flex;
+						flex-wrap: nowrap;
+						
+						span.plus-line {
+							display: inline-block;
+							position: absolute;
+							background-color: $sky-blue;
+							transition: $transition;
+							
+							&.plus-line-h {
+								height: 3px;
+								width: 100%;
+								top: 0;
+								bottom: 0;
+								left: 0;
+								right: 0;
+								margin: auto;
+								width: 100%;
+							}
+							
+							&.plus-line-v {
+								width: 3px;
+								top: 16px;
+								left: 0;
+								right: 0;
+								bottom: 16px;
+								margin: auto;
+							}
+							
+						}
+					}
+					
+					a:hover {
+						.plus-wrap span.plus-line.plus-line-h {
+							width: 32px;	
+						}
+				
+						.plus-wrap span.plus-line.plus-line-v {
+							top: 0;
+							bottom: 0;
+						}
+					}
 			    	
 		    	}
 	    	}

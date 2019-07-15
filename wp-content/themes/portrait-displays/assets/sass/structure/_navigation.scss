@@ -85,6 +85,11 @@ button {
 			max-height: none;
 		}		
 		
+			.header-logo {
+				width: 100%;
+				max-width: 266px;
+			}
+		
 		}
 		
 		
@@ -276,6 +281,7 @@ button {
 						    
 						    	&:after {
 								    content: "";
+								    width: 0;
 								    height: 2px;
 								    background-color: $dark-blue;
 								    position: absolute;
@@ -285,6 +291,7 @@ button {
 							    }
 							    
 							&:hover:after{
+								width: auto;
 								left: 0;
 								right: 0;
 							}
@@ -452,6 +459,23 @@ button {
 							 	white-space: nowrap;
 						 	}
 						}
+					
+					&.about-nav,
+					&.support-nav {
+						&:hover {
+						 	>  ul.sub-menu {
+							 	left: auto;
+							 	right: 0;
+							   }
+							  
+							@media screen and (min-width: 1500px) {
+								left: 0;
+								right: auto;
+							}
+							   
+						}
+						
+					}
 						 	
 			    	}
 			    	
@@ -472,9 +496,13 @@ button {
 			    ul.sub-menu {
 				    li {
 					    a {
+						    
+						    @include breakpoint (large) {
 							
-							&:hover {
-								background-color: $light-gray;
+								&:hover {
+									background-color: $light-gray;
+								}
+							
 							}
 
 					    }
@@ -507,12 +535,21 @@ button {
 		@include breakpoint (smedium) {
 			min-width: 0;
 		}
+
+		@media screen and (min-width: 1200px) {
+			white-space: nowrap;
+			flex: 1 1 auto;
+   		}
+			
+			&.nav-partners {
+				display: none;
+			}
 			
 		}
 		
 		li {
 			
-			margin-bottom: 1em;
+			margin-bottom: 0.7em;
 			
 			a {
 				font-size: 0.875rem;
@@ -530,6 +567,7 @@ button {
 				margin: 0 auto 2em;
 				li {
 					padding: 0;
+					line-height: 1.2;
 					a {
 						text-transform: none;
 						font-size: 14px;
@@ -537,6 +575,12 @@ button {
 						letter-spacing: 0;
 						text-align: left;
 						line-height: 31px;
+						line-height: 1;
+						
+					&:hover {
+						color: $sky-blue;
+					}
+						
 					}
 				}
 			}

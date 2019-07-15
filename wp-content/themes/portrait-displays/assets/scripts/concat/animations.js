@@ -263,29 +263,31 @@ if(($fadeInRight).is(':visible')) {
 
 // Fancy Bullet Lists
 var $fancyBullet = $('ul.fancy-bullets li');
-if(($fancyBullet).is(':visible')) {	
-	
-	$($fancyBullet).each(function() {
+if(!$.browser.mozilla) {
+	if(($fancyBullet).is(':visible')) {	
 		
-		var $span = $(this).find('span');
+		$($fancyBullet).each(function() {
+			
+			var $span = $(this).find('span');
+			
+			var tl = new TimelineMax();
 		
-		var tl = new TimelineMax();
-	
-		tl
-		.fromTo(this, 0.25, {x:-12}, {x:0, ease: Power2.easeOut})
-		.fromTo($span, 0.25, {x:12}, {x:0, ease: Power2.easeOut}, '-=0.25')
+			tl
+			.fromTo(this, 0.25, {x:-12}, {x:0, ease: Power2.easeOut})
+			.fromTo($span, 0.25, {x:12}, {x:0, ease: Power2.easeOut}, '-=0.25')
+			
+			
+			var scene = new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: "onEnter",
+			offset: "70px"
+			})
+			.setTween(tl)
+			.addTo(controller);
 		
+		});	
 		
-		var scene = new ScrollMagic.Scene({
-		triggerElement: this,
-		triggerHook: "onEnter",
-		offset: "70px"
-		})
-		.setTween(tl)
-		.addTo(controller);
-	
-	});	
-	
+	};
 };
 
 // Multi-prupose img BGs

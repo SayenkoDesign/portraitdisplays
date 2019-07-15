@@ -328,6 +328,11 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 
 </div>
 
+<a id="back-top-top" href='#page-top'>
+	<div class="row">
+		<img src="/wp-content/themes/portrait-displays/assets/svg/back-to-top-arrow.svg"/>
+	</div>
+</a>
 
 <?php
 get_footer();

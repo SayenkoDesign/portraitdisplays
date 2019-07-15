@@ -14,6 +14,11 @@ body {
 	}
 }
 
+#primary {
+	position: relative;
+	z-index: 1;
+}
+
 #page {
 	background-color: #fff;
 	overflow: hidden;
@@ -36,7 +41,7 @@ a {
 }
 
 .small-wrap {
-	max-width: 650px !important;
+	max-width: 670px !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
@@ -162,6 +167,10 @@ a {
 
 }
 
+.dropdown-pane {
+	background: #fff;
+}
+
 ul.fancy-bullets {
 	padding-top: 0.27em;
 	list-style: none;
@@ -212,6 +221,10 @@ ul.fancy-bullets.fancy-arrow-bullets li:before {
 
 
 // Pop-up Sliders
+#value-slider-wrap {
+	position: relative;	
+}
+
 .mobile-value-arrow-wrap {
 	display: flex;
 	justify-content: space-between;
@@ -259,7 +272,8 @@ ul.fancy-bullets.fancy-arrow-bullets li:before {
 }
 
 nav#values-wrap {
-	justify-content: center;	
+	justify-content: center;
+	align-items: flex-start;	
 	
 	button {
 		margin-bottom: 2em;
@@ -272,8 +286,22 @@ nav#values-wrap {
 
 .slide-content-wrap {
 	position: relative;
-	display: flex;
-	align-items: center;
+	padding: 0 70px;
+	
+	.modal-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	&.value-before {
+		left: 10px;
+	}		
+	&.value-after {
+		right: 10px;
+	}
+		
+	}
+	
+	
 }
 
 .slick-slide img {
@@ -283,7 +311,7 @@ nav#values-wrap {
 button.hide-value-slider.no-style-button {
     position: absolute;
     top: 2px;
-    right: 0;
+    right: 10px;
     margin-bottom: 3em;
     z-index: 5;
     

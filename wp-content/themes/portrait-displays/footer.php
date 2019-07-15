@@ -22,7 +22,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	    
 	    <div class="row">
 
-			<div class="columns footer-half small-12 medium-4 large-4">
+			<div class="columns footer-half small-12 medium-4 large-3">
 				
 				<div id="footer-first-widget">
 				
@@ -89,7 +89,7 @@ _s_get_template_part( 'template-parts/global', 'footer-cta' );
 	                    'container_class' => '',
 	                    'container_id' => '',
 	                    'menu_id'        => 'js-superfish',
-	                    'menu_class'     => 'primary-menu footer-half menu row columns small-12 smedium-12 medium-8 large-8',
+	                    'menu_class'     => 'primary-menu footer-half menu row columns small-12 smedium-12 medium-8 large-9',
 	                    'before' => '',
 	                    'after' => '',
 	                    'link_before' => '',

@@ -57,11 +57,17 @@
 		.wpgmza_map {
 		    min-width: 100vw;
 		    min-height: 100vh;
+		    
+				button.gm-control-active:focus img,
+				button.gm-control-active:hover img {
+					transform: translate(-50%,-50%) !important;
+				}
 		
 		@include breakpoint(large) {
 			min-width: 0;
 		    min-height: 0;			
 			}
+		
 		}
 		
 	}

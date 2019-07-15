@@ -55,6 +55,40 @@
             $(this).attr("href", this.hash);
         }
     });
+    
+    
+	        
+    $(window).bind('hashchange', function(event) {
+	    
+      $.smoothScroll({
+        // Replace '#/' with '#' to go to the correct target
+        scrollTarget: location.hash.replace(/^\#\/?/, '#'),
+		
+		// Remove '/' after '#' for shareable urls
+        afterScroll: function() {
+        	window.location.hash = location.hash.replace(/^\#\/?/, '#');
+	  	}
+	  	
+      });
+      
+    });
+    
+    $('.fancy-bullets.accordion-content a')
+    .bind('click', function(event) {
+      // Remove '#' from the hash.
+      var hash = this.hash.replace(/^#/, '')
+      if (this.pathname === location.pathname && hash) {
+        event.preventDefault();
+        // Change '#' (removed above) to '#/' so it doesn't jump without the smooth scrolling
+        location.hash = '#/' + hash;
+      }
+      
+    });
+    
+    // Trigger hashchange event on page load if there is a hash in the URL.
+    if (location.hash) {
+      $(window).trigger('hashchange');
+    }
 
     // select all href-elements that start with #
     // including the ones that were stripped by their pathname just above

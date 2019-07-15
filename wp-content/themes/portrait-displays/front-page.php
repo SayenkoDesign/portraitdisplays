@@ -56,10 +56,14 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						$img_size = "home-solution-link";
 						$imgarr = wp_get_attachment_image_src( $img_id, $img_size );
 							if( !empty($image) ): ?>
-							<div class="single-solution columns staggered" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat: no-repeat; background-position: center center; background-size: cover;" href="<!-- <?php the_sub_field('link');?> -->">
+							<a class="single-solution columns staggered" href="<?php the_sub_field('link');?>">
 								<h3 class="text-center"><?php the_sub_field('label');?></h3>
-	<!-- 						<p class="solution-hover-text"><?php the_sub_field('hover_text');?></p> -->
-							</div>
+								
+								<div class="hover-text-wrap" style="background-image: url(<?php echo $imgarr[0]; ?> );background-repeat: no-repeat; background-position: center center; background-size: cover;" href="<?php the_sub_field('link');?>">
+									<div class="mask"></div>
+									<p class="solution-hover-text"><?php the_sub_field('hover_text');?><img src="/wp-content/themes/portrait-displays/assets/svg/small-white-right-arrow.svg"/></p>
+								</div>
+							</a>
 							<?php endif;?>
 						<?php endwhile;?>
 					<?php endif;?>
@@ -162,11 +166,39 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 						
 						<div class="single-industry columns">
 							<?php 
-							$image = get_sub_field('icon');
-							if( !empty($image) ): ?>
-							<img class="fadeInLeft" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-							<?php endif; ?>
-							<h3 class="fadeInUp"><?php the_sub_field('label');?></h3>									
+							$link = get_sub_field('link');
+							if( $link ): 
+								$link_url = $link['url'];
+							?>
+							<a href="<?php echo esc_url($link_url); ?>">
+							<?php endif;?>
+											
+								<?php 
+								$image = get_sub_field('icon');
+								if( !empty($image) ): ?>
+								<img class="fadeInLeft" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								<?php endif; ?>
+								<div class="fadeInUp">
+									<h3><?php the_sub_field('label');?></h3>
+						  	
+								  	<?php 
+									$link = get_sub_field('link');
+									if( $link ): ?>
+									
+										<div class="plus-wrap">
+								  			<span class="plus-line plus-line-h"></span>
+								  			<span class="plus-line plus-line-v"></span>
+								  		</div>
+									<?php endif;?>
+									
+								</div>
+								
+						  	<?php 
+							$link = get_sub_field('link');
+							if( $link ): ?>
+							</a>
+							<?php endif;?>
+											
 						</div>
 					
 						<?php endwhile;?>

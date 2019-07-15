@@ -32,11 +32,21 @@
 
   gtag('config', 'UA-10195773-1');
 </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N524NB3');</script>
+<!-- End Google Tag Manager -->
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N524NB3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->	
 
 	<?php
 		_s_get_template_part( 'template-parts/modal', 'contact-modal' );
@@ -84,13 +94,13 @@
 	    
         <div class="wrap row align-bottom">
 	        
-            <div class="logo-wrap columns small-12 medium-12 large-6">
+            <div class="logo-wrap columns small-12 medium-12 large-4">
 
                 <div class="site-branding">
                     <div class="site-title">
                     <?php
                     $site_url = home_url();
-                    $logo = sprintf('<img src="%slogo.svg" alt="site logo" class="" />', trailingslashit( THEME_IMG ) );    
+                    $logo = sprintf('<img src="%slogo.svg" alt="site logo" class="header-logo" />', trailingslashit( THEME_IMG ) );    
                     printf('<a href="%s" title="%s">%s</a>',
                             $site_url, 
                             get_bloginfo( 'name' ), 
@@ -103,7 +113,7 @@
 
 
 
-            <div class="site-nav-wrap site-nav-desktop columns small-12 medium-12 large-6">	                    
+            <div class="site-nav-wrap site-nav-desktop columns small-12 medium-12 large-8">	                    
                 <nav class="site-navigation nav-primary" role="navigation" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement">  
 	                          
 					<div class="upper-nav">

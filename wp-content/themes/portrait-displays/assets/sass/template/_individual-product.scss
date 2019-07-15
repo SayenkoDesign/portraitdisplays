@@ -32,6 +32,7 @@
 					display: flex;
 					flex-wrap: nowrap;
 					max-width: 100%;
+					min-width: 100%;
 				
 					.single-product-why-us-panel {
 						background: $gray;
@@ -227,19 +228,25 @@
 			a.button.blue-button {
 				font-size: 11px;
 				color: #FFFFFF;
-				padding: 0.546em 1.573em;
+				padding: 0.864em 1.573em;
 				letter-spacing: 0.93px;
 				text-align: center;
-				line-height: 20px;	
+				line-height: 1.2;	
 			}
 			
 			.prod-table-cat {
 				display: none;
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;
 				position: absolute;
 				border-radius: 2px;
 				border-bottom: 10px solid #f9f9f9;
 				transition: transform 0.3s linear;
 				transform: translateY(50px);
+				
+			@include breakpoint (medium) {
+				overflow: inherit;
+			}
 			
 			&.visible {
 				position: relative;
@@ -285,6 +292,7 @@
 					}
 					
 					.single-product-card {
+						padding: 0;
 						margin-left: 18px;
 						margin-right: 18px;
 						margin-bottom: 18px;
@@ -292,6 +300,12 @@
 						border-radius: 2px;
 						cursor: pointer;
 						transition: $transition;
+													color: $text-black;
+							display: block;
+							padding: 2.2em 2.4em 1.8em;
+						&:hover {
+							color: $text-black;
+						}
 						
 					@include breakpoint (medium) {
 						max-width: calc(50% - 18px);
@@ -323,15 +337,6 @@
 						
 					}
 						
-						> a {
-							color: $text-black;
-							display: block;
-							padding: 2.2em 2.2em 1.8em;
-						&:hover {
-							color: $text-black;
-						}
-							
-						}
 						
 						> .spc-inner {
 							height: 100%;
@@ -348,6 +353,7 @@
 								justify-content: space-between;
 								h3 {
 									padding-top: 0.3em;
+									padding-right: 1em;
 								}
 							}
 						}

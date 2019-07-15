@@ -1,6 +1,28 @@
 // Single Post
 
 .page-template-single-blog-post {
+	
+	#page-top .hero-content-half {
+		
+		&.top-heading {
+			max-width: 100%;
+			
+			@include breakpoint (medium) {
+				max-width: 36%;
+			}
+			
+			
+			@media screen and (min-width: 1100px) {
+				max-width: 36%;
+			}
+			
+		}
+		
+	}
+	
+	#page-top .hero-content-half > h1 {
+		font-size: 1.875rem
+	}
     
     .content-area {
         margin-bottom: 1em;   

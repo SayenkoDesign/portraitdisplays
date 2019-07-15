@@ -649,7 +649,7 @@ j.scaleX=j.scaleY=j.scaleZ=1,za("transform,scale,scaleX,scaleY,scaleZ,x,y,z,rota
     // speed can be a number or 'auto'
     // if 'auto', the speed will be calculated based on the formula:
     // (current scroll position - target scroll position) / autoCoeffic
-    speed: 400,
+    speed: 600,
 
     // coefficient for "auto" speed
     autoCoefficient: 2,
@@ -4985,29 +4985,31 @@ if(($fadeInRight).is(':visible')) {
 
 // Fancy Bullet Lists
 var $fancyBullet = $('ul.fancy-bullets li');
-if(($fancyBullet).is(':visible')) {	
-	
-	$($fancyBullet).each(function() {
+if(!$.browser.mozilla) {
+	if(($fancyBullet).is(':visible')) {	
 		
-		var $span = $(this).find('span');
+		$($fancyBullet).each(function() {
+			
+			var $span = $(this).find('span');
+			
+			var tl = new TimelineMax();
 		
-		var tl = new TimelineMax();
-	
-		tl
-		.fromTo(this, 0.25, {x:-12}, {x:0, ease: Power2.easeOut})
-		.fromTo($span, 0.25, {x:12}, {x:0, ease: Power2.easeOut}, '-=0.25')
+			tl
+			.fromTo(this, 0.25, {x:-12}, {x:0, ease: Power2.easeOut})
+			.fromTo($span, 0.25, {x:12}, {x:0, ease: Power2.easeOut}, '-=0.25')
+			
+			
+			var scene = new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: "onEnter",
+			offset: "70px"
+			})
+			.setTween(tl)
+			.addTo(controller);
 		
+		});	
 		
-		var scene = new ScrollMagic.Scene({
-		triggerElement: this,
-		triggerHook: "onEnter",
-		offset: "70px"
-		})
-		.setTween(tl)
-		.addTo(controller);
-	
-	});	
-	
+	};
 };
 
 // Multi-prupose img BGs
@@ -5915,11 +5917,28 @@ if(($footerCTAHalf).is(':visible')) {
             $toggle.trigger('click');
             e.preventDefault();
         }
-        
-        
-
     });
     
+// Add hash to Downloads scrolling anchor links
+/*
+$(".fancy-bullets.accordion-content a").click(function(e){ 
+  window.location.hash = this.hash;
+});
+*/
+    
+//Check to see if the window is top if not then display button
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 700) {
+        $('a#back-top-top').fadeIn();
+    } else {
+        $('a#back-top-top').fadeOut();
+    }
+});
+    
+// Close Dropdown when a link is clicked    
+	$('#example-dropdown').on('click', 'ul.dropdown li', function() {
+		$('#example-dropdown').foundation('close');
+	});  
     	
 // Close Header Alert
 	var $topBar = $('#top-bar-message-wrap');
@@ -5957,11 +5976,10 @@ if(($footerCTAHalf).is(':visible')) {
 	});
 
 // Ingredient Brands Slider
-	$('ul.slick-dots li button').addClass('no-style-button');
-
 	$('#ingredient-brands').on('click', 'button.single-value', function() {
 		$('.hide-for-slider').addClass('hidden');	
 		$('.show-for-slider').removeClass('hidden');	
+		$('#value-slide').slick("refresh");
 
 	});
 	
@@ -6023,16 +6041,15 @@ if(($footerCTAHalf).is(':visible')) {
 		$(notesButton).click(function(){
 			$(legacyButton).removeClass('clicked');
 			$(legacyContent).fadeOut($timing).delay($timing).hide().removeClass('visible');
-			$(this).addClass('clicked');
-			$(notesContent).fadeIn($timing).addClass('visible');
+			$(this).toggleClass('clicked');
+			$(notesContent).fadeIn($timing).toggleClass('visible');
 		});	
 		
 		$(legacyButton).click(function(){
 			$(notesButton).removeClass('clicked');
 			$(notesContent).fadeOut($timing).delay($timing).hide().removeClass('visible');
-			
-			$(this).addClass('clicked');
-			$(legacyContent).fadeIn($timing).addClass('visible');
+			$(this).toggleClass('clicked');
+			$(legacyContent).fadeIn($timing).toggleClass('visible');
 		});	
 	
 	});
@@ -6161,8 +6178,6 @@ if(($footerCTAHalf).is(':visible')) {
 		
 	
 	});
-	
-
 
 
 }(document, window, jQuery));
@@ -6381,6 +6396,40 @@ if(($footerCTAHalf).is(':visible')) {
             $(this).attr("href", this.hash);
         }
     });
+    
+    
+	        
+    $(window).bind('hashchange', function(event) {
+	    
+      $.smoothScroll({
+        // Replace '#/' with '#' to go to the correct target
+        scrollTarget: location.hash.replace(/^\#\/?/, '#'),
+		
+		// Remove '/' after '#' for shareable urls
+        afterScroll: function() {
+        	window.location.hash = location.hash.replace(/^\#\/?/, '#');
+	  	}
+	  	
+      });
+      
+    });
+    
+    $('.fancy-bullets.accordion-content a')
+    .bind('click', function(event) {
+      // Remove '#' from the hash.
+      var hash = this.hash.replace(/^#/, '')
+      if (this.pathname === location.pathname && hash) {
+        event.preventDefault();
+        // Change '#' (removed above) to '#/' so it doesn't jump without the smooth scrolling
+        location.hash = '#/' + hash;
+      }
+      
+    });
+    
+    // Trigger hashchange event on page load if there is a hash in the URL.
+    if (location.hash) {
+      $(window).trigger('hashchange');
+    }
 
     // select all href-elements that start with #
     // including the ones that were stripped by their pathname just above

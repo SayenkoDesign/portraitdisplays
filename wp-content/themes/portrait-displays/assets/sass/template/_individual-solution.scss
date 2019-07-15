@@ -66,7 +66,10 @@
 			
 			}
 			
-			ul.fancy-bullets.fancy-arrow-bullets {
+			ul.fancy-bullets {
+				justify-content: space-between;
+			
+				&.fancy-arrow-bullets {
 				padding-left: 4em;
 			
 				li {
@@ -76,6 +79,13 @@
 			    	left: -35px;
 			    }
 			    }
+    			
+    			@include breakpoint (medium) {
+    				padding-left: 6em;
+    			}
+    			
+    			}
+    			
     		}
 			
 		@include breakpoint (large) {

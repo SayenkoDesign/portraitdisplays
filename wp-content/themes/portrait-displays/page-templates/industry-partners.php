@@ -50,54 +50,56 @@ _s_get_template_part( 'template-parts/global', 'hero' );
 				  	
 				  	
 				  	<?php if( have_rows('partner_cubes') ):?>
-				  	<section id="partner-cubes" class="row">
+				  	<section id="partner-cubes">
+					  	<div class="row">
 				  		<?php while ( have_rows('partner_cubes') ) : the_row();?>	
 				  
-
-				  	<?php if( have_rows('single_partner_cube') ):?>
-				  		<?php while ( have_rows('single_partner_cube') ) : the_row();?>					  
-				  
-				  		<div class="single-partner-cube columns small-12 medium-6 large-3">
-					  		
-					  		<div class="sp-logo-wrap">
+	
+					  	<?php if( have_rows('single_partner_cube') ):?>
+					  		<?php while ( have_rows('single_partner_cube') ) : the_row();?>					  
+					  
+					  		<div class="single-partner-cube columns small-12 medium-6 large-3">
 						  		
-								<span>
-						  		<?php 
-								$image = get_sub_field('color_logo');
-								$size = 'full'; // (thumbnail, medium, large, full or custom size)
-								if( $image ) {
-									echo wp_get_attachment_image( $image, $size );
-								}
-								?>
-								</span>
-								
-						  		<?php 
-								$image = get_sub_field('gray_logo');
-								$size = 'full'; // (thumbnail, medium, large, full or custom size)
-								if( $image ) {
-									echo wp_get_attachment_image( $image, $size );
-								}
-								?>
+						  		<div class="sp-logo-wrap">
+							  		
+									<span>
+							  		<?php 
+									$image = get_sub_field('color_logo');
+									$size = 'full'; // (thumbnail, medium, large, full or custom size)
+									if( $image ) {
+										echo wp_get_attachment_image( $image, $size );
+									}
+									?>
+									</span>
+									
+							  		<?php 
+									$image = get_sub_field('gray_logo');
+									$size = 'full'; // (thumbnail, medium, large, full or custom size)
+									if( $image ) {
+										echo wp_get_attachment_image( $image, $size );
+									}
+									?>
+	
+						  		</div>
+						  		
+						  		<div class="sp-copy-wrap">
+									<button class="no-style-button sp-copy-close" aria-label="Close">
+										<span class="sp-close-1"></span>
+										<span class="sp-close-2"></span>
+									</button>
+							  		<p><?php the_sub_field('copy');?></p>
+						  		</div>
+						  		
+					  		</div>
+					  
+					  
+					  		<?php endwhile;?>
+					  	<?php endif;?>	
 
-					  		</div>
-					  		
-					  		<div class="sp-copy-wrap">
-								<button class="no-style-button sp-copy-close" aria-label="Close">
-									<span class="sp-close-1"></span>
-									<span class="sp-close-2"></span>
-								</button>
-						  		<p><?php the_sub_field('copy');?></p>
-					  		</div>
-					  		
-				  		</div>
-				  
+
 				  
 				  		<?php endwhile;?>
-				  	<?php endif;?>	
-
-
-				  
-				  		<?php endwhile;?>
+					  	</div>
 					</section>
 				  	<?php endif;?>						
 		
